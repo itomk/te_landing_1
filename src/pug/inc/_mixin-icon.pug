@@ -1,0 +1,5 @@
+//- Миксин для генерации иконки со спрайта
+mixin icon(icon_name, classes)
+  svg(class='_icn' class=classes)
+    use(xlink:href=`/assets/images/sprites/sprite.svg#${icon_name}`)
+//- +icon('mail', 'header__icon')

@@ -1,0 +1,15 @@
+block variables
+include ../inc/mixins.pug
+doctype
+html(lang='ru')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    title= theme_title
+    meta(name='theme-color' content=theme_color)
+    meta(name='viewport' content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0')
+    link(rel='shortcut icon' href='/assets/images/favicon.ico' type='image/x-icon')
+    link(rel="stylesheet", href="/assets/styles/main.min.css")
+  body(class=theme_body_classes)
+    block content
+    script(src="/assets/scripts/main.min.js") 

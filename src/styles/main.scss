@@ -1,0 +1,11 @@
+@use "sass:math";
+
+@use './inc/libs'; // Сторонние библиотеки
+@use './inc/reset';
+@use './inc/helpers' as *;
+@use './inc/fonts';
+@use './inc/global';
+
+@use './blocks/header/index' as header-style;
+@use './blocks/404/index' as not_found-style;
+@use './blocks/footer/index' as footer-style;

@@ -1,0 +1,40 @@
+@use '../../inc/helpers' as *;
+
+.not-found {
+  text-align: center;
+
+  padding: 40px 0;
+
+  @include md {
+    padding: 50px 0;
+  }
+
+  @include xl {
+    padding: 60px 0;
+  }
+
+  &__title {
+    font-size: 80px;
+    line-height: 1;
+
+    @include md {
+      font-size: 100px;
+    }
+
+    @include xl {
+      font-size: 120px;
+    }
+  }
+
+  &__text {
+    font-size: 20px;
+
+    @include md {
+      font-size: 30px;
+    }
+
+    @include xl {
+      font-size: 40px;
+    }
+  }
+}

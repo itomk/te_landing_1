@@ -1,0 +1,26 @@
+{
+  "main_menu": [
+    {
+      "locale": "index",
+      "link": "/",
+      "text": "Главная",
+      "sub": [
+        {
+          "locale": "contacts",
+          "link": "/contacts.html",
+          "text": "Контакты"
+        },
+        {
+          "locale": "blog",
+          "link": "/blog.html",
+          "text": "Блог"
+        }
+      ]
+    },
+    {
+      "locale": "404",
+      "link": "/404.html",
+      "text": "404"
+    }
+  ]
+}

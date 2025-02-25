@@ -1,0 +1,22 @@
+mixin menu
+  ul.menu__list
+    each menuItem in main_menu
+      +menu_item(menuItem)
+
+mixin menu_item(menuItem)
+  li.menu__item(
+    class = (current_page === menuItem.locale) ? 'menu__item--current' : '' 
+    class = menuItem.sub ? 'menu__item--has-sub' : ''
+  )
+    a.menu__link(
+      class = (current_page === menuItem.locale) ? 'menu__link--current' : '' 
+      href = menuItem.link
+    )= menuItem.text
+    if menuItem.sub
+      ul.sub-menu__list
+        each submenuItem in menuItem.sub
+          li.sub-menu__item
+            a.sub-menu__link(
+              class = (current_page === submenuItem.locale) ? 'menu__link--current' : '' 
+              href = submenuItem.link
+            )= submenuItem.text

@@ -1,0 +1,12 @@
+extends layouts/_default.pug
+
+block variables
+  - const theme_title = 'Главная страница'
+  - const theme_color = '#fff'
+  - const theme_body_classes = ['page', 'page--footer-bottom']
+  - const current_page = 'index'
+
+block content
+  include blocks/header.pug
+  main.main#Main
+  include blocks/footer.pug
