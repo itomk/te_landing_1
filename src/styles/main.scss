@@ -5,7 +5,13 @@
 @use './inc/helpers' as *;
 @use './inc/fonts';
 @use './inc/global';
+@use './inc/animates';
 
-@use './blocks/header/index' as header-style;
-@use './blocks/404/index' as not_found-style;
-@use './blocks/footer/index' as footer-style;
+@forward './elems/heading';
+@forward './elems/label-flag';
+@forward './elems/btn';
+@forward './elems/cntrl';
+
+@forward './blocks/404/index';
+@forward './blocks/promo/index';
+@forward './blocks/footer/index';

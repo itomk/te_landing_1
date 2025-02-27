@@ -1,0 +1,33 @@
+@use '../inc/mixins/breakpoints' as queries;
+
+.heading {
+  font-weight: 600;
+  font-size: var(--fz-heading);
+  line-height: calc(24 / 20);
+
+  text-align: center;
+
+  color: var(--color-dark);
+
+  margin: 0 auto var(--mb-heading);
+
+  @include queries.lg {
+    line-height: calc(31 / 26);
+  }
+
+  @include queries.xl {
+    line-height: calc(36 / 30);
+  }
+
+  @include queries.xxl {
+    line-height: calc(42 / 35);
+  }
+
+  @include queries.xxxl {
+    line-height: calc(48 / 40);
+  }
+
+  &>span {
+    color: var(--color-base);
+  }
+}

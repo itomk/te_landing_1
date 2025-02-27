@@ -1,0 +1,387 @@
+@use '../../inc/mixins/breakpoints' as queries;
+
+.promo {
+  --color-promo-bg: hsl(220, 100%, 96%);
+  --gradient-promo-border: linear-gradient(256.69deg, hsl(255, 100%, 100%) 5.07%, hsl(219, 100%, 86%) 99.19%);
+  --br-promo: 1.2rem;
+
+  @include queries.md-max {
+    @include queries.sm {
+      --br-promo: 2.4rem;
+    }
+  }
+
+  @include queries.lg {
+    --br-promo: 2.4rem;
+  }
+
+  @include queries.xl {
+    --br-promo: 2.6rem;
+  }
+
+  @include queries.xxl {
+    --br-promo: 3.2rem;
+  }
+
+  @include queries.xxxl {
+    --br-promo: 3.4rem;
+  }
+
+  & {
+    padding: var(--section-padding-y, 0) var(--section-padding-x, 0);
+  }
+
+  &__row {
+    display: block;
+
+    @include queries.md {
+      display: flex;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+
+      @include queries.lg {
+        margin-bottom: 2.5rem;
+      }
+
+      @include queries.xl {
+        margin-bottom: 3rem;
+      }
+
+      @include queries.xxl {
+        margin-bottom: 3.5rem;
+      }
+
+      @include queries.xxxl {
+        margin-bottom: 4rem;
+      }
+    }
+  }
+
+  &__item {
+    position: relative;
+    overflow: hidden;
+
+    height: auto;
+
+    padding: 1.3rem 0.7rem;
+
+    border-radius: var(--br-promo);
+
+    @include queries.md {
+      width: calc(50% - 0.75rem);
+    }
+
+    @include queries.lg {
+      width: calc(50% - 1.25rem);
+
+      padding: 3.1rem 1rem;
+    }
+
+    @include queries.xl {
+      width: calc(50% - 1.5rem);
+
+      padding: 3.6rem 1rem 3.3rem;
+    }
+
+    @include queries.xxl {
+      width: calc(50% - 1.75rem);
+
+      padding: 4.5rem 1.6rem 4.3rem;
+    }
+
+    @include queries.xxxl {
+      width: calc(50% - 2rem);
+
+      padding: 5rem 1.6rem 4.5rem;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 1.4rem;
+
+      @include queries.md {
+        margin-bottom: 0;
+        margin-right: 1.5rem;
+      }
+
+      @include queries.lg {
+        margin-right: 2.5rem;
+      }
+
+      @include queries.xl {
+        margin-right: 3rem;
+      }
+
+      @include queries.xxl {
+        margin-right: 3.5rem;
+      }
+
+      @include queries.xxxl {
+        margin-right: 4rem;
+      }
+    }
+
+    &:nth-child(odd) {
+      .promo__pic>img {
+        transform-origin: 50% 50%;
+        animation: anim-phonering-center 2.5s infinite ease-in-out;
+      }
+
+      .promo__bg {
+        &::before {
+          content: '';
+          left: -16.76%;
+          top: 48.125%;
+          width: 61.173%;
+          transform: rotate(-87deg) scale(1, -1);
+        }
+
+        &::after {
+          content: '';
+          right: -12.57%;
+          top: -3.125%;
+          width: 44.972%;
+          transform: rotate(-133deg);
+
+          @include queries.lg {
+            top: 5%;
+          }
+        }
+      }
+    }
+
+    &:nth-child(even) {
+      .promo__inner {
+        flex-flow: row-reverse;
+      }
+
+      .promo__bg {
+        &::after {
+          content: '';
+          right: -14.246%;
+          top: 46.875%;
+          width: 47.765%;
+          transform: rotate(-95.24deg);
+        }
+      }
+    }
+
+    &::before {
+      position: absolute;
+      z-index: 1;
+      display: block;
+      content: '';
+      inset: 0;
+      background-image: var(--gradient-promo-border);
+    }
+
+    &::after {
+      position: absolute;
+      z-index: 2;
+      display: block;
+      content: '';
+      inset: 1px;
+      background-color: var(--color-promo-bg);
+      border-radius: var(--br-promo);
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    z-index: 3;
+    display: block;
+    inset: 1px;
+    border-radius: var(--br-promo);
+    overflow: hidden;
+    opacity: 0.4;
+
+    &::before,
+    &::after {
+      position: absolute;
+      display: block;
+      background-image: url('../images/promo-decor.svg');
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 100% 100%;
+      aspect-ratio: 1 / 1;
+    }
+  }
+
+  &__label-flag {
+    right: 0;
+    top: 0.7rem;
+
+    z-index: 4;
+
+    @include queries.md-max {
+      @include queries.sm {
+        top: 0.95rem;
+      }
+    }
+
+    @include queries.lg {
+      top: 0.95rem;
+    }
+
+    @include queries.xl {
+      top: 1.1rem;
+    }
+
+    @include queries.xxl {
+      top: 1.3rem;
+    }
+
+    @include queries.xxxl {
+      top: 1.5rem;
+    }
+  }
+
+  &__inner {
+    position: relative;
+    z-index: 3;
+
+    display: flex;
+    align-items: center;
+  }
+
+  &__name {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+
+    font-weight: 600;
+    font-size: 1.6rem;
+    line-height: calc(19 / 16);
+
+    color: var(--color-dark);
+
+    text-align: center;
+
+    margin: 0;
+
+    @include queries.md-max {
+      @include queries.sm {
+        font-size: 2.1rem;
+      }
+    }
+
+    @include queries.lg {
+      font-size: 2.1rem;
+    }
+
+    @include queries.xl {
+      font-size: 2.2rem;
+    }
+
+    @include queries.xxl {
+      font-size: 2.8rem;
+    }
+
+    @include queries.xxxl {
+      font-size: 3rem;
+    }
+
+    &-accent {
+      color: var(--color-base);
+      margin-top: 0.6rem;
+      text-transform: uppercase;
+
+      @include queries.lg {
+        margin-top: 0.7rem;
+      }
+
+      @include queries.xl {
+        font-size: 0.8rem;
+      }
+
+      @include queries.xxl {
+        margin-top: 1rem;
+      }
+
+      &--timer {
+        font-size: 5.4rem;
+        line-height: calc(64 / 54);
+
+        @include queries.md-max {
+          @include queries.sm {
+            font-size: 7.1rem;
+          }
+        }
+
+        @include queries.lg {
+          font-size: 7.1rem;
+        }
+
+        @include queries.xl {
+          font-size: 8rem;
+        }
+
+        @include queries.xxl {
+          font-size: 9.8rem;
+        }
+
+        @include queries.xxxl {
+          font-size: 10.5rem;
+        }
+      }
+
+      &--free {
+        font-size: 3.4rem;
+        line-height: calc(41 / 34);
+
+        @include queries.md-max {
+          @include queries.sm {
+            font-size: 4.5rem;
+          }
+        }
+
+        @include queries.lg {
+          font-size: 4.5rem;
+        }
+
+        @include queries.xl {
+          font-size: 5rem;
+        }
+
+        @include queries.xxl {
+          font-size: 6rem;
+        }
+
+        @include queries.xxxl {
+          font-size: 6.4rem;
+        }
+      }
+    }
+  }
+
+  &__pic {
+    position: relative;
+    display: block;
+
+    flex: 0 0 37.8%;
+
+    &::before {
+      content: '';
+      display: table;
+      padding-bottom: 106.14%;
+    }
+
+    &>img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      max-width: 100%;
+      width: auto;
+      max-height: 100%;
+      height: auto;
+
+      transform: translate(-50%, -50%);
+
+      object-fit: contain;
+    }
+  }
+}

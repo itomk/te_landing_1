@@ -1,5 +1,10 @@
 :root {
-  --color-base: hsl(246, 52%, 38%);
+  // MAIN
+  --color-base: hsl(219, 100%, 49%);
   --color-light: hsl(0, 0%, 100%);
   --color-dark: hsl(0, 0%, 0%);
+  // FOOTER
+  --color-footer-bg: hsl(229, 73%, 97%);
+  --color-footer-text: hsl(223, 13%, 57%);
+  --color-footer-text-hover: hsl(223, 13%, 27%);
 }

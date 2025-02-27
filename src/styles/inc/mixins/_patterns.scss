@@ -1,0 +1,12 @@
+@use '../mixins/hover' as mix;
+
+@mixin underline-hover($color, $size: 1px, $easy: background-size var(--timing-ease)) {
+  background-image: linear-gradient(transparent calc(100% - $size), $color $size);
+  background-size: 0;
+  background-repeat: no-repeat;
+  transition: $easy;
+
+  @include mix.on-hover {
+    background-size: 100%;
+  }
+}

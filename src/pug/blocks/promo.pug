@@ -1,0 +1,31 @@
+section.promo#promo
+  .container
+    h2.heading.promo__heading Начните заботиться о себе прямо сейчас – 
+      span всего за 499 рублей
+    .promo__row
+      article.promo__item
+        span.promo__bg
+        .promo__inner
+          h3.promo__name Предложение 
+            br
+            | сгорит через:
+            span.timer.promo__name-accent.promo__name-accent--timer(data-timer="360")
+              span.timer-number
+                span.timer--minutes 00
+              span.timer-number :
+              span.timer-number
+                span.timer--seconds 00
+          picture.promo__pic
+            source(media="(min-width: 993px)", srcset="/assets/images/promo-01--pc.png", type="image/png")
+            img(src="/assets/images/promo-01.png", alt="")
+      .promo__item
+        span.promo__bg
+        +label-flag('Бонус', 'promo__label-flag')
+        .promo__inner
+          h3.promo__name Сессия с психологом
+            span.promo__name-accent.promo__name-accent--free Бесплатно
+          picture.promo__pic
+            source(media="(min-width: 993px)", srcset="/assets/images/promo-02--pc.png", type="image/png")
+            img(src="/assets/images/promo-02.png", alt="")
+    .cntrl.promo__cntrl
+      a.btn.btn-lg.btn-gradient-red(href="#!") Получить доступ за 499 рублей

@@ -1,29 +1,71 @@
+@mixin xxxl {
+  @media (width >=1781px) {
+    @content;
+  }
+}
+
 @mixin xxl {
-  @media (width >=1400px) {
+  @media (width >=1441px) {
     @content;
   }
 }
 
 @mixin xl {
-  @media (width >=1200px) {
+  @media (width >=1281px) {
     @content;
   }
 }
 
 @mixin lg {
-  @media (width >=992px) {
+  @media (width >=993px) {
     @content;
   }
 }
 
 @mixin md {
-  @media (width >=768px) {
+  @media (width >=769px) {
     @content;
   }
 }
 
 @mixin sm {
-  @media (width >=576px) {
+  @media (width >=577px) {
+    @content;
+  }
+}
+
+@mixin xxxl-max {
+  @media (width <=1780px) {
+    @content;
+  }
+}
+
+@mixin xxl-max {
+  @media (width <=1440px) {
+    @content;
+  }
+}
+
+@mixin xl-max {
+  @media (width <=1280px) {
+    @content;
+  }
+}
+
+@mixin lg-max {
+  @media (width <=992px) {
+    @content;
+  }
+}
+
+@mixin md-max {
+  @media (width <=768px) {
+    @content;
+  }
+}
+
+@mixin sm-max {
+  @media (width <=576px) {
     @content;
   }
 }

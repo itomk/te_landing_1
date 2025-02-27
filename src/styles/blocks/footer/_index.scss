@@ -1,11 +1,70 @@
-.footer {
-  background-color: var(--color-base);
+@forward 'f-menu';
+@use '../../inc/mixins/breakpoints' as queries;
 
-  padding: 12px 0;
+.footer {
+  background-color: var(--color-footer-bg);
+  color: var(--color-footer-text);
+  padding: var(--pad-footer-y) var(--pad-footer-x);
+
+  &__wrapper {
+    @include queries.lg {
+      padding: 0 2.5rem;
+    }
+
+    @include queries.xl {
+      padding: 0 2.8rem;
+    }
+
+    @include queries.xxl {
+      padding: 0 3.4rem;
+    }
+  }
+
+  &__menu {
+    --mb-fmenu-nav: 3.5rem;
+
+    @include queries.lg {
+      --mb-fmenu-nav: 2.8rem;
+    }
+
+    @include queries.xl {
+      --mb-fmenu-nav: 3rem;
+    }
+
+    @include queries.xxl {
+      --mb-fmenu-nav: 3.5rem;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: calc(var(--mb-fmenu-nav, 0) - var(--mb-fmenu-items, 0));
+    }
+  }
 
   &__copyright {
+    display: block;
+
+    font-weight: 500;
+    font-size: var(--fz-footer-text);
+    line-height: 90%;
+
     text-align: center;
 
-    color: var(--color-light);
+    @include queries.lg {
+      line-height: calc(18 / 9);
+
+      text-align-last: left;
+    }
+
+    @include queries.xl {
+      line-height: calc(21 / 10);
+    }
+
+    @include queries.xxl {
+      line-height: calc(25 / 11);
+    }
+
+    @include queries.xxxl {
+      line-height: calc(27 / 11);
+    }
   }
 }

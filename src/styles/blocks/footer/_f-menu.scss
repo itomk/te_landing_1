@@ -1,0 +1,96 @@
+@use '../../inc/mixins/hover' as mix;
+@use '../../inc/mixins/patterns' as pat;
+@use '../../inc/mixins/breakpoints' as queries;
+
+.f-menu {
+  --mr-fmenu-items: 0;
+  --mb-fmenu-items: 1.5rem;
+
+  @include queries.lg {
+    --mr-fmenu-items: 2.5rem;
+  }
+
+  @include queries.xl {
+    --mb-fmenu-items: 1.6rem;
+  }
+
+  @include queries.xxl {
+    --mb-fmenu-items: 2rem;
+  }
+
+  &__list {
+    padding-left: 0;
+    margin: 0 calc(-1 * var(--mr-fmenu-items)) 0 0;
+
+    @include queries.lg {
+      max-height: 13rem;
+
+      display: flex;
+      flex-flow: column wrap;
+      align-content: flex-start;
+    }
+
+    @include queries.xxl {
+      max-height: 18rem;
+    }
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+
+    text-align: center;
+
+    margin: 0 var(--mr-fmenu-items) var(--mb-fmenu-items) 0;
+
+    @include queries.lg {
+      justify-content: flex-start;
+
+      width: 100%;
+      max-width: 22.7rem;
+    }
+
+    @include queries.xl {
+      max-width: 23.7rem;
+    }
+
+    @include queries.xxl {
+      max-width: 27.6rem;
+    }
+
+    @include queries.xxxl {
+      max-width: 28.6rem;
+    }
+  }
+
+  &__link {
+    font-weight: 500;
+    font-size: var(--fz-footer-link);
+    line-height: 90%;
+
+    text-decoration: none;
+
+    color: var(--color-footer-text);
+    @include pat.underline-hover(var(--color-footer-text-hover), 1px, all var(--timing-ease));
+
+    @include queries.lg {
+      line-height: calc(18 / 10);
+    }
+
+    @include queries.xl {
+      line-height: calc(21 / 11);
+    }
+
+    @include queries.xxl {
+      line-height: calc(26 / 12);
+    }
+
+    @include queries.xxxl {
+      line-height: calc(27 / 12);
+    }
+
+    @include mix.on-hover {
+      color: var(--color-footer-text-hover);
+    }
+  }
+}
