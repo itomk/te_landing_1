@@ -1,0 +1,76 @@
+svg.svg__hidden
+  defs
+    linearGradient(id="strokeGradient" x1="1" x2="0" y1="0" y2="0")
+      stop(offset="0%" stop-color="#b6cfff")
+      stop(offset="100%" stop-color="#fff")
+    linearGradient(id="fillGradient" x1="0" x2="100%" y1="0" y2="0")
+      stop(offset="0%" stop-color="#b2b0ff" stop-opacity="0.65")
+      stop(offset="100%" stop-color="#e0ebff")
+
+.modal.micromodal-slide#modal-dga(aria-hidden="true")
+  .modal__overlay(tabindex="-1" data-modal-close)
+  .modal__container(role="dialog" aria-modal="true" aria-labelledby="modal-dga-title")
+    .modal__block
+      .modal__bg
+        .modal__decor
+      button.modal__close(data-modal-close aria-label="Закрыть")
+        svg(xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none")
+          path(d="M5.25 5.25L18.75 18.75M5.25 18.75L18.75 5.25" stroke="#848CA2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round")
+      .modal__first
+        .modal__top
+          h2.modal__title#modal-dga-title Не уходи!
+          p.modal__subtitle Получи полный доступ на 7 дней БЕСПЛАТНО
+        .modal__main
+          .wpcf7
+            form.wpcf7-form
+              .form-block
+                .form-line
+                  p
+                    label.form-label Имя
+                    br
+                    span.wpcf7-form-control-wrap(data-name="your-name")
+                      input.wpcf7-form-control.wpcf7-text.wpcf7-validates-as-required.form-control(size="40" aria-required="true" aria-invalid="false" placeholder="Ваше имя" value="" type="text" name="your-name")
+                .form-line
+                  p
+                    label.form-label Электронная почта
+                    br
+                    span.wpcf7-form-control-wrap(data-name="your-email")
+                      input.wpcf7-form-control.wpcf7-text.wpcf7-validates-as-required.form-control(size="40" aria-required="true" aria-invalid="false" placeholder="Ваша электронная почта" value="" type="email" name="your-email")
+                .form-line
+                  p
+                    label.form-label Номер телефона
+                    br
+                    span.wpcf7-form-control-wrap(data-name="your-tel")
+                      input.wpcf7-form-control.wpcf7-text.wpcf7-validates-as-required.form-control(size="40" aria-required="true" aria-invalid="false" placeholder="Ваш номер телефона" value="" type="tel" name="your-tel")
+              p
+                input.wpcf7-form-control.wpcf7-submit.has-spinner.btn.btn-lg.btn-gradient-red.modal__btn(type="submit" value="Отправить")
+                span.wpcf7-spinner
+              p.modal__accept Нажимая кнопку “Отправить”, вы принимаете и соглашаетесь с 
+                a(href="/terms-of-use/") Условиями использования
+                | , 
+                a(href="/privacy-policy/") Политикой конфиденциальности
+                | , 
+                a(href="/personal_info/") Согласием на обработку персональных данных
+                | , указанными на сайте main.trumeneva.ru
+      .modal__result
+        p.modal__result-title Ваше сообщение успешно отправлено, мы свяжемся с вами по указанным контактам
+        h3.modal__result-subtitle Присоединяйтесь к нашим соц сетям, уже сейчас там много интересного из мира психологии!
+        ul.modal__result-socials
+          li
+            a(href="https://t.me/trumeneva" target="_blank")
+              img(src="http://trumeneva.local/wp-content/themes/trumeneva/assets/img/icons/telegram.svg" data-lazy-load="false" alt="Telegram")
+          li
+            a(href="https://vk.com/trumenevaru" target="_blank")
+              img(src="http://trumeneva.local/wp-content/themes/trumeneva/assets/img/icons/vk.svg" data-lazy-load="false" alt="vk")
+          li
+            a(href="mailto:trumenevaapp@gmail.com")
+              img(src="http://trumeneva.local/wp-content/themes/trumeneva/assets/img/icons/mail.svg" data-lazy-load="false" alt="Mail")
+          li
+            a(href="https://www.youtube.com/@TruMenEva" target="_blank")
+              img(src="http://trumeneva.local/wp-content/themes/trumeneva/assets/img/icons/youtube.svg" data-lazy-load="false" alt="Youtube")
+          li
+            a(href="https://dzen.ru/" target="_blank")
+              img(src="http://trumeneva.local/wp-content/themes/trumeneva/assets/img/icons/dzen.svg" data-lazy-load="false" alt="Dzen")
+          li
+            a(href="https://www.rutube.ru/" target="_blank")
+              img(src="http://trumeneva.local/wp-content/themes/trumeneva/assets/img/icons/rutube.svg" data-lazy-load="false" alt="Rutube")

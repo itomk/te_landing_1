@@ -1,8 +1,7 @@
 @use '../../inc/mixins/breakpoints' as queries;
+@use '../../inc/mixins/patterns' as pat;
 
 .promo {
-  --color-promo-bg: hsl(220, 100%, 96%);
-  --gradient-promo-border: linear-gradient(256.69deg, hsl(255, 100%, 100%) 5.07%, hsl(219, 100%, 86%) 99.19%);
   --br-promo: 1.2rem;
 
   @include queries.md-max {
@@ -28,34 +27,25 @@
   }
 
   & {
+    position: relative;
+    z-index: 2;
     padding: var(--section-padding-y, 0) var(--section-padding-x, 0);
+  }
+
+  &__heading {
+    max-width: 33rem;
+
+    @include queries.sm {
+      max-width: none;
+    }
   }
 
   &__row {
     display: block;
+    @include pat.not-last-margin;
 
     @include queries.md {
       display: flex;
-    }
-
-    &:not(:last-child) {
-      margin-bottom: 2rem;
-
-      @include queries.lg {
-        margin-bottom: 2.5rem;
-      }
-
-      @include queries.xl {
-        margin-bottom: 3rem;
-      }
-
-      @include queries.xxl {
-        margin-bottom: 3.5rem;
-      }
-
-      @include queries.xxxl {
-        margin-bottom: 4rem;
-      }
     }
   }
 

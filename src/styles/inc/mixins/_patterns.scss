@@ -1,4 +1,5 @@
 @use '../mixins/hover' as mix;
+@use '../mixins/breakpoints' as queries;
 
 @mixin underline-hover($color, $size: 1px, $easy: background-size var(--timing-ease)) {
   background-image: linear-gradient(transparent calc(100% - $size), $color $size);
@@ -8,5 +9,27 @@
 
   @include mix.on-hover {
     background-size: 100%;
+  }
+}
+
+@mixin not-last-margin {
+  &:not(:last-child) {
+    margin-bottom: 2rem;
+
+    @include queries.lg {
+      margin-bottom: 2.5rem;
+    }
+
+    @include queries.xl {
+      margin-bottom: 3rem;
+    }
+
+    @include queries.xxl {
+      margin-bottom: 3.5rem;
+    }
+
+    @include queries.xxxl {
+      margin-bottom: 4rem;
+    }
   }
 }

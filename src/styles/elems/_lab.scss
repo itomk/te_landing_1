@@ -1,0 +1,104 @@
+@use '../inc/mixins/breakpoints' as queries;
+
+.lab {
+  display: inline-flex;
+  position: relative;
+  padding: 0.4rem 0.6rem;
+  white-space: nowrap;
+
+  @include queries.md {
+    padding: 0.6rem 0.8rem;
+  }
+
+  @include queries.xl {
+    padding: 0.7rem 0.9rem;
+  }
+
+  @include queries.xxl {
+    padding: 0.9rem 1.1rem;
+  }
+
+  @include queries.xxxl {
+    padding: 1rem 1.2rem;
+  }
+
+  &>span {
+    position: relative;
+    z-index: 2;
+
+    display: inline;
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: calc(14 / 12);
+
+    background: var(--color-lab);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+
+    @include queries.sm {
+      font-size: 1.4rem;
+    }
+
+    @include queries.md {
+      font-size: 1.6rem;
+    }
+
+    @include queries.lg {
+      font-weight: 600;
+      font-size: 1.8rem;
+    }
+
+    @include queries.xl {
+      font-size: 2rem;
+    }
+
+    @include queries.xxl {
+      font-size: 2.472rem;
+    }
+
+    @include queries.xxxl {
+      font-size: 2.6rem;
+    }
+  }
+
+  &__svg {
+    position: absolute;
+    z-index: 1;
+    top: 1px;
+    left: 1px;
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+
+    &>rect {
+      @include queries.lg {
+        rx: 6px;
+        ry: 6px;
+      }
+
+      @include queries.xl {
+        rx: 7px;
+        ry: 7px;
+        stroke-width: 2px;
+      }
+
+      @include queries.xxl {
+        rx: 8px;
+        ry: 8px;
+      }
+
+      @include queries.xxxl {
+        rx: 9px;
+        ry: 9px;
+      }
+    }
+  }
+}
+
+.svg__hidden {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+  visibility: hidden;
+}

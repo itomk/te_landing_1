@@ -3,6 +3,7 @@ body {
   height: 100%;
   font-family: var(--font-family-base);
   font-size: 62.5%;
+  color: var(--color-dark);
   background-color: var(--color-light);
   font-synthesis: none;
   -webkit-text-size-adjust: 100%;
@@ -40,4 +41,10 @@ body {
   width: min(var(--container-max-width), 100% - (var(--container-padding-x) * 2));
   padding-block: var(--container-padding-y, 0);
   margin-inline: auto;
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
 }

@@ -1,0 +1,34 @@
+section.services#services
+  .container
+    h2.heading.services__heading Вы получаете доступ ко всему, что нужно для гармоничной жизни
+    .services__block
+      +label-flag('Бонус', 'services__label-flag')
+      picture.services__block-pic
+        source(srcset="/assets/images/cart.webp", type="image/webp")
+        img(src="/assets/images/cart.png", alt="")
+      .services__block-inner
+        p.services__block-text При покупке прямо сейчас 
+          span.services__block-text-accent Доступ ко всем 
+            span премиум-функциям 
+            | без ограничений:
+        p.services__block-name Сессия с психологом 
+          span.services__block-name-accent в подарок
+        picture.services__block-surprise
+          img(src="/assets/images/promo-01.png", alt="")
+    .services__row
+      .services__item
+        picture.services__pic
+          img(src="/assets/images/services-01.jpg", alt="")
+        p.services__name 200+ инструментов самопомощи
+      .services__item
+        picture.services__pic
+          img(src="/assets/images/services-02.jpg", alt="")
+        p.services__name Доступ к психологам, коучам, астрологам, нумерологам
+      .services__item
+        picture.services__pic
+          img(src="/assets/images/services-03.jpg", alt="")
+        p.services__name Анонимные чаты поддержки и трайбы
+      .services__item
+        picture.services__pic
+          img(src="/assets/images/services-04.jpg", alt="")
+        p.services__name Помощь виртуального психолога

@@ -1,0 +1,301 @@
+@use '../../inc/mixins/breakpoints' as queries;
+@use '../../inc/mixins/patterns' as pat;
+
+.problems {
+  position: relative;
+  z-index: 1;
+  padding: var(--section-padding-y, 0) var(--section-padding-x, 0);
+
+  &>.container {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__bg {
+    position: absolute;
+    z-index: 1;
+    display: none;
+    top: 0;
+    left: 0;
+    bottom: -16.3rem;
+    width: 100%;
+    opacity: 0.35;
+    overflow: hidden;
+    pointer-events: none;
+
+    @include queries.lg {
+      display: block;
+    }
+
+    @include queries.xl {
+      bottom: -18.3rem;
+    }
+
+    @include queries.xxl {
+      bottom: -22.7rem;
+    }
+
+    @include queries.xxxl {
+      bottom: -24.7rem;
+    }
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: '';
+      z-index: 1;
+      display: block;
+      background-image: url('../images/promo-decor.svg');
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 100% 100%;
+      opacity: 0.7;
+      aspect-ratio: 1 / 1;
+    }
+
+    &::after {
+      bottom: 0;
+      left: 50.7%;
+      width: 79.4rem;
+      transform: rotate(110deg);
+
+      @include queries.xl {
+        width: 89.4rem;
+        bottom: 0;
+        left: 49.5%;
+      }
+
+      @include queries.xxl {
+        width: 110.3rem;
+        bottom: 0;
+        left: 49.6%;
+      }
+
+      @include queries.xxxl {
+        width: 118.9rem;
+        bottom: 0;
+        left: 49.6%;
+      }
+    }
+
+    &::before {
+      bottom: -1.9rem;
+      right: 54.3%;
+      width: 63.6rem;
+      transform: rotate(-45deg);
+
+      @include queries.xl {
+        width: 71.6rem;
+      }
+
+      @include queries.xxl {
+        width: 88.5rem;
+      }
+
+      @include queries.xxxl {
+        bottom: -3.9rem;
+        width: 95.4rem;
+      }
+    }
+  }
+
+  &__heading {
+    max-width: 20rem;
+
+    @include queries.sm {
+      max-width: none;
+    }
+  }
+
+  &__row,
+  &__review-slider-wrapper {
+    @include pat.not-last-margin;
+  }
+
+  &__row {
+    @include queries.md {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__item {
+    width: 100%;
+    height: auto;
+
+    box-sizing: border-box;
+
+    background: var(--bg-problems-item);
+    box-shadow: var(--bsh-problems-item);
+    border-radius: 1.2rem;
+
+    line-height: calc(14 / 12);
+    text-align: center;
+
+    color: var(--color-problems-item);
+
+    padding: 1.5rem;
+
+    @include queries.md {
+      width: calc(33.3333% - 1rem);
+    }
+
+    @include queries.lg {
+      width: calc(33.3333% - 2rem);
+      border-radius: 2.4rem;
+      padding: 2rem;
+    }
+
+    @include queries.xl {
+      border-radius: 2.6rem;
+      padding: 2.2rem;
+    }
+
+    @include queries.xxl {
+      width: calc(33.3333% - 2.3333rem);
+      border-radius: 3.2rem;
+      padding: 2.8rem;
+    }
+
+    @include queries.xxxl {
+      width: calc(33.3333% - 2.6666rem);
+      border-radius: 3.4rem;
+      padding: 3rem;
+    }
+
+    &:not(:last-child) {
+      margin: 0 0 1.4rem;
+
+      @include queries.md {
+        margin: 0;
+      }
+    }
+  }
+
+  &__pic {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: 1rem;
+    width: 100%;
+    height: auto;
+
+    @include queries.lg {
+      border-radius: 1.5rem;
+    }
+
+    @include queries.xl {
+      border-radius: 1.6rem;
+    }
+
+    @include queries.xxl {
+      border-radius: 2rem;
+    }
+
+    @include queries.xxxl {
+      border-radius: 2.2rem;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 0.6rem;
+
+      @include queries.lg {
+        margin-bottom: 1rem;
+      }
+
+      @include queries.xl {
+        margin-bottom: 1.1rem;
+      }
+
+      @include queries.xxl {
+        margin-bottom: 1.4rem;
+      }
+
+      @include queries.xxxl {
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    &::before {
+      content: '';
+      display: table;
+      padding-bottom: 54.88%;
+
+      @include queries.lg {
+        padding-bottom: 85.94%;
+      }
+
+      @include queries.xl {
+        padding-bottom: 84.58%;
+      }
+
+      @include queries.xxl {
+        padding-bottom: 84.72%;
+      }
+
+      @include queries.xxxl {
+        padding-bottom: 84.97%;
+      }
+    }
+
+    &>img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__que,
+  &__text {
+    font-size: 1.2rem;
+    margin: 0;
+
+    @include queries.lg {
+      font-size: 1.4rem;
+    }
+
+    @include queries.xl {
+      font-size: 1.6rem;
+    }
+
+    @include queries.xxl {
+      font-size: 2rem;
+    }
+
+    @include queries.xxxl {
+      font-size: 2.157rem;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 0.5rem;
+
+      @include queries.lg {
+        margin-bottom: 1rem;
+      }
+
+      @include queries.xl {
+        margin-bottom: 1.1rem;
+      }
+
+      @include queries.xxl {
+        margin-bottom: 1.4rem;
+      }
+
+      @include queries.xxxl {
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+
+  &__que {
+    font-weight: 400;
+  }
+
+  &__text {
+    font-weight: 600;
+  }
+}

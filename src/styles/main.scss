@@ -1,17 +1,23 @@
 @use "sass:math";
 
 @use './inc/libs'; // Сторонние библиотеки
-@use './inc/reset';
+// @use './inc/reset';
 @use './inc/helpers' as *;
 @use './inc/fonts';
 @use './inc/global';
 @use './inc/animates';
 
+@forward './elems/lab';
 @forward './elems/heading';
 @forward './elems/label-flag';
 @forward './elems/btn';
 @forward './elems/cntrl';
+@forward './elems/modal';
 
-@forward './blocks/404/index';
+@forward './blocks/hero/index';
+@forward './blocks/review/index';
+@forward './blocks/problems/index';
+@forward './blocks/services/index';
+@forward './blocks/history/index';
 @forward './blocks/promo/index';
 @forward './blocks/footer/index';
