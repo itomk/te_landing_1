@@ -430,57 +430,22 @@
   }
 
   &__label-flag {
-    --fz-label-flag: 1.2rem;
-
-    @include queries.sm {
-      font-size: 1.4rem;
-    }
-
-    @include queries.md {
-      font-size: 1.6rem;
-    }
+    top: 0.9rem;
 
     @include queries.lg {
-      font-size: 1.8rem;
-      padding: 0.9rem 1.8rem 0.9rem 1rem;
+      top: 0.8rem;
     }
 
     @include queries.xl {
-      font-size: 2rem;
-      padding: 1rem 2.1rem 1rem 1.1rem;
+      top: 0.9rem;
     }
 
     @include queries.xxl {
-      font-size: 2.4rem;
-      padding: 1.35rem 2.6rem 1.35rem 1.6rem;
+      top: 1.2rem;
     }
 
     @include queries.xxxl {
-      font-size: 2.5rem;
-      padding: 1.5rem 2.9rem 1.5rem 1.85rem;
-    }
-
-    & {
-      right: 0;
-      top: 0.9rem;
-
-      z-index: 4;
-
-      @include queries.lg {
-        top: 0.8rem;
-      }
-
-      @include queries.xl {
-        top: 0.9rem;
-      }
-
-      @include queries.xxl {
-        top: 1.2rem;
-      }
-
-      @include queries.xxxl {
-        top: 1.3rem;
-      }
+      top: 1.3rem;
     }
   }
 

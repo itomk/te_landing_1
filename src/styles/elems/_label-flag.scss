@@ -29,6 +29,10 @@
 
   & {
     position: absolute;
+    z-index: 4;
+
+    right: 0;
+    top: 0;
 
     display: inline-flex;
 
@@ -92,6 +96,38 @@
 
     @include queries.xxl {
       width: 1.3rem;
+    }
+  }
+
+  &--lg {
+    --fz-label-flag: 1.2rem;
+
+    @include queries.sm {
+      --fz-label-flag: 1.4rem;
+    }
+
+    @include queries.md {
+      --fz-label-flag: 1.6rem;
+    }
+
+    @include queries.lg {
+      --fz-label-flag: 1.8rem;
+      padding: 0.9rem 1.8rem 0.9rem 1rem;
+    }
+
+    @include queries.xl {
+      --fz-label-flag: 2rem;
+      padding: 1rem 2.1rem 1rem 1.1rem;
+    }
+
+    @include queries.xxl {
+      --fz-label-flag: 2.4rem;
+      padding: 1.35rem 2.6rem 1.35rem 1.6rem;
+    }
+
+    @include queries.xxxl {
+      --fz-label-flag: 2.5rem;
+      padding: 1.5rem 2.9rem 1.5rem 1.85rem;
     }
   }
 }
