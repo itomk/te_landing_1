@@ -1,0 +1,18 @@
+extends layouts/_default.pug
+
+block variables
+  - const theme_title = 'Landing_1'
+  - const theme_color = '#fff'
+  - const theme_body_classes = ['page']
+  - const current_page = 'landing_1'
+
+block content
+  main.main#main
+    include blocks/landing1/hero.pug
+    include blocks/landing1/problems.pug
+    include blocks/landing1/services.pug
+    include blocks/landing1/history.pug
+    include blocks/landing1/promo.pug
+  include components/footer.pug
+  include components/modal-dga.pug
+  include components/svg-defs.pug

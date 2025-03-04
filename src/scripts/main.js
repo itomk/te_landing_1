@@ -24,7 +24,8 @@ window.addEventListener('DOMContentLoaded', () => {
     countdownTimer('[data-timer]')
 
   // Init modals on page
-  new InitModal('modal-dga', 'data-bs-target', 7000, 'modal_dga_is_opened', 1)
+  if (document.getElementById('modal-dga'))
+    new InitModal('modal-dga', 'data-bs-target', 7000, 'modal_dga_is_opened', 1)
 
   window.addEventListener('load', () => {
     return true

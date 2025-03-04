@@ -1,17 +1,15 @@
 extends layouts/_default.pug
 
 block variables
-  - const theme_title = 'Главная страница'
+  - const theme_title = 'Pages List'
   - const theme_color = '#fff'
   - const theme_body_classes = ['page']
-  - const current_page = 'index'
+  - const current_page = 'list_pages'
 
 block content
-  main.main#Main
-    include blocks/hero.pug
-    include blocks/problems.pug
-    include blocks/services.pug
-    include blocks/history.pug
-    include blocks/promo.pug
-  include blocks/footer.pug
-  include blocks/others.pug
+  main.main#main
+    ul
+      li
+        a(href="/landing1.html") Landing_1
+      li
+        a(href="/landing2.html") Landing_2

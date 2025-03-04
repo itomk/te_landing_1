@@ -17,6 +17,7 @@ global.app = {
 
 import { clean } from './tasks/clean.js';
 import { img } from './tasks/img.js';
+import { pic } from './tasks/pic.js';
 import { font } from './tasks/font.js';
 import { svgIcons } from './tasks/svg-icons.js';
 import { server } from './tasks/server.js';
@@ -39,7 +40,7 @@ function watcher() {
   gulp.watch(`${app.path.css.watch}`, handleSass);
 }
 
-const devTasks = gulp.series(gulp.parallel(font, img, svgIcons), handlePug, handleJs, handleSass);
+const devTasks = gulp.series(gulp.parallel(font, img, pic, svgIcons), handlePug, handleJs, handleSass);
 const dev = gulp.series(clean, devTasks, gulp.parallel(watcher, handleServer));
 const build = gulp.series(clean, devTasks);
 

@@ -37,4 +37,8 @@ export const path = {
     src: `${root_src}images/**/*.{png,jpg,jpeg,gif,svg,webp,ico}`,
     build: `${assets_build}images`,
   },
+  pic: {
+    src: `${root_src}picture/**/*.{png,jpg,jpeg,gif,svg,webp,ico}`,
+    build: `${assets_build}picture`,
+  },
 };
