@@ -13,6 +13,7 @@
 @forward './elems/btn';
 @forward './elems/cntrl';
 @forward './elems/modal';
+@forward './elems/badge';
 
 @forward './blocks/hero/index';
 @forward './blocks/review/index';
@@ -21,3 +22,10 @@
 @forward './blocks/history/index';
 @forward './blocks/promo/index';
 @forward './blocks/footer/index';
+
+@forward './blocks/banner/index';
+@forward './blocks/help/index';
+@forward './blocks/instruments/index';
+@forward './blocks/users/index';
+@forward './blocks/now/index';
+@forward './blocks/bonus/index';

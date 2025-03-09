@@ -8,7 +8,7 @@
   box-sizing: border-box;
   overflow: hidden;
 
-  background: var(--bg-hero);
+  background: var(--gradient-bw-horizontal);
 
   padding: 5rem 0 1.8rem;
 
@@ -158,7 +158,7 @@
     font-size: 1.8rem;
     line-height: calc(21 / 18);
 
-    color: var(--color-hero-title);
+    color: var(--color-base);
     margin: 0;
 
     @include queries.sm {
@@ -296,7 +296,7 @@
         align-items: center;
         justify-content: center;
 
-        background: var(--bg-masonry-item);
+        background: var(--color-base-light);
         border-radius: 1.13rem;
         overflow: hidden;
 
@@ -329,7 +329,7 @@
       }
 
       &--gradient {
-        background: var(--bg-gradient-masonry-item);
+        background: var(--gradient-vb-vertical);
       }
 
       &--pic {
@@ -541,7 +541,7 @@
     font-size: 1.6rem;
     line-height: calc(19 / 16);
 
-    color: var(--color-hero-price);
+    color: var(--color-dark-light);
 
     text-align: center;
     margin: 0;
@@ -572,7 +572,7 @@
       font-size: 2.5rem;
       line-height: calc(31 / 25);
 
-      color: var(--color-hero-price-current);
+      color: var(--color-base);
 
       margin: 0 0.7rem;
 
@@ -619,7 +619,7 @@
 
     &-old {
       position: relative;
-      color: var(--color-hero-price-old);
+      color: var(--color-base-op-48);
 
       margin: 0;
 
@@ -628,7 +628,7 @@
         content: '';
         width: 100%;
         height: 0.155rem;
-        background-color: var(--color-hero-price-current);
+        background-color: var(--color-base);
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%) rotate(-4.56deg);

@@ -1,0 +1,155 @@
+@use '../inc/mixins/breakpoints' as media;
+@use '../inc/mixins/hover' as hover;
+
+.badge {
+  max-width: 33rem;
+  width: 100%;
+  min-height: 7rem;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--color-light);
+  border-radius: 1.6rem;
+
+  padding: 0.8rem 4.5rem;
+  transform: scale(1);
+
+  transition: background-color var(--timing-ease), transform var(--timing-ease);
+
+  @include media.lg {
+    height: auto;
+    width: auto;
+    min-height: 7.1rem;
+    border: 0.175rem solid var(--color-base);
+    padding: 0.8rem 1.8rem;
+  }
+
+  @include media.xl {
+    min-height: 7.8rem;
+    padding: 1rem 1.6rem;
+  }
+
+  @include media.xxl {
+    max-width: 35rem;
+    border-width: 0.2rem;
+    min-height: 10rem;
+    padding: 1rem 2rem;
+    border-radius: 1.8rem;
+  }
+
+  @include media.xxxl {
+    max-width: 37rem;
+    min-height: 10.8rem;
+    padding: 1.1rem 2.2rem;
+    border-radius: 2rem;
+  }
+
+  @include hover.on-hover {
+    transform: scale(1.03);
+    background-color: var(--color-gray-op-59);
+  }
+
+  &__img {
+    max-width: 100%;
+    width: auto;
+    max-height: 5.2rem;
+    height: auto;
+    object-fit: contain;
+
+    @include media.xl {
+      max-height: 5.9rem;
+    }
+
+    @include media.xxl {
+      max-height: 7.4rem;
+    }
+
+    @include media.xxxl {
+      max-height: 8rem;
+    }
+  }
+
+  &--mini {
+    max-width: 17rem;
+    min-height: 4.8rem;
+
+    border: 0.109rem solid var(--color-base);
+    border-radius: 1rem;
+
+    padding: 0.7rem 1rem;
+
+    @include media.xl {
+      max-width: 19rem;
+      min-height: 5.6rem;
+
+      padding: 0.8rem 1.1rem;
+    }
+
+    @include media.xxl {
+      max-width: 24rem;
+      min-height: 7rem;
+
+      border-radius: 1.6rem;
+
+      padding: 1.1rem 1.4rem;
+    }
+
+    @include media.xxxl {
+      max-width: 25.5rem;
+      min-height: 7.5rem;
+
+      padding: 1.1rem 1, 5rem;
+    }
+
+    .badge__img {
+      max-height: 3.2rem;
+
+      @include media.xl {
+        max-height: 3.6rem;
+      }
+
+      @include media.xxl {
+        max-height: 4.5rem;
+      }
+
+      @include media.xxxl {
+        max-height: 4.8rem;
+      }
+    }
+  }
+
+  &--cntrl {
+    min-height: 4.8rem;
+    border: 0.109rem solid var(--color-base);
+    padding: 0.6rem 1rem;
+
+    @include media.lg {
+      min-height: 7.1rem;
+      padding: 0.8rem 1.8rem;
+    }
+
+    @include media.xl {
+      min-height: 7.8rem;
+      padding: 1rem 1.6rem;
+    }
+
+    @include media.xxl {
+      max-width: 35rem;
+      border-width: 0.2rem;
+      min-height: 10rem;
+      padding: 1rem 2rem;
+    }
+
+    @include media.xxxl {
+      max-width: 37rem;
+      min-height: 10.8rem;
+      padding: 1.1rem 2.2rem;
+    }
+
+    .badge__img {
+      max-height: 3.6rem;
+    }
+  }
+}

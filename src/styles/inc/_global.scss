@@ -48,3 +48,7 @@ body {
 ::before {
   box-sizing: border-box;
 }
+
+section {
+  padding: var(--section-padding-y, 0) var(--section-padding-x, 0);
+}

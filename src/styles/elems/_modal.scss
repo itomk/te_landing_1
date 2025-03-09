@@ -43,7 +43,7 @@
 
     width: min(var(--modal-max-width), 100% - (var(--modal-padding-x) * 2));
 
-    background: var(--bg-modal-block);
+    background: var(--gradient-wb-diagonal);
     box-shadow: var(--bsh-modal-block);
     border-radius: 2rem;
 

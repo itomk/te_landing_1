@@ -4,7 +4,6 @@
 .problems {
   position: relative;
   z-index: 1;
-  padding: var(--section-padding-y, 0) var(--section-padding-x, 0);
 
   &>.container {
     position: relative;
@@ -125,14 +124,14 @@
 
     box-sizing: border-box;
 
-    background: var(--bg-problems-item);
-    box-shadow: var(--bsh-problems-item);
+    background: var(--color-light);
+    box-shadow: 0px 0.9px 10.4px var(--color-shadow-gray);
     border-radius: 1.2rem;
 
     line-height: calc(14 / 12);
     text-align: center;
 
-    color: var(--color-problems-item);
+    color: var(--color-dark);
 
     padding: 1.5rem;
 

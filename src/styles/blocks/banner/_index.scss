@@ -1,0 +1,810 @@
+@use '../../inc/mixins/breakpoints' as media;
+
+.banner {
+  &__line {
+    top: 0.9rem;
+
+    @include media.lg {
+      top: 2rem;
+    }
+
+    @include media.xl {
+      top: 2.3rem;
+    }
+
+    @include media.xxl {
+      top: 2.7rem;
+    }
+
+    @include media.xxxl {
+      top: 3rem;
+    }
+  }
+
+  &__hero {
+    padding: 5rem 0 3rem;
+
+    @include media.lg {
+      padding: 8.3rem 0 2rem;
+    }
+
+    @include media.xl {
+      padding: 9.2rem 0 2rem;
+    }
+
+    @include media.xxl {
+      padding: 11.4rem 0 3rem;
+    }
+
+    @include media.xxxl {
+      padding: 12.3rem 0 3.2rem;
+    }
+  }
+
+  &__container {
+    @include media.lg {
+      --container-max-width: 192rem;
+      --container-padding-x: 2.5rem;
+    }
+
+    @include media.xl {
+      --container-padding-x: 2.9rem;
+    }
+
+    @include media.xxl {
+      --container-padding-x: 3.6rem;
+    }
+
+    @include media.xxxl {
+      --container-padding-x: 4rem;
+    }
+  }
+
+  &__wrapper {
+    width: 100%;
+    box-sizing: border-box;
+
+    @include media.lg {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding-left: 2.1rem;
+    }
+
+    @include media.xxl {
+      padding-left: 2.6rem;
+    }
+
+    @include media.xxxl {
+      padding-left: 2.7rem;
+    }
+  }
+
+  &__main {
+    &:not(:last-child) {
+      margin-bottom: 3.4rem;
+
+      @include media.lg {
+        margin-bottom: 1.6rem;
+      }
+
+      @include media.xl {
+        margin-bottom: 1.6rem;
+      }
+
+      @include media.xxl {
+        margin-bottom: 2.3rem;
+      }
+
+      @include media.xxxl {
+        margin-bottom: 2.4rem;
+      }
+    }
+  }
+
+  &__title {
+    &:not(:last-child) {
+      @include media.xxl {
+        margin-bottom: 1.3rem;
+      }
+
+      @include media.xxxl {
+        margin-bottom: 1.4rem;
+      }
+    }
+  }
+
+  &__subtitle {
+    display: none;
+
+    font-weight: 500;
+    font-size: 1.9rem;
+    line-height: calc(23 / 19);
+
+    color: var(--color-dark-easy);
+
+    margin: 0;
+
+    @include media.lg {
+      display: block;
+    }
+
+    @include media.xl {
+      font-size: 2.2rem;
+    }
+
+    @include media.xxl {
+      font-size: 2.7rem;
+    }
+
+    @include media.xxxl {
+      font-size: 3rem;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+
+      @include media.xxl {
+        margin-bottom: 1.3rem;
+      }
+
+      @include media.xxxl {
+        margin-bottom: 1.4rem;
+      }
+    }
+  }
+
+  &__lab {
+    max-width: 28rem;
+
+    @include media.sm {
+      max-width: 31rem;
+    }
+
+    @include media.md {
+      max-width: 36rem;
+    }
+
+    @include media.lg {
+      max-width: 41.8rem;
+    }
+
+    @include media.xl {
+      max-width: 46.3rem;
+    }
+
+    @include media.xxl {
+      max-width: 55.5rem;
+    }
+
+    @include media.xxxl {
+      max-width: 60rem;
+    }
+
+    &:not(:last-child) {
+      @include media.xl {
+        margin-bottom: 2.6rem;
+      }
+
+      @include media.xxl {
+        margin-bottom: 3.2rem;
+      }
+
+      @include media.xxxl {
+        margin-bottom: 3.5rem;
+      }
+    }
+
+    &>span {
+      font-weight: 600;
+
+      @include media.xxl {
+        font-size: 2.4rem;
+      }
+
+      @include media.xxxl {
+        font-size: 2.6rem;
+      }
+    }
+  }
+
+  &__masonry {
+    position: relative;
+
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    align-content: space-between;
+
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+
+    flex-grow: 0;
+    flex-shrink: 0;
+
+    aspect-ratio: 1.341 / 1;
+
+    margin: 0 auto;
+
+    @include media.lg {
+      max-width: 50.538%;
+      aspect-ratio: 1.505 / 1;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 3.4rem;
+    }
+  }
+
+  &__label-flag {
+    max-width: 9.8rem;
+
+    position: absolute;
+    top: 0;
+    right: -1.6rem;
+    z-index: 3;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    font-weight: 500;
+    font-size: 0.7rem;
+    line-height: calc(8 / 7);
+
+    padding: 0.65rem 0.4rem;
+
+    @include media.lg-max {
+      @include media.sm {
+        max-width: 16rem;
+        font-size: 1.2rem;
+        line-height: calc(14 / 12);
+        padding: 1rem;
+      }
+
+      @include media.md {
+        max-width: 23rem;
+        font-size: 1.8rem;
+        line-height: calc(21 / 18);
+        padding: 1.4rem;
+      }
+    }
+
+    @include media.lg {
+      right: -2.5rem;
+      max-width: 16rem;
+      font-size: 1.2rem;
+      line-height: calc(14 / 12);
+      padding: 1rem;
+    }
+
+    @include media.xl {
+      right: -2.9rem;
+      max-width: 19.2rem;
+      font-size: 1.4rem;
+      line-height: calc(17 / 14);
+      padding: 1.1rem 1rem 1.1rem 2.1rem;
+    }
+
+    @include media.xxl {
+      right: -3.6rem;
+      max-width: 24rem;
+      font-size: 1.7rem;
+      line-height: calc(20 / 17);
+      padding: 1.4rem 1rem 1.4rem 2.4rem;
+    }
+
+    @include media.xxxl {
+      right: -4rem;
+      max-width: 25rem;
+      font-size: 1.8rem;
+      line-height: calc(21 / 18);
+      padding: 1.5rem 1.4rem 1.3rem 3.3rem;
+    }
+
+    &::before {
+      width: 1.2rem;
+
+      @include media.lg-max {
+        @include media.sm {
+          width: 1.6rem;
+        }
+
+        @include media.md {
+          font-size: 1.8rem;
+          line-height: calc(21 / 18);
+        }
+      }
+
+      @include media.lg {
+        width: 1.6rem;
+      }
+
+      @include media.xl {
+        width: 2rem;
+      }
+
+      @include media.xxl {
+        width: 2.2rem;
+      }
+
+      @include media.xxxl {
+        width: 2.5rem;
+      }
+    }
+
+    &>span {
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 1.3rem;
+
+      @include media.lg-max {
+        @include media.sm {
+          font-size: 2.2rem;
+        }
+
+        @include media.md {
+          font-size: 3.2rem;
+        }
+      }
+
+      @include media.lg {
+        font-size: 2.2rem;
+      }
+
+      @include media.xl {
+        font-size: 2.5rem;
+      }
+
+      @include media.xxl {
+        font-size: 3rem;
+      }
+
+      @include media.xxxl {
+        font-size: 3.2rem;
+      }
+    }
+  }
+
+  &__item {
+    --gap-masonry-item-x: 17px;
+    --gap-masonry-item-y: 23px;
+    --margin-masonry-item-x: calc(var(--gap-masonry-item-x) / 2);
+    --margin-masonry-item-y: calc(var(--gap-masonry-item-y) / 2);
+
+    @include media.lg {
+      --gap-masonry-item: 11px;
+    }
+
+    @include media.xl {
+      --gap-masonry-item: 15px;
+    }
+
+    @include media.xxl {
+      --gap-masonry-item: 18px;
+    }
+
+    @include media.xxxl {
+      --gap-masonry-item: 20px;
+    }
+
+    & {
+      position: relative;
+      box-sizing: border-box;
+
+      width: calc(28.5% - var(--margin-masonry-item-x));
+      height: calc(36.55% - var(--margin-masonry-item-y));
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      background: linear-gradient(1.36deg, #1A5BC4 -20.82%, #9D5AF1 51.68%, #E66D90 121.59%);
+      border-radius: 1.1rem;
+      overflow: hidden;
+
+      padding: 0.6rem;
+
+      @include media.lg-max {
+        @include media.sm {
+          border-radius: 1.685rem;
+
+          padding: 1rem;
+        }
+
+        @include media.md {
+          border-radius: 2.6rem;
+
+          padding: 1.5rem;
+        }
+      }
+
+      @include media.lg {
+        border-radius: 1.685rem;
+
+        padding: 1rem;
+      }
+
+      @include media.xl {
+        border-radius: 1.9rem;
+
+        padding: 1.1rem;
+      }
+
+      @include media.xxl {
+        border-radius: 2.4rem;
+
+        padding: 1.4rem;
+      }
+
+      @include media.xxxl {
+        height: calc(35.45% - var(--margin-masonry-item-y));
+
+        border-radius: 2.6rem;
+
+        padding: 1.5rem;
+      }
+
+      &:nth-child(1) {
+        width: calc(65.1% - var(--margin-masonry-item-x));
+        height: calc(63.65% - var(--margin-masonry-item-y));
+
+        @include media.lg {
+          height: calc(64.65% - var(--margin-masonry-item-y));
+        }
+
+        @include media.xxxl {
+          height: calc(63.65% - var(--margin-masonry-item-y));
+        }
+      }
+
+      &:nth-child(3) {
+        padding: 2.7rem 0.6rem 1.1rem;
+        margin-top: auto;
+        justify-content: space-between;
+        width: calc(34.7% - var(--margin-masonry-item-x));
+        height: calc(72.2% - var(--margin-masonry-item-y));
+
+        @include media.lg-max {
+          @include media.sm {
+            padding: 3.7rem 1rem 4.1rem;
+          }
+
+          @include media.md {
+            padding: 6.1rem 1rem;
+          }
+        }
+
+        @include media.lg {
+          width: calc(31.5% - var(--margin-masonry-item-x));
+          height: calc(73.2% - var(--margin-masonry-item-y));
+          padding: 4.1rem 1rem 4.1rem;
+        }
+
+        @include media.xl {
+          padding: 4.5rem 1.1rem;
+        }
+
+        @include media.xxl {
+          padding: 5.6rem 1.4rem;
+        }
+
+        @include media.xxxl {
+          width: calc(31% - var(--margin-masonry-item-x));
+          height: calc(72% - var(--margin-masonry-item-y));
+
+          padding: 6.1rem 1rem;
+        }
+
+        &::before {
+          position: absolute;
+          content: '';
+          z-index: 1;
+          display: block;
+          top: -185%;
+          left: -137%;
+          width: 419%;
+          background-image: url('../images/promo-decor.svg');
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: 100% 100%;
+          aspect-ratio: 1 / 1;
+          opacity: 0.3;
+          transform: scale(-1, -1) rotate(-75deg) skewX(10deg);
+
+          @include media.lg {
+            top: -210%;
+          }
+        }
+      }
+    }
+
+    &--gradient {
+      background: linear-gradient(190.95deg, #A75CE4 0.53%, #4887FF 47.8%);
+    }
+
+    &--pic {
+      background: none;
+    }
+  }
+
+  &__pic {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    display: block;
+
+    &>img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
+
+    &-top {
+      position: absolute;
+      z-index: 3;
+      display: block;
+      max-width: 100%;
+      width: 52%;
+      left: 49.5%;
+      bottom: 1.5%;
+      transform: translateX(-50%);
+
+      @include media.lg {
+        width: 47.2%;
+        left: 49.3%;
+        bottom: -1.4%;
+      }
+
+      @include media.xl {
+        width: 47%;
+        left: 50%;
+        bottom: -1.5%;
+      }
+
+      @include media.xxxl {
+        bottom: -1%;
+      }
+
+      &>img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+
+  &__img {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    justify-content: center;
+
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+
+    &>img {
+      width: 120%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center center;
+
+      @include media.lg {
+        width: 105%;
+      }
+    }
+  }
+
+  &__text {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    max-width: 100%;
+    word-break: normal;
+    overflow-wrap: normal;
+    hyphens: none;
+
+    font-weight: 500;
+    font-size: 0.8rem;
+    line-height: calc(10 / 8);
+    text-align: center;
+
+    color: var(--color-light);
+
+    margin: 0;
+
+    @include media.lg-max {
+      @include media.sm {
+        font-size: 1.4rem;
+      }
+
+      @include media.md {
+        font-size: 2.1rem;
+      }
+    }
+
+    @include media.lg {
+      font-size: 1.4rem;
+    }
+
+    @include media.xl {
+      font-size: 1.6rem;
+    }
+
+    @include media.xxl {
+      font-size: 2rem;
+    }
+
+    @include media.xxxl {
+      font-size: 2.1rem;
+    }
+
+    &>span {
+      font-weight: 700;
+      font-size: 1.3rem;
+      line-height: calc(16 / 13);
+
+      @include media.lg-max {
+        @include media.sm {
+          font-size: 2.2rem;
+        }
+
+        @include media.md {
+          font-size: 3.2rem;
+        }
+      }
+
+      @include media.lg {
+        font-size: 2.2rem;
+      }
+
+      @include media.xl {
+        font-size: 2.5rem;
+      }
+
+      @include media.xxl {
+        font-size: 3rem;
+      }
+
+      @include media.xxxl {
+        font-size: 3.2rem;
+      }
+
+      &:last-child {
+        font-size: 1.6rem;
+        line-height: calc(19 / 16);
+
+        @include media.lg-max {
+          @include media.sm {
+            font-size: 2.6rem;
+          }
+
+          @include media.md {
+            font-size: 4rem;
+          }
+        }
+
+        @include media.lg {
+          font-size: 2.6rem;
+        }
+
+        @include media.xl {
+          font-size: 3rem;
+        }
+
+        @include media.xxl {
+          font-size: 3.7rem;
+        }
+
+        @include media.xxxl {
+          font-size: 4rem;
+        }
+      }
+    }
+  }
+
+  &__control {
+    max-width: 40rem;
+
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+
+    margin: 0 auto;
+
+    @include media.lg {
+      max-width: 33rem;
+
+      justify-content: flex-start;
+
+      margin: 0;
+    }
+
+    @include media.xl {
+      max-width: 37rem;
+    }
+
+    @include media.xxl {
+      max-width: 46rem;
+    }
+
+    @include media.xxxl {
+      max-width: 49.5rem;
+    }
+
+    &-badge {
+      border-radius: 0.9rem;
+
+      @include media.lg {
+        min-height: 4.8rem;
+        padding: 0.6rem 1rem;
+      }
+
+      @include media.xl {
+        border-radius: 1rem;
+        min-height: 5.4rem;
+        padding: 0.7rem 1.1rem;
+      }
+
+      @include media.xxl {
+        border-radius: 1.2rem;
+        min-height: 6.8rem;
+        padding: 0.9rem 1.4rem;
+      }
+
+      @include media.xxxl {
+        border-radius: 1.5rem;
+        min-height: 7.3rem;
+        padding: 1rem 1.7rem;
+      }
+
+      &:not(:last-child) {
+        margin-right: 1rem;
+
+        @include media.xl {
+          margin-right: 1.2rem;
+        }
+
+        @include media.xxl {
+          margin-right: 1.7rem;
+        }
+
+        @include media.xxxl {
+          margin-right: 1.6rem;
+        }
+      }
+
+      .badge__img {
+        @include media.xl {
+          max-height: 4rem;
+        }
+
+        @include media.xxl {
+          max-height: 5.1rem;
+        }
+
+        @include media.xxxl {
+          max-height: 5.4rem;
+        }
+      }
+    }
+  }
+}

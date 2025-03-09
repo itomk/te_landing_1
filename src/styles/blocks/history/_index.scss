@@ -50,7 +50,6 @@
   & {
     position: relative;
     z-index: 1;
-    padding: var(--section-padding-y) var(--section-padding-x);
 
     &>.container {
       position: relative;
@@ -172,8 +171,8 @@
 
     min-height: var(--mh-history-block);
 
-    border: var(--bw-history-block) solid var(--border-history-block);
-    background: var(--bg-history-block);
+    border: var(--bw-history-block) solid var(--color-base-border);
+    background: var(--gradient-multi-horizontal);
     border-radius: var(--br-history-block);
 
     &-inner {

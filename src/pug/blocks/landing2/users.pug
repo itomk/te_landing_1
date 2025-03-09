@@ -1,0 +1,54 @@
+section.users#users
+  .users__bg
+  .container.users__container
+    h2.heading.users__heading Наши пользователи уже чувствуют себя лучше
+    .review-slider-wrapper.users__review-slider-wrapper
+      .swiper.review-slider
+        .swiper-wrapper
+          .swiper-slide.review
+            article.review__item
+              picture.review__pic
+                img(src="/assets/picture/review-01.jpg", alt="")
+              .review__content
+                h3.review__name Анна, 29 лет
+                span.review__rating
+                  span(style="width: 100%")
+                p.review__comment С Trumen Eva я смогла преодолеть тревогу и найти поддержку
+          .swiper-slide.review
+            article.review__item
+              picture.review__pic
+                img(src="/assets/picture/review-02.jpg", alt="")
+              .review__content
+                h3.review__name Дмитрий, 35 лет
+                span.review__rating
+                  span(style="width: 90%")
+                p.review__comment Теперь я регулярно отслеживаю настроение и эмоции, чувствую себя лучше.
+          .swiper-slide.review
+            article.review__item
+              picture.review__pic
+                img(src="/assets/picture/review-03.jpg", alt="")
+              .review__content
+                h3.review__name Мария, 23 года
+                span.review__rating
+                  span(style="width: 100%")
+                p.review__comment Я стала высыпаться и наладила свои отношения с молодым человеком.
+      .swiper-button-prev.review-slider-prev
+      .swiper-button-next.review-slider-next
+    .users__block
+      .users__block-top
+        .users__block-rating
+          span.users__block-rating-number 4.8
+            img.users__block-rating-star(src="/assets/images/star.svg", alt="")
+          | рейтинг в
+        .users__block-row
+          a.badge.badge--mini.users__block-badge(href="#!" target="_blank")
+            img.badge__img(src="/assets/picture/app_store.svg", alt="")
+          a.badge.badge--mini.users__block-badge(href="#!" target="_blank")
+            img.badge__img(src="/assets/picture/google_play.svg", alt="")
+      .users__block-bottom
+        p.users__block-item
+          span.users__block-item-accent 1400+
+          | пользователей уже с нами
+        p.users__block-item
+          span.users__block-item-accent Поддержка
+          | сертифицированных специалистов

@@ -20,7 +20,7 @@ export const path = {
   css: {
     src: [`${root_src}styles/main.scss`],
     build: `${assets_build}styles`,
-    watch: `${root_src}styles/**/*.{sass,scss,css}`,
+    watch: [`${root_src}styles/**/*.{sass,scss,css}`],
   },
   js: {
     src: [`${root_src}scripts/main.js`],

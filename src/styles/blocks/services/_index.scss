@@ -4,7 +4,6 @@
 .services {
   position: relative;
   z-index: 2;
-  padding: var(--section-padding-y, 0) var(--section-padding-x, 0);
 
   &__heading {
     max-width: 36rem;
@@ -22,8 +21,8 @@
     box-sizing: border-box;
     overflow: hidden;
 
-    background: var(--bg-services-block);
-    border: 1px solid var(--bc-services-block);
+    background: var(--color-gray-op-59);
+    border: 1px solid var(--color-base-border);
     border-radius: 1.2rem;
 
     padding: 1.2rem 3.5rem 0.6rem 9.9rem;
@@ -141,7 +140,7 @@
       position: relative;
       z-index: 3;
 
-      background: var(--bg-services-block-inner);
+      background: var(--gradient-bwl-horizontal);
       border-radius: 1.1rem;
       border-bottom-left-radius: 0 !important;
       border-top-left-radius: 1.6rem;
@@ -264,7 +263,7 @@
       font-size: 1rem;
       line-height: calc(12 / 10);
 
-      color: var(--color-services-block-inner-text);
+      color: var(--color-dark);
 
       margin: 0;
 
@@ -322,7 +321,7 @@
         }
 
         &>span {
-          color: var(--color-services-block-inner-text-accent);
+          color: var(--color-base);
         }
       }
     }
@@ -334,7 +333,7 @@
       font-size: 1.4rem;
       line-height: 154%;
 
-      color: var(--color-services-block-inner-text-accent);
+      color: var(--color-base);
 
       margin: 0;
 
@@ -517,10 +516,10 @@
     width: var(--width-item);
     box-sizing: border-box;
 
-    color: var(--color-services-item);
+    color: var(--color-dark);
 
-    background: var(--bg-services-item);
-    box-shadow: var(--bsh-services-item);
+    background: var(--color-light);
+    box-shadow: 0px 0.9px 10px var(--color-shadow-gray);
     border-radius: 1.2rem;
 
     padding: 1.5rem;

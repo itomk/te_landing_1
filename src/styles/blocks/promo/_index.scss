@@ -29,7 +29,6 @@
   & {
     position: relative;
     z-index: 2;
-    padding: var(--section-padding-y, 0) var(--section-padding-x, 0);
   }
 
   &__heading {
@@ -163,7 +162,7 @@
       display: block;
       content: '';
       inset: 0;
-      background-image: var(--gradient-promo-border);
+      background-image: var(--gradient-wb-horizontal);
     }
 
     &::after {
@@ -172,7 +171,7 @@
       display: block;
       content: '';
       inset: 1px;
-      background-color: var(--color-promo-bg);
+      background-color: var(--color-light-darken);
       border-radius: var(--br-promo);
     }
   }

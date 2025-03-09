@@ -1,44 +1,32 @@
 :root {
-  // MAIN
+  // COLOR
   --color-base: hsl(219, 100%, 49%);
+  --color-base-light: hsl(219, 100%, 64%);
+  --color-base-op-48: hsla(219, 100%, 49%, 48%);
+  --color-base-border: hsl(219, 100%, 86%);
   --color-light: hsl(0, 0%, 100%);
+  --color-light-darken: hsl(220, 100%, 96%);
   --color-dark: hsl(0, 0%, 0%);
-  // HERO
-  --bg-hero: linear-gradient(270deg, hsl(225, 100%, 98%) 40.39%, hsl(220, 100%, 89%) 100%);
-  --color-hero-title: var(--color-base);
-  --color-hero-price: hsl(240, 12%, 16%);
-  --color-hero-price-current: var(--color-base);
-  --color-hero-price-old: hsla(219, 100%, 49%, 48%);
-  --color-lab: linear-gradient(90deg, hsl(219, 100%, 49%) 0%, hsl(257, 76%, 63%) 100%);
-  --color-masonry-item: var(--color-light);
-  --bg-masonry-item: hsl(219, 100%, 64%);
-  --bg-gradient-masonry-item: linear-gradient(1.36deg, hsl(217, 77%, 44%) -20.82%, hsl(267, 84%, 65%) 51.68%, hsl(343, 71%, 66%) 121.59%);
-  // PROBLEMS
-  --bg-problems-item: var(--color-light);
-  --bsh-problems-item: 0px 0.9px 10.4px hsla(211, 60%, 40%, 0.1);
-  --color-problems-item: var(--color-dark);
-  // SERVICES
-  --color-services-item: var(--color-dark);
-  --bg-services-item: var(--color-light);
-  --bsh-services-item: 0px 0.9px 10px hsla(211, 60%, 40%, 0.1);
-  --bg-services-block: hsla(219, 100%, 94%, 0.59);
-  --bc-services-block: hsl(219, 100%, 86%);
-  --bg-services-block-inner: linear-gradient(90deg, hsl(220, 100%, 94%) 0%, hsl(0, 0%, 100%) 102.87%);
-  --color-services-block-inner-text: var(--color-dark);
-  --color-services-block-inner-text-accent: var(--color-base);
-  // HISTORY
-  --bg-history-block: linear-gradient(90.31deg, hsl(219, 100%, 61%) -7.62%, hsl(263, 88%, 91%) 26.03%, hsl(251, 100%, 98%) 51.83%, hsl(274, 80%, 80%) 104.55%);
-  --border-history-block: hsl(219, 100%, 86%);
-  // PROMO
-  --color-promo-bg: hsl(220, 100%, 96%);
-  --gradient-promo-border: linear-gradient(256.69deg, hsl(255, 100%, 100%) 5.07%, hsl(219, 100%, 86%) 99.19%);
+  --color-dark-light: hsl(0, 12%, 16%);
+  --color-dark-easy: hsl(240, 12%, 16%);
+  --color-gray-op-59: hsla(219, 100%, 94%, 59%);
+  --color-shadow-gray: hsla(211, 60%, 40%, 10%);
+  // GRADIENT
+  --gradient-vb-vertical: linear-gradient(1.36deg, hsl(217, 77%, 44%) -20.82%, hsl(267, 84%, 65%) 51.68%, hsl(343, 71%, 66%) 121.59%);
+  --gradient-bv-horizontal: linear-gradient(90deg, var(--color-base) 0%, hsl(257, 76%, 63%) 100%);
+  --gradient-bw-horizontal: linear-gradient(270deg, hsl(225, 100%, 98%) 40.39%, hsl(220, 100%, 89%) 100%);
+  --gradient-bwl-horizontal: linear-gradient(90deg, hsl(220, 100%, 94%) 0%, var(--color-light) 102.87%);
+  --gradient-multi-horizontal: linear-gradient(90.31deg, hsl(219, 100%, 61%) -7.62%, hsl(263, 88%, 91%) 26.03%, hsl(251, 100%, 98%) 51.83%, hsl(274, 80%, 80%) 104.55%);
+  --gradient-wb-horizontal: linear-gradient(256.69deg, var(--color-light) 5.07%, var(--color-base-border) 99.19%);
+  --gradient-wb-diagonal: linear-gradient(302.38deg, var(--color-light) 61.29%, var(--color-base-border) 99.96%);
+  --gradient-bw-diagonal: linear-gradient(134.93deg, var(--color-base-light) 54%, hsl(273, 72%, 63%) 85.45%);
+  --gradient-aw-horizontal: linear-gradient(91.65deg, hsla(0, 0%, 100%, 0.01) 1.2%, hsl(0, 0%, 100%) 45.93%);
   // FOOTER
   --color-footer-bg: hsl(229, 73%, 97%);
   --color-footer-text: hsl(223, 13%, 57%);
   --color-footer-text-hover: hsl(223, 13%, 27%);
   // MODAL
   --bg-modal-overlay: hsla(243, 4%, 22%, 33%);
-  --bg-modal-block: linear-gradient(302.38deg, hsl(0, 0%, 100%) 61.29%, hsl(219, 100%, 86%) 99.96%);
   --bsh-modal-block: 0px 2px 22.6px rgba(22, 41, 88, 0.16);
   --color-modal-title: linear-gradient(90.44deg, hsl(217, 77%, 44%) 25.19%, hsl(267, 84%, 65%) 49.19%, hsl(332, 68%, 62%) 75.99%, hsl(31, 100%, 72%) 103.98%);
   --color-modal-subtitle: hsl(220, 93%, 50%);
