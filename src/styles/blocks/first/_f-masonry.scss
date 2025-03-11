@@ -1,0 +1,350 @@
+@use '../../inc/mixins/breakpoints' as media;
+
+.f-masonry {
+  --gap-masonry-item: 7px;
+
+  position: relative;
+
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  align-content: space-between;
+  flex-flow: row wrap;
+
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+
+  margin-bottom: calc(var(--gap-masonry-item) * -1);
+
+  @include media.lg {
+    --gap-masonry-item: 11px;
+
+    flex-flow: column wrap;
+
+    max-width: 44.538%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    aspect-ratio: 1.309 / 1;
+  }
+
+  @include media.xl {
+    --gap-masonry-item: 15px;
+
+    max-width: 44.708%;
+  }
+
+  @include media.xxl {
+    --gap-masonry-item: 18px;
+  }
+
+  @include media.xxxl {
+    --gap-masonry-item: 20px;
+  }
+
+  &__item {
+    --margin-masonry-item: calc(var(--gap-masonry-item) * 2 / 3);
+
+    position: relative;
+
+    width: calc(33.3333% - var(--margin-masonry-item));
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--color-base-light);
+    border-radius: 1.13rem;
+    overflow: hidden;
+
+    padding: 2.35rem 1rem;
+    margin-bottom: var(--gap-masonry-item);
+
+    @include media.lg {
+      height: calc(33.333% - var(--margin-masonry-item));
+
+      border-radius: 1.6rem;
+
+      padding: 1rem;
+      margin-bottom: 0;
+    }
+
+    @include media.xl {
+      border-radius: 1.8rem;
+    }
+
+    @include media.xxl {
+      border-radius: 2.2rem;
+    }
+
+    @include media.xxxl {
+      border-radius: 2.4rem;
+    }
+
+    &:nth-child(4) {
+      width: 100%;
+
+      padding: 0.6rem 1rem;
+
+      @include media.lg {
+        width: calc(66.666% - var(--gap-masonry-item) / 2);
+        height: calc(50% - var(--gap-masonry-item) / 2);
+
+        padding: 1rem;
+      }
+    }
+
+    &:nth-child(5),
+    &:nth-child(6) {
+      width: calc(50% - var(--gap-masonry-item) / 2);
+
+      padding: 1rem;
+
+      @include media.lg {
+        width: calc(33.333% - var(--margin-masonry-item));
+        height: calc(50% - var(--gap-masonry-item) / 2);
+      }
+    }
+
+    &:nth-child(6) {
+      @include media.lg {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+      }
+    }
+
+    &--pic {
+      background: none;
+    }
+
+    &--gradient {
+      background: var(--gradient-vb-vertical);
+    }
+
+    &--cats {
+      .f-masonry {
+        &__text {
+          max-width: none;
+
+          font-size: 1.2rem;
+
+          @include media.lg-max {
+            @include media.sm {
+              font-size: 1.4rem;
+            }
+
+            @include media.md {
+              font-size: 2.1rem;
+            }
+          }
+
+          @include media.lg {
+            font-size: 1.4rem;
+          }
+
+          @include media.xl {
+            font-size: 1.6rem;
+          }
+
+          @include media.xxl {
+            font-size: 2rem;
+          }
+
+          @include media.xxxl {
+            font-size: 2.1rem;
+          }
+        }
+      }
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    max-width: 9rem;
+    word-break: normal;
+    overflow-wrap: normal;
+    hyphens: none;
+
+    font-weight: 500;
+    font-size: 0.9rem;
+    line-height: calc(11 / 9);
+    text-align: center;
+
+    color: var(--color-light);
+
+    margin: 0;
+
+    @include media.lg-max {
+      @include media.sm {
+        max-width: 12.8rem;
+        font-size: 1.4rem;
+      }
+
+      @include media.md {
+        max-width: 19.4rem;
+        font-size: 2.1rem;
+      }
+    }
+
+    @include media.lg {
+      max-width: 11rem;
+      font-size: 1.2rem;
+    }
+
+    @media (width >=1081px) {
+      max-width: 12.8rem;
+      font-size: 1.4rem;
+    }
+
+    @include media.xl {
+      max-width: 14.6rem;
+      font-size: 1.6rem;
+    }
+
+    @include media.xxl {
+      max-width: 18.2rem;
+      font-size: 2rem;
+    }
+
+    @include media.xxxl {
+      max-width: 19.4rem;
+      font-size: 2.1rem;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 0.9rem;
+
+      @include media.xl {
+        margin-bottom: 1.2rem;
+      }
+
+      @include media.xxl {
+        margin-bottom: 1.7rem;
+      }
+
+      @include media.xxxl {
+        margin-bottom: 1.8rem;
+      }
+    }
+
+    &-accent {
+      font-weight: 700;
+      font-size: 1.6rem;
+
+      @include media.lg-max {
+        @include media.sm {
+          font-size: 2.2rem;
+        }
+
+        @include media.md {
+          font-size: 4rem;
+        }
+      }
+
+      @include media.lg {
+        font-size: 2rem;
+      }
+
+      @media (width >=1081px) {
+        font-size: 2.6rem;
+      }
+
+      @include media.xl {
+        font-size: 3rem;
+      }
+
+      @include media.xxl {
+        font-size: 3.7rem;
+      }
+
+      @include media.xxxl {
+        font-size: 4rem;
+      }
+    }
+
+    &--mini {
+      .f-masonry__text {
+        &-accent {
+          @include media.lg-max {
+            @include media.sm {
+              font-size: 1.8rem;
+            }
+
+            @include media.md {
+              font-size: 3.4rem;
+            }
+          }
+
+          @include media.lg {
+            font-size: 1.8rem;
+          }
+
+          @media (width >=1081px) {
+            font-size: 2.2rem;
+          }
+
+          @include media.xl {
+            font-size: 2.6rem;
+          }
+
+          @include media.xxl {
+            font-size: 3.2rem;
+            line-height: calc(38 / 32);
+          }
+
+          @include media.xxxl {
+            font-size: 3.4rem;
+          }
+        }
+      }
+    }
+  }
+
+  &__pic {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+  }
+
+  &__row {
+    --gap-categories-y: 1rem;
+    --gap-categories-x: 0.5rem;
+
+    width: 100%;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-flow: row wrap;
+
+    list-style: none;
+
+    margin: 0 0 calc(var(--gap-categories-y) * -1);
+    padding: 0;
+
+    @include media.xxl {
+      --gap-categories-y: 1.2rem;
+      --gap-categories-x: 0.6rem;
+    }
+  }
+
+  &__cat {
+    margin: 0 var(--gap-categories-x) var(--gap-categories-y);
+  }
+}

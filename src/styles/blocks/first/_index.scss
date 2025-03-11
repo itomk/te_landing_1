@@ -1,0 +1,316 @@
+@use '../../inc/mixins/breakpoints' as media;
+
+@forward 'f-slide';
+@forward 'f-masonry';
+@forward '../future/f-cat';
+
+.first {
+  position: relative;
+
+  max-width: 100%;
+
+  box-sizing: border-box;
+  overflow: hidden;
+
+  background: var(--gradient-bw-horizontal);
+
+  padding: 5rem 0 2.4rem;
+
+  @include media.md {
+    padding: 6.15rem 0 2.6rem;
+  }
+
+  @include media.lg {
+    padding: 7.3rem 0 2.8rem;
+  }
+
+  @include media.xl {
+    padding: 8.2rem 0 3rem;
+  }
+
+  @include media.xxl {
+    padding: 10.1rem 0 3.8rem;
+  }
+
+  @include media.xxxl {
+    padding: 10.9rem 0 4.2rem;
+  }
+
+  &__line {
+    top: 1.2rem;
+
+    @include media.lg {
+      top: 2rem;
+    }
+
+    @include media.xl {
+      top: 2.2rem;
+    }
+
+    @include media.xxl {
+      top: 2.7rem;
+    }
+
+    @include media.xxxl {
+      top: 3rem;
+    }
+  }
+
+  &__container {
+    @include media.lg {
+      --container-max-width: 192rem;
+      --container-padding-x: 3.6rem;
+    }
+
+    @include media.xl {
+      --container-padding-x: 3.7rem;
+    }
+
+    @include media.xxl {
+      --container-padding-x: 4.8rem;
+    }
+
+    @include media.xxxl {
+      --container-padding-x: 5rem;
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 1.8rem;
+    line-height: calc(21 / 18);
+
+    color: var(--color-base);
+    margin: 0;
+
+    @include media.sm {
+      font-size: 2.2rem;
+    }
+
+    @include media.md {
+      font-size: 2.6rem;
+    }
+
+    @include media.lg {
+      font-size: 3rem;
+    }
+
+    @include media.xl {
+      font-size: 3.4rem;
+    }
+
+    @include media.xxl {
+      font-size: 4.2rem;
+    }
+
+    @include media.xxxl {
+      font-size: 4.5rem;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+
+      @include media.xl {
+        margin-bottom: 1.2rem;
+      }
+
+      @include media.xxl {
+        margin-bottom: 1.4rem;
+      }
+
+      @include media.xxxl {
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+
+  &__lab {
+    display: inline-flex;
+    align-items: center;
+
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+
+      @include media.xl {
+        margin-bottom: 1.5rem;
+      }
+
+      @include media.xxl {
+        margin-bottom: 1.4rem;
+      }
+
+      @include media.xxxl {
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    &>span {
+      display: inline-flex;
+      align-items: center;
+
+      font-weight: 600;
+      font-size: 1.4rem;
+      line-height: calc(17 / 14);
+
+      font-feature-settings: 'calt' off;
+
+      background: var(--gradient-quadro-horizontal);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+
+      @include media.lg {
+        font-size: 2.2rem;
+      }
+
+      @include media.xl {
+        font-size: 2.4rem;
+      }
+
+      @include media.xxl {
+        font-size: 2.6rem;
+      }
+
+      &:nth-child(3) {
+        margin: 0 0.5rem;
+      }
+
+      &:last-child {
+        line-height: calc(13 / 14);
+        margin-left: 0.5rem;
+      }
+
+      &>span {
+        font-size: 1.6rem;
+
+        background: var(--color-base);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+
+        margin: 0 0.5rem;
+
+        @include media.lg {
+          font-size: 2.2rem;
+        }
+
+        @include media.xl {
+          font-size: 2.4rem;
+        }
+
+        @include media.xxl {
+          font-size: 2.6rem;
+        }
+      }
+    }
+
+    &>img {
+      max-width: 3rem;
+      width: 100%;
+      height: auto;
+
+      object-fit: contain;
+
+      @include media.lg {
+        max-width: 4.6rem;
+      }
+
+      @include media.xl {
+        max-width: 5.4rem;
+      }
+
+      @include media.xxl {
+        max-width: 6.6rem;
+      }
+    }
+  }
+
+  &__masonry {
+    margin: 0 auto;
+
+    &:not(:last-child) {
+      margin-bottom: calc(14px - var(--gap-masonry-item));
+    }
+  }
+
+  &__text {
+    width: 100%;
+
+    font-weight: 600;
+    font-size: 1.4rem;
+    line-height: calc(17 / 14);
+
+    background: var(--gradient-bv-horizontal);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+
+    margin: 0;
+    padding: 0 1rem;
+
+    @include media.lg {
+      max-width: 47.4rem;
+      font-size: 1.8rem;
+      padding: 0;
+    }
+
+    @include media.xl {
+      max-width: 52.8rem;
+      font-size: 2rem;
+    }
+
+    @include media.xxl {
+      max-width: 62rem;
+      font-size: 2.4rem;
+      line-height: calc(29 / 24);
+    }
+
+    @include media.xxxl {
+      max-width: 68.6rem;
+      font-size: 2.6rem;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 2.6rem;
+
+      @include media.lg {
+        margin-bottom: 2.3rem;
+      }
+
+      @include media.xl {
+        margin-bottom: 3rem;
+      }
+
+      @include media.xxl {
+        margin-bottom: 3.5rem;
+      }
+    }
+  }
+
+  &__btn {
+    &.btn-lg {
+      --btn-font-weight: 500;
+      --btn-font-size: 2rem;
+
+      @include media.lg {
+        --btn-padding-x: 7rem;
+        --btn-font-size: 2.4rem;
+      }
+
+      @include media.xxl {
+        --btn-padding-y: 1.5rem;
+        --btn-padding-x: 8.6rem;
+        --btn-font-size: 3rem;
+      }
+
+      @include media.xxl {
+        --btn-padding-y: 1.6rem;
+        --btn-padding-x: 9rem;
+        --btn-font-size: 3.2rem;
+      }
+    }
+  }
+}

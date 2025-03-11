@@ -1,7 +1,10 @@
 @use '../../inc/mixins/breakpoints' as media;
 @use '../../inc/mixins/patterns' as pattern;
 
-.s-review {
+@forward 'f-item';
+@forward 'f-block';
+
+.future {
   position: relative;
   z-index: 1;
 
@@ -41,98 +44,97 @@
 
     &::after {
       bottom: -6rem;
-      left: 43.7%;
+      left: 37.5%;
       width: 103.9rem;
       height: 72.4rem;
       transform: rotate(110deg);
 
       @include media.xl {
-        width: 73.9rem;
-        height: 81.4rem;
-        bottom: -10.5rem;
-        left: 55.7%;
-        transform: rotate(112deg);
+        bottom: -6rem;
+        left: 52.7%;
+        width: 79.4rem;
+        height: 79.4rem;
       }
 
       @include media.xxl {
-        width: 91.5rem;
-        height: 100.7rem;
-        bottom: -12.5rem;
+        bottom: -8rem;
+        left: 51.7%;
+        width: 100.3rem;
+        height: 100.3rem;
       }
 
       @include media.xxxl {
-        width: 98.7rem;
+        bottom: -9rem;
+        width: 108.5rem;
         height: 108.5rem;
-        bottom: -13.5rem;
-        left: 55%;
       }
     }
 
     &::before {
-      bottom: -13.9rem;
+      bottom: -8rem;
       right: 57.3%;
       width: 57.7rem;
       height: 63.6rem;
       transform: rotate(-45deg);
 
       @include media.xl {
-        bottom: -16rem;
-        right: 58%;
+        bottom: -9.5rem;
         width: 65rem;
         height: 71.6rem;
       }
 
       @include media.xxl {
-        bottom: -19rem;
+        bottom: -12rem;
         width: 80.3rem;
         height: 88.5rem;
       }
 
       @include media.xxxl {
-        bottom: -21rem;
+        bottom: -13rem;
         width: 86.6rem;
         height: 95.4rem;
       }
     }
   }
 
-  &__review-slider-wrapper,
-  &__title {
+  &__row,
+  &__block {
     @include pattern.not-last-margin;
   }
 
-  &__title {
-    max-width: 68rem;
+  &__row {
+    --gap-future-row: 1.4rem;
 
-    text-align: center;
-    font-weight: 600;
-    font-size: 1.6rem;
-    line-height: calc(24 / 20);
-    color: var(--color-dark);
+    display: flex;
+    flex-direction: column;
 
-    margin: 0 auto;
+    @include media.md {
+      --gap-future-row: 3rem;
 
-    @include media.lg {
-      font-size: 2rem;
-    }
-
-    @include media.xl {
-      max-width: 75.8rem;
-      font-size: 2.2rem;
+      flex-direction: row;
+      justify-content: space-between;
     }
 
     @include media.xxl {
-      max-width: 92.4rem;
-      font-size: 2.7rem;
+      --gap-future-row: 3.5rem;
     }
 
     @include media.xxxl {
-      max-width: 101.6rem;
-      font-size: 3rem;
+      --gap-future-row: 4rem;
+    }
+  }
+
+  &__item {
+    @include media.md {
+      width: calc(33.3333% - (var(--gap-future-row) * 2 / 3));
     }
 
-    &-accent {
-      color: var(--color-base);
+    &:not(:last-child) {
+      margin-bottom: var(--gap-future-row);
+
+      @include media.md {
+        margin-bottom: 0;
+      }
     }
   }
 }

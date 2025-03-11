@@ -1,0 +1,163 @@
+@use '../../inc/mixins/breakpoints' as media;
+
+.f-item {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: var(--color-light);
+  box-shadow: 0 2px 22px var(--color-shadow-gray);
+  border-radius: 1.2rem;
+
+  padding: 1.5rem;
+  margin: 0;
+
+  @include media.md {
+    border-radius: 1.8rem;
+  }
+
+  @include media.lg {
+    border-radius: 2.4rem;
+    padding: 2rem;
+  }
+
+  @include media.xl {
+    border-radius: 2.6rem;
+    padding: 2.2rem;
+  }
+
+  @include media.xxl {
+    border-radius: 3.2rem;
+    padding: 2.8rem;
+  }
+
+  @include media.xxxl {
+    border-radius: 3.4rem;
+    padding: 3rem;
+  }
+
+  &__pic {
+    position: relative;
+    display: block;
+
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+
+    color: var(--color-dark);
+    border-radius: 1rem;
+    overflow: hidden;
+
+    @include media.md {
+      border-radius: 1.2rem;
+    }
+
+    @include media.lg {
+      border-radius: 1.5rem;
+    }
+
+    @include media.xl {
+      border-radius: 1.6rem;
+    }
+
+    @include media.xxl {
+      border-radius: 2rem;
+    }
+
+    @include media.xxxl {
+      border-radius: 2.2rem;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 0.6rem;
+
+      @include media.md {
+        margin-bottom: 0.8rem;
+      }
+
+      @include media.lg {
+        margin-bottom: 1rem;
+      }
+
+      @include media.xl {
+        margin-bottom: 1.1rem;
+      }
+
+      @include media.xxl {
+        margin-bottom: 1.4rem;
+      }
+
+      @include media.xxxl {
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    &::before {
+      content: '';
+      display: table;
+      padding-bottom: 74.39%;
+
+      @include media.md {
+        padding-bottom: 85.94%;
+      }
+
+      @include media.xl {
+        padding-bottom: 84.3%;
+      }
+
+      @include media.xxl {
+        padding-bottom: 84.7%;
+      }
+
+      @include media.xxxl {
+        padding-bottom: 84.97%;
+      }
+    }
+  }
+
+  &__img {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    object-fit: cover;
+    object-position: center center;
+  }
+
+  &__name {
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.2rem;
+    line-height: calc(14 / 12);
+
+    @include media.md {
+      font-size: 1.3rem;
+    }
+
+    @include media.lg {
+      font-size: 1.4rem;
+    }
+
+    @include media.xl {
+      font-size: 1.6rem;
+    }
+
+    @include media.xxl {
+      font-size: 2rem;
+      line-height: calc(24 / 20);
+    }
+
+    @include media.xxxl {
+      font-size: 2.2rem;
+    }
+  }
+}

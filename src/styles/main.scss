@@ -14,9 +14,9 @@
 @forward './elems/cntrl';
 @forward './elems/modal';
 @forward './elems/badge';
+@forward './elems/review-slider';
 
 @forward './blocks/hero/index';
-@forward './blocks/review/index';
 @forward './blocks/problems/index';
 @forward './blocks/services/index';
 @forward './blocks/history/index';
@@ -29,3 +29,7 @@
 @forward './blocks/users/index';
 @forward './blocks/now/index';
 @forward './blocks/bonus/index';
+
+@forward './blocks/first/index';
+@forward './blocks/future/index';
+@forward './blocks/review/index';

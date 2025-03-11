@@ -1,4 +1,4 @@
-@use '../../inc/mixins/breakpoints' as queries;
+@use '../../inc/mixins/breakpoints' as media;
 @use '../../inc/mixins/patterns' as pat;
 
 .services {
@@ -8,7 +8,7 @@
   &__heading {
     max-width: 36rem;
 
-    @include queries.sm {
+    @include media.sm {
       max-width: none;
     }
   }
@@ -29,23 +29,23 @@
 
     @include pat.not-last-margin;
 
-    @include queries.lg {
+    @include media.lg {
       border-radius: 1rem;
       padding: 0.9rem 15.55rem 3.05rem 14rem;
     }
 
-    @include queries.xl {
+    @include media.xl {
       border-radius: 1.6rem;
       padding: 0.887rem 17.67rem 3.35rem 15.7rem;
     }
 
-    @include queries.xxl {
+    @include media.xxl {
       border-width: 2px;
       border-radius: 2rem;
       padding: 1rem 21.7rem 4.05rem 19.2rem;
     }
 
-    @include queries.xxxl {
+    @include media.xxxl {
       border-radius: 2.2rem;
       padding: 1.1rem 23.1rem 4.4rem 20.8rem;
     }
@@ -64,25 +64,25 @@
       background-size: contain;
       transform: rotate(105deg);
 
-      @include queries.lg {
+      @include media.lg {
         top: -34.4rem;
         left: -20.8rem;
         width: 51.9rem;
       }
 
-      @include queries.xl {
+      @include media.xl {
         top: -38.4rem;
         left: -28.8rem;
         width: 58.2rem;
       }
 
-      @include queries.xxl {
+      @include media.xxl {
         top: -48.4rem;
         left: -28.8rem;
         width: 72rem;
       }
 
-      @include queries.xxxl {
+      @include media.xxxl {
         top: -52.4rem;
         left: -30.8rem;
         width: 77.7rem;
@@ -104,25 +104,25 @@
 
       animation: transform-top 2s infinite ease-in-out alternate;
 
-      @include queries.lg {
+      @include media.lg {
         bottom: -2.3rem;
         left: -0.1rem;
         width: 16.8rem;
       }
 
-      @include queries.xl {
+      @include media.xl {
         bottom: -2.5rem;
         left: 0;
         width: 18.4rem;
       }
 
-      @include queries.xxl {
+      @include media.xxl {
         bottom: -3.1rem;
         left: -0.22rem;
         width: 23rem;
       }
 
-      @include queries.xxxl {
+      @include media.xxxl {
         bottom: -3.3rem;
         left: -0.1rem;
         width: 24.9rem;
@@ -147,36 +147,36 @@
 
       padding: 1.5rem 4rem 1.6rem 1.1rem;
 
-      @include queries.sm {
+      @include media.sm {
         display: flex;
         justify-content: space-between;
         align-items: center;
       }
 
-      @include queries.md {
+      @include media.md {
         padding: 1.8rem 4.15rem 1.45rem 1.9rem;
       }
 
-      @include queries.lg {
+      @include media.lg {
         align-items: flex-start;
         border-radius: 2.4rem;
         border-top-left-radius: 3.2rem;
         padding: 1.9rem 4.7rem 1.2rem 2.8rem;
       }
 
-      @include queries.xl {
+      @include media.xl {
         border-radius: 2.6rem;
         border-top-left-radius: 3.6rem;
         padding: 2.2rem 5.6rem 1.5rem 3.1rem;
       }
 
-      @include queries.xxl {
+      @include media.xxl {
         border-radius: 2.8rem;
         border-top-left-radius: 4.7rem;
         padding: 2.8rem 6.5rem 1.8rem 3.9rem;
       }
 
-      @include queries.xxxl {
+      @include media.xxxl {
         border-radius: 2.8rem;
         border-top-left-radius: 4.9rem;
         padding: 3rem 6.7rem 1.8rem 4.2rem;
@@ -194,23 +194,23 @@
         background-position: left bottom;
         background-size: auto 100%;
 
-        @include queries.lg {
+        @include media.lg {
           width: 4.6rem;
           height: 3.1rem;
         }
 
-        @include queries.xl {
+        @include media.xl {
           width: 5rem;
           height: 3.4rem;
         }
 
-        @include queries.xxl {
+        @include media.xxl {
           width: 5rem;
           width: 6.1rem;
           height: 4.2rem;
         }
 
-        @include queries.xxxl {
+        @include media.xxxl {
           width: 6.7rem;
           height: 4.6rem;
         }
@@ -230,26 +230,26 @@
         background-size: contain;
         transform: rotate(230deg);
 
-        @include queries.lg {
+        @include media.lg {
           top: -2.1rem;
           right: -17rem;
           width: 20.8rem;
         }
 
-        @include queries.xl {
+        @include media.xl {
           top: -2.8rem;
           right: -19.1rem;
           width: 23.4rem;
           transform: rotate(222deg);
         }
 
-        @include queries.xxl {
+        @include media.xxl {
           top: -3.8rem;
           right: -24.1rem;
           width: 29rem;
         }
 
-        @include queries.xxxl {
+        @include media.xxxl {
           right: -26.1rem;
           width: 31.2rem;
         }
@@ -267,32 +267,32 @@
 
       margin: 0;
 
-      @include queries.sm {
+      @include media.sm {
         max-width: 18.5rem;
         font-size: 1.2rem;
       }
 
-      @include queries.md {
+      @include media.md {
         max-width: 24.5rem;
         font-size: 1.4rem;
       }
 
-      @include queries.lg {
+      @include media.lg {
         max-width: 28.8rem;
         font-size: 1.6rem;
       }
 
-      @include queries.xl {
+      @include media.xl {
         max-width: 32.4rem;
         font-size: 1.8rem;
       }
 
-      @include queries.xxl {
+      @include media.xxl {
         max-width: 40rem;
         font-size: 2.2rem;
       }
 
-      @include queries.xxxl {
+      @include media.xxxl {
         max-width: 43.2rem;
         font-size: 2.4rem;
       }
@@ -300,7 +300,7 @@
       &:not(:last-child) {
         margin-bottom: 1.6rem;
 
-        @include queries.sm {
+        @include media.sm {
           margin-bottom: 0;
         }
       }
@@ -312,11 +312,11 @@
 
         margin-top: 0.2rem;
 
-        @include queries.md {
+        @include media.md {
           margin-top: 0.4rem;
         }
 
-        @include queries.xxl {
+        @include media.xxl {
           margin-top: 0.6rem;
         }
 
@@ -337,23 +337,23 @@
 
       margin: 0;
 
-      @include queries.sm {
+      @include media.sm {
         text-align: center;
       }
 
-      @include queries.md {
+      @include media.md {
         font-size: 1.6rem;
       }
 
-      @include queries.xl {
+      @include media.xl {
         font-size: 1.8rem;
       }
 
-      @include queries.xxl {
+      @include media.xxl {
         font-size: 2.2rem;
       }
 
-      @include queries.xxxl {
+      @include media.xxxl {
         font-size: 2.4rem;
       }
 
@@ -362,15 +362,15 @@
 
         font-size: 2.4rem;
 
-        @include queries.xl {
+        @include media.xl {
           font-size: 2.7rem;
         }
 
-        @include queries.xxl {
+        @include media.xxl {
           font-size: 3.3rem;
         }
 
-        @include queries.xxxl {
+        @include media.xxxl {
           font-size: 3.5rem;
         }
       }
@@ -390,30 +390,30 @@
 
       animation: anim-phonering 2.5s infinite ease-in-out;
 
-      @include queries.sm {
+      @include media.sm {
         top: 2.3rem;
         right: -2.1rem;
       }
 
-      @include queries.lg {
+      @include media.lg {
         width: 11.7rem;
         top: -0.8rem;
         right: -7.6rem;
       }
 
-      @include queries.xl {
+      @include media.xl {
         width: 13.2rem;
         top: -0.8rem;
         right: -8.6rem;
       }
 
-      @include queries.xxl {
+      @include media.xxl {
         width: 16.3rem;
         top: -0.8rem;
         right: -10.8rem;
       }
 
-      @include queries.xxxl {
+      @include media.xxxl {
         width: 17.6rem;
         top: -1rem;
         right: -11.7rem;
@@ -431,19 +431,19 @@
   &__label-flag {
     top: 0.9rem;
 
-    @include queries.lg {
+    @include media.lg {
       top: 0.8rem;
     }
 
-    @include queries.xl {
+    @include media.xl {
       top: 0.9rem;
     }
 
-    @include queries.xxl {
+    @include media.xxl {
       top: 1.2rem;
     }
 
-    @include queries.xxxl {
+    @include media.xxxl {
       top: 1.3rem;
     }
   }
@@ -455,7 +455,7 @@
 
     margin-bottom: calc(var(--mb-item) * -1);
 
-    @include queries.sm {
+    @include media.sm {
       --width-item: calc(50% - 0.7rem);
 
       display: flex;
@@ -463,29 +463,29 @@
       flex-flow: row wrap;
     }
 
-    @include queries.md {
+    @include media.md {
       --mb-item: 2rem;
       --width-item: calc(50% - 1rem);
       --gap-item: 0.8rem;
     }
 
-    @include queries.lg {
+    @include media.lg {
       --mb-item: 3rem;
       --width-item: calc(50% - 1.5rem);
       --gap-item: 1rem;
     }
 
-    @include queries.xl {
+    @include media.xl {
       --gap-item: 1.1rem;
     }
 
-    @include queries.xxl {
+    @include media.xxl {
       --mb-item: 3.5rem;
       --width-item: calc(50% - 1.75rem);
       --gap-item: 1.4rem;
     }
 
-    @include queries.xxxl {
+    @include media.xxxl {
       --mb-item: 4rem;
       --width-item: calc(50% - 2rem);
       --gap-item: 1.5rem;
@@ -494,19 +494,19 @@
     &:not(:last-child) {
       margin-bottom: calc(2rem - var(--mb-item));
 
-      @include queries.lg {
+      @include media.lg {
         margin-bottom: calc(2.5rem - var(--mb-item));
       }
 
-      @include queries.xl {
+      @include media.xl {
         margin-bottom: calc(3rem - var(--mb-item));
       }
 
-      @include queries.xxl {
+      @include media.xxl {
         margin-bottom: calc(3.5rem - var(--mb-item));
       }
 
-      @include queries.xxxl {
+      @include media.xxxl {
         margin-bottom: calc(4rem - var(--mb-item));
       }
     }
@@ -525,27 +525,27 @@
     padding: 1.5rem;
     margin: 0 0 var(--mb-item);
 
-    @include queries.md {
+    @include media.md {
       padding: 1.7rem;
       border-radius: 1.8rem;
     }
 
-    @include queries.lg {
+    @include media.lg {
       padding: 2rem;
       border-radius: 2.4rem;
     }
 
-    @include queries.xl {
+    @include media.xl {
       padding: 2.2rem;
       border-radius: 2.6rem;
     }
 
-    @include queries.xxl {
+    @include media.xxl {
       padding: 2.8rem;
       border-radius: 3.2rem;
     }
 
-    @include queries.xxxl {
+    @include media.xxxl {
       padding: 3rem;
       border-radius: 3.4rem;
     }
@@ -561,19 +561,19 @@
 
     border-radius: 1rem;
 
-    @include queries.lg {
+    @include media.lg {
       border-radius: 1.5rem;
     }
 
-    @include queries.xl {
+    @include media.xl {
       border-radius: 1.6rem;
     }
 
-    @include queries.xxl {
+    @include media.xxl {
       border-radius: 2rem;
     }
 
-    @include queries.xxxl {
+    @include media.xxxl {
       border-radius: 2.2rem;
     }
 
@@ -586,19 +586,19 @@
       display: table;
       padding-bottom: 54.88%;
 
-      @include queries.lg {
+      @include media.lg {
         padding-bottom: 52.38%;
       }
 
-      @include queries.xl {
+      @include media.xl {
         padding-bottom: 51.89%;
       }
 
-      @include queries.xxl {
+      @include media.xxl {
         padding-bottom: 52.04%;
       }
 
-      @include queries.xxxl {
+      @include media.xxxl {
         padding-bottom: 52.06%;
       }
     }
@@ -627,19 +627,19 @@
 
     margin: 0 0 var(--gap-item);
 
-    @include queries.md {
+    @include media.md {
       font-size: 1.4rem;
     }
 
-    @include queries.xl {
+    @include media.xl {
       font-size: 1.6rem;
     }
 
-    @include queries.xxl {
+    @include media.xxl {
       font-size: 2rem;
     }
 
-    @include queries.xxxl {
+    @include media.xxxl {
       font-size: 2.2rem;
     }
   }

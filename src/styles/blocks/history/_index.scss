@@ -152,6 +152,14 @@
     @include queries.sm {
       max-width: none;
     }
+
+    &--max {
+      max-width: 30rem;
+
+      @include queries.sm {
+        max-width: none;
+      }
+    }
   }
 
   &__review-slider-wrapper,
@@ -268,6 +276,10 @@
     position: absolute;
     z-index: 4;
     inset: 0;
+
+    &--max {
+      inset: 0 -2rem;
+    }
 
     &-pic {
       position: absolute;
