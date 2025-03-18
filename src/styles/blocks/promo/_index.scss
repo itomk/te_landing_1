@@ -37,6 +37,14 @@
     @include queries.sm {
       max-width: none;
     }
+
+    &--mini {
+      max-width: 24rem;
+
+      @include queries.sm {
+        max-width: none;
+      }
+    }
   }
 
   &__row {
@@ -52,6 +60,10 @@
     position: relative;
     overflow: hidden;
 
+    display: flex;
+    align-items: center;
+
+    min-height: 16rem;
     height: auto;
 
     padding: 1.3rem 0.7rem;
@@ -63,24 +75,28 @@
     }
 
     @include queries.lg {
+      min-height: 24rem;
       width: calc(50% - 1.25rem);
 
       padding: 3.1rem 1rem;
     }
 
     @include queries.xl {
+      min-height: 27rem;
       width: calc(50% - 1.5rem);
 
       padding: 3.6rem 1rem 3.3rem;
     }
 
     @include queries.xxl {
+      min-height: 33rem;
       width: calc(50% - 1.75rem);
 
       padding: 4.5rem 1.6rem 4.3rem;
     }
 
     @include queries.xxxl {
+      min-height: 36rem;
       width: calc(50% - 2rem);
 
       padding: 5rem 1.6rem 4.5rem;
@@ -128,13 +144,13 @@
 
         &::after {
           content: '';
-          right: -12.57%;
+          right: -16.5%;
           top: -3.125%;
           width: 44.972%;
-          transform: rotate(-133deg);
+          transform: rotate(-155deg);
 
           @include queries.lg {
-            top: 5%;
+            top: -4%;
           }
         }
       }
@@ -227,6 +243,8 @@
     position: relative;
     z-index: 3;
 
+    width: 100%;
+
     display: flex;
     align-items: center;
   }
@@ -246,7 +264,7 @@
 
     text-align: center;
 
-    margin: 0;
+    margin: 0 auto;
 
     @include queries.md-max {
       @include queries.sm {
@@ -338,6 +356,56 @@
 
         @include queries.xxxl {
           font-size: 6.4rem;
+        }
+      }
+    }
+
+    &--mini {
+      max-width: 26.2rem;
+
+      @include queries.md-max {
+        @include queries.sm {
+          max-width: 37.4rem;
+        }
+      }
+
+      @include queries.lg {
+        max-width: 37.4rem;
+      }
+
+      @include queries.xl {
+        max-width: 38rem;
+      }
+
+      @include queries.xxl {
+        max-width: 49rem;
+      }
+
+      .promo__name {
+        &-accent {
+          font-size: 1.8rem;
+
+          @include queries.md-max {
+            @include queries.sm {
+              font-size: 2.5rem;
+            }
+          }
+
+          @include queries.lg {
+            font-size: 2.5rem;
+          }
+
+          @include queries.xl {
+            font-size: 2.6rem;
+          }
+
+          @include queries.xxl {
+            font-size: 2.8rem;
+          }
+
+          @include queries.xxl {
+            font-size: 3rem;
+          }
         }
       }
     }

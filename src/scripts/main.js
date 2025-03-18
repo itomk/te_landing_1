@@ -1,5 +1,7 @@
 import { vhSetFix } from './functions/vh-fix.js'
 import { countdownTimer } from './functions/timer.js'
+import { toggle_top_btn, scroll_top_btn } from './functions/top-link.js'
+import { throttle } from './functions/throttle.js'
 import { reviewSlider } from './blocks/review.js'
 import { runLine, cuteControlElement } from './blocks/hero.js'
 import InitModal from './blocks/modal.js'
@@ -26,6 +28,15 @@ window.addEventListener('DOMContentLoaded', () => {
   // Init modals on page
   if (document.getElementById('modal-dga'))
     new InitModal('modal-dga', 'data-bs-target', 7000, 'modal_dga_is_opened', 1)
+
+  // Init button scroll to top
+  if (document.querySelectorAll("[data-scroll-top]").length) {
+    const throttle_show_fixed_buttons = throttle(toggle_top_btn)
+
+    throttle_show_fixed_buttons()
+    scroll_top_btn()
+    window.addEventListener("scroll", () => throttle_show_fixed_buttons(), { passive: true })
+  }
 
   window.addEventListener('load', () => {
     return true

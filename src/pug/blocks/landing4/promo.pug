@@ -1,0 +1,23 @@
+section.promo#promo
+  .container
+    h2.heading.promo__heading.promo__heading--mini Ответы внутри тебя. 
+      span.heading__accent Узнай их сегодня
+    .promo__row
+      article.promo__item
+        span.promo__bg
+        .promo__inner
+          h3.promo__name.promo__name--mini Не жди перемен 
+            span.promo__name-accent.promo__name-accent--free сделай первый шаг к осознанности уже сейчас!
+      .promo__item
+        span.promo__bg
+        +label-flag('Бонус', 'promo__label-flag')
+        .promo__inner
+          h3.promo__name Пройди тест и получи 
+            br
+            | сессию с психологом 
+            span.promo__name-accent.promo__name-accent--free бесплатно
+          picture.promo__pic
+            source(media="(min-width: 993px)", srcset="/assets/images/promo-02--pc.png", type="image/png")
+            img(src="/assets/images/promo-02.png", alt="")
+    .cntrl.promo__cntrl
+      a.btn.btn-lg.btn-gradient-red(href="#!") Пройти тест бесплатно
