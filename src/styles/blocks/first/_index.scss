@@ -228,18 +228,18 @@
 
     &--check {
       white-space: normal;
-      padding: 0.6rem 0.8rem 0.6rem 3.2rem;
+      padding: 0.6rem 0.8rem 0.6rem 3.2rem !important;
 
       @include media.xl {
-        padding: 1.1rem 1rem 1.1rem 4.4rem;
+        padding: 1.1rem 1rem 1.1rem 4.4rem !important;
       }
 
       @include media.xxl {
-        padding: 1.3rem 1.2rem 1.3rem 5.1rem;
+        padding: 1.3rem 1.2rem 1.3rem 5.1rem !important;
       }
 
       @include media.xxxl {
-        padding: 1.4rem 1.4rem 1.4rem 6rem;
+        padding: 1.4rem 1.4rem 1.4rem 6rem !important;
       }
 
       &>span {
@@ -502,7 +502,7 @@
       margin: 0 auto;
 
       @include media.lg {
-        max-width: none;
+        max-width: none !important;
         margin: 0;
         text-align: left;
       }
