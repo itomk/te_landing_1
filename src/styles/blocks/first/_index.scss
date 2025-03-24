@@ -243,6 +243,8 @@
       }
 
       &>span {
+        line-height: 1.2 !important;
+
         @include media.lg {
           font-size: 1.8rem;
         }
