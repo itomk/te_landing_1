@@ -17,7 +17,7 @@
   --btn-hover-border-color: hsl(219, 100%, 42%);
   --btn-border-radius: 10rem;
   --btn-hover-border-color: transparent;
-  --btn-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
+  --btn-box-shadow: none;
   --btn-disabled-opacity: 0.65;
   --btn-focus-box-shadow: 0 0 0 0.25rem rgba(var(--btn-focus-shadow-rgb), .5);
   --btn-focus-shadow-rgb: 38, 112, 252;
@@ -54,7 +54,8 @@
     border: var(--btn-border-width) solid var(--btn-border-color);
     border-radius: var(--btn-border-radius);
     background: var(--btn-bg);
-    transition: color .3s ease-in-out, background .3s ease-in-out, border-color .3s ease-in-out, box-shadow .3s ease-in-out, background-size .3s ease-in-out;
+    box-shadow: var(--btn-box-shadow);
+    transition: color .3s ease-in-out, background .3s ease-in-out, border-color .3s ease-in-out, box-shadow .3s ease-in-out, background-size .3s ease-in-out, background-position .3s ease-in-out;
   }
 
   @include mix.on-hover {
@@ -85,6 +86,29 @@
       --btn-width: auto;
       --btn-border-radius: 10rem;
     }
+
+    &.btn-icon {
+      .btn__icon {
+        position: relative;
+        top: -2px;
+        width: 2.3rem;
+        height: auto;
+        object-fit: contain;
+        vertical-align: middle;
+
+        @include queries.xl {
+          width: 2.5rem;
+        }
+
+        &:first-child {
+          margin-right: 0.8rem;
+        }
+
+        &:last-child {
+          margin-left: 0.8rem;
+        }
+      }
+    }
   }
 
   &-sm {
@@ -92,6 +116,39 @@
     --btn-font-weight: 400;
     --btn-padding-y: 0.9rem;
     --btn-padding-x: 1.2rem;
+  }
+
+  &-gradient-blue {
+    --btn-bg: linear-gradient(90deg, #959FFF -6.23%, #B694FF 7.04%, #4203C2 22.72%, #1B014F 54.07%, #2E0289 68.55%, #B694FF 96.29%, #959FFF 114.38%);
+    --btn-hover-bg: linear-gradient(90deg, #959FFF -6.23%, #B694FF 7.04%, #4203C2 22.72%, #1B014F 54.07%, #2E0289 68.55%, #B694FF 96.29%, #959FFF 114.38%);
+    --btn-active-bg: linear-gradient(90deg, #959FFF -6.23%, #B694FF 7.04%, #4203C2 22.72%, #1B014F 54.07%, #2E0289 68.55%, #B694FF 96.29%, #959FFF 114.38%);
+    --btn-box-shadow: -2px 3px 12.9px rgba(58, 2, 170, 0.29);
+    --btn-border-width: 0;
+
+    background-size: 200%;
+    background-position-x: 0;
+
+    @include mix.on-hover {
+      background-size: 200%;
+      background-position-x: 100%;
+    }
+
+    &.btn-lg {
+      --btn-width: auto;
+      --btn-padding-y: 1.5rem;
+      --btn-padding-x: 3rem;
+      --btn-font-size: 2.2rem;
+      --btn-font-weight: 600;
+      --btn-line-height: 1.18;
+
+      @include queries.sm {
+        --btn-padding-x: 4.5rem;
+      }
+
+      @include queries.xl {
+        --btn-font-size: 2.4rem;
+      }
+    }
   }
 
   &-gradient-red {

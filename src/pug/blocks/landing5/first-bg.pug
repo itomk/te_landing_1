@@ -1,0 +1,60 @@
+section.first.medit#firstBlock
+  .swiper.hero__line.medit__line#heroLine
+    .swiper-wrapper
+      .swiper-slide.hero__line-item
+        span.lab.hero__line-lab
+          svg.lab__svg
+            rect(width="100%" height="100%" rx="4" ry="4" fill="url(#fillGradient)" fill-opacity="0.59" stroke="url(#strokeGradient)" stroke-width="1" stroke-linecap="round")
+          span
+            img(src="/assets/picture/landing5/icon-01.png", alt="")
+            |  17 медитаций для качественного сна, спокойствия и концентрации
+      .swiper-slide.hero__line-item
+        span.lab.hero__line-lab
+          svg.lab__svg
+            rect(width="100%" height="100%" rx="4" ry="4" fill="url(#fillGradient)" fill-opacity="0.59" stroke="url(#strokeGradient)" stroke-width="1" stroke-linecap="round")
+          span
+            img(src="/assets/picture/landing5/icon-02.png", alt="")
+            |  Срочные медитации от тревоги, усталости и негатива
+      .swiper-slide.hero__line-item
+        span.lab.hero__line-lab
+          svg.lab__svg
+            rect(width="100%" height="100%" rx="4" ry="4" fill="url(#fillGradient)" fill-opacity="0.59" stroke="url(#strokeGradient)" stroke-width="1" stroke-linecap="round")
+          span
+            img(src="/assets/picture/landing5/icon-03.png", alt="")
+            |  Звукотерапия с целебными звуками природы и специальными частотами
+      .swiper-slide.hero__line-item
+        span.lab.hero__line-lab
+          svg.lab__svg
+            rect(width="100%" height="100%" rx="4" ry="4" fill="url(#fillGradient)" fill-opacity="0.59" stroke="url(#strokeGradient)" stroke-width="1" stroke-linecap="round")
+          span
+            img(src="/assets/picture/landing5/icon-04.png", alt="")
+            |  Мантры для очищения разума и наполнения энергией
+  picture.medit__bg
+    source(media="(min-width: 992px)", srcset="/assets/picture/landing5/medit-bg.jpg")
+    img(src="/assets/picture/landing5/medit-bg-mob.jpg", alt="")
+  .container.medit__container
+    .hero__wrapper.medit__wrapper
+      .hero__main.medit__main
+        h1.hero__title.medit__title Освободись от стресса 
+          br
+          | и наполнись энергией уже сегодня
+        p.medit__text Бесплатно и без регистрации — 2 медитации, которые помогут снять напряжение и вернуть ресурсное состояние.
+      .medit__row
+        .medit__item
+          picture.medit__pic
+            img(src="/assets/picture/landing5/meditation-01.jpg", alt="")
+          p.medit__name
+            img(src="/assets/picture/landing5/icon-05.png", alt="")
+            | Медитация на снятие стресса
+          svg.medit__like
+            use(xlink:href="#like-icon")
+        .medit__item
+          picture.medit__pic
+            img(src="/assets/picture/landing5/meditation-02.jpg", alt="")
+          p.medit__name
+            img(src="/assets/picture/landing5/icon-06.png", alt="")
+            | Медитация по наполнению энергией
+          svg.medit__like
+            use(xlink:href="#like-icon")
+      .hero__control.medit__control
+        a.btn.btn-lg.btn-gradient-red.medit__btn(href="#!") Послушать медитации сейчас

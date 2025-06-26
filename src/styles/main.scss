@@ -16,21 +16,35 @@
 @forward './elems/badge';
 @forward './elems/review-slider';
 @forward './elems/top-link';
+@forward './elems/m-player';
 
-@forward './blocks/hero/index';
-@forward './blocks/problems/index';
-@forward './blocks/services/index';
-@forward './blocks/history/index';
-@forward './blocks/promo/index';
-@forward './blocks/footer/index';
+@forward './blocks/hero';
+@forward './blocks/problems';
+@forward './blocks/services';
+@forward './blocks/history';
+@forward './blocks/promo';
+@forward './blocks/footer';
 
-@forward './blocks/banner/index';
-@forward './blocks/help/index';
-@forward './blocks/instruments/index';
-@forward './blocks/users/index';
-@forward './blocks/now/index';
-@forward './blocks/bonus/index';
+@forward './blocks/banner';
+@forward './blocks/help';
+@forward './blocks/instruments';
+@forward './blocks/users';
+@forward './blocks/now';
+@forward './blocks/bonus';
 
-@forward './blocks/first/index';
-@forward './blocks/future/index';
-@forward './blocks/review/index';
+@forward './blocks/first';
+@forward './blocks/future';
+@forward './blocks/review';
+
+@forward './blocks/medit';
+@forward './blocks/meditation';
+@forward './blocks/test';
+@forward './blocks/wild';
+
+@forward './blocks/free';
+@forward './blocks/line';
+@forward './blocks/etap';
+@forward './blocks/get';
+@forward './blocks/app';
+@forward './blocks/quote';
+@forward './blocks/prom';

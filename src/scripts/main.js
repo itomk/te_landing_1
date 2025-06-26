@@ -3,6 +3,8 @@ import { countdownTimer } from './functions/timer.js'
 import { toggle_top_btn, scroll_top_btn } from './functions/top-link.js'
 import { throttle } from './functions/throttle.js'
 import { reviewSlider } from './blocks/review.js'
+import { etapSlider } from './blocks/etap.js'
+import { playerSlider, controlMusic, controlLike } from './blocks/player.js'
 import { runLine, cuteControlElement } from './blocks/hero.js'
 import InitModal from './blocks/modal.js'
 
@@ -20,6 +22,17 @@ window.addEventListener('DOMContentLoaded', () => {
   // Slider for Review block
   if (document.querySelectorAll('.review-slider').length)
     reviewSlider('.review-slider')
+
+  // Slider for Etap block
+  if (document.querySelectorAll('.etap-slider').length)
+    etapSlider('.etap-slider')
+
+  // Slider for Player block
+  if (document.querySelectorAll('.player-slider').length) {
+    playerSlider('.player-slider', '.m-player')
+    controlMusic('.m-player__play', '.m-player')
+    controlLike('.m-player__like')
+  }
 
   // Timer for Promo section
   if (document.querySelectorAll('[data-timer]'))

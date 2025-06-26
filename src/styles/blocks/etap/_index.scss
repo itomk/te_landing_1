@@ -1,0 +1,225 @@
+@use '../../inc/mixins/breakpoints' as media;
+@use '../../inc/mixins/hover' as hover;
+
+.etap {
+  & {
+    --section-padding-y: 5rem;
+  }
+
+  &__container {
+    --container-max-width: 99rem;
+
+    @include media.xl {
+      --container-max-width: 107rem;
+    }
+
+    @include media.xxl {
+      --container-max-width: 132rem;
+    }
+
+    @include media.xxxl {
+      --container-max-width: 144rem;
+    }
+  }
+
+  &__heading {
+    font-weight: 700;
+    color: #565BD9;
+    --fz-heading: 2.5rem;
+
+    @include media.sm {
+      --fz-heading: 3rem;
+    }
+
+    @include media.md {
+      --fz-heading: 3.5rem;
+    }
+
+    @include media.lg {
+      --fz-heading: 4rem;
+    }
+
+    @include media.xl {
+      --fz-heading: 4.2rem;
+    }
+
+    @include media.xxl {
+      --fz-heading: 4.4rem;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 2.5rem;
+
+      @include media.xxl {
+        margin-bottom: 3rem;
+      }
+    }
+  }
+
+  &-slider {
+    width: calc(100% + var(--container-padding-x) * 2);
+    margin-left: calc(-1 * var(--container-padding-x));
+    padding: 2rem calc(2rem + var(--container-padding-x));
+    background: linear-gradient(180.21deg, #F7F9FF 25.41%, #9B9CE9 71.53%, #5A5ADA 94.15%, #3A49CE 110.09%), linear-gradient(257.68deg, #0012B5 17.87%, #222CD5 53.01%);
+    border-radius: 0;
+
+    @include media.lg {
+      border-radius: 25px;
+      margin: 0;
+      width: 100%;
+      padding: 2rem;
+    }
+
+    & > .swiper-wrapper {
+      align-items: stretch;
+      padding: 0;
+      list-style: none;
+      counter-reset: myCounter 0;
+
+      &:not(:last-child) {
+        margin-bottom: 2rem;
+
+        @include media.md {
+          margin-bottom: 2.5rem;
+        }
+
+        @include media.lg {
+          margin-bottom: 3rem;
+        }
+      }
+    }
+  }
+
+  &__item {
+    position: relative;
+    z-index: 2;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--color-light);
+    border-radius: 20px;
+    padding: 0 1rem 2rem;
+    box-shadow: 0 0 12px rgba(140, 125, 247, 0.36);
+
+    @include media.xxl {
+      padding: 3rem 1rem 2rem;
+      gap: 1.7rem;
+    }
+
+    &::before {
+      position: absolute;
+      z-index: 3;
+      top: 1rem;
+      left: 1rem;
+      counter-increment: myCounter;
+      content: counter(myCounter);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 500;
+      font-size: 1.6rem;
+      line-height: calc(19 / 16);
+      color: var(--color-light);
+      width: 2.5rem;
+      height: 2.5rem;
+      background: radial-gradient(50% 50% at 50% 50%, #3F4CD0 0%, #96AAFF 83%);
+      box-shadow: 0 0 4px #9E5AEF;
+
+      @include media.xxl {
+        width: 3.4rem;
+        height: 3.4rem;
+        font-size: 2.1rem;
+      }
+    }
+
+    &::after {
+      position: absolute;
+      z-index: 2;
+      content: '';
+      left: 0.2rem;
+      top: 2.25rem;
+      width: calc(100% - 1.3rem);
+      height: 16px;
+      transform: translate(-100%, -50%);
+      background-image: url('../images/etap-arrow.svg');
+      background-repeat: no-repeat;
+      background-position: center right;
+      background-size: 100% auto;
+
+      @include media.xxl {
+        top: 2.75rem;
+        width: calc(100% - 2rem);
+      }
+    }
+
+    &:first-child {
+      &::after {
+        display: none;
+      }
+    }
+
+    &-image {
+      position: relative;
+      z-index: 1;
+      max-width: 100%;
+      width: 100%;
+      height: 19.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include media.xxl {
+        max-width: 33.3rem;
+        height: 22.8rem;
+      }
+
+      &>img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+
+    &-name {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      font-weight: 700;
+      font-size: 1.6rem;
+      line-height: calc(19 / 16);
+
+      @include media.xl {
+        font-size: 1.8rem;
+      }
+
+      @include media.xxl {
+        font-size: 2.2rem;
+      }
+    }
+  }
+
+  &__text {
+    max-width: 25rem;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.6rem;
+    line-height: calc(19 / 16);
+    color: var(--color-light);
+    margin: 0 auto;
+
+    @include media.sm {
+      max-width: 100%;
+      font-size: 2rem;
+    }
+
+    @include media.lg {
+      font-size: 2.5rem;
+    }
+
+    @include media.xl {
+      font-size: 2.7rem;
+    }
+  }
+}

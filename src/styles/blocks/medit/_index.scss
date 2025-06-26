@@ -1,0 +1,437 @@
+@use '../../inc/mixins/breakpoints' as media;
+@use '../../inc/mixins/patterns' as pat;
+
+.medit {
+  padding-bottom: 2.6rem;
+  background: #fff;
+
+  @include media.lg {
+    padding: 12.8rem 0 8.3rem;
+  }
+
+  @include media.xl {
+    padding: 15.3rem 0 10rem;
+  }
+
+  @include media.xxl {
+    padding: 19rem 0 13rem;
+  }
+
+  @include media.xxxl {
+    padding: 20.5rem 0 13.7rem;
+  }
+
+  &::after {
+    position: absolute;
+    content: '';
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 66.3%;
+    background-image: linear-gradient(0deg, rgba(217, 217, 217, 0) 4.1%, rgba(201, 217, 237, 0.525) 19.22%, #C9DBFF 47.39%);
+    backdrop-filter: blur(1px);
+
+    @include media.lg {
+      width: 77.03%;
+      height: 100%;
+      background: linear-gradient(270deg, rgba(217, 217, 217, 0) 0%, rgba(201, 217, 237, 0.525) 21.39%, #C9DBFF 46.24%);
+      backdrop-filter: blur(2px);
+    }
+  }
+
+  &__line {
+    z-index: 4;
+  }
+
+  &__bg {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+
+    &>img {
+      position: absolute;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+
+      @include media.lg {
+        width: auto;
+        height: 100%;
+        left: auto;
+        right: 0;
+        top: 50%;
+        bottom: auto;
+        object-position: right center;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  &__container {
+    position: relative;
+    z-index: 3;
+
+    @include media.lg {
+      --container-max-width: 128rem;
+      --container-padding-x: 4.6rem;
+    }
+
+    @include media.xl {
+      --container-max-width: 144rem;
+      --container-padding-x: 5.2rem;
+    }
+
+    @include media.xxl {
+      --container-max-width: 178rem;
+      --container-padding-x: 6.4rem;
+    }
+
+    @include media.xxxl {
+      --container-max-width: 192rem;
+      --container-padding-x: 6.9rem;
+    }
+  }
+
+  &__wrapper {
+    padding: 0;
+
+    @include media.lg {
+      gap: 3.5rem;
+    }
+  }
+
+  &__main {
+    @include media.lg {
+      max-width: 62.5rem;
+      margin-right: 0;
+    }
+
+    @include media.xl {
+      max-width: 70rem;
+    }
+
+    @include media.xxl {
+      max-width: 83rem;
+    }
+
+    @include media.xxxl {
+      max-width: 90rem;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 3.7rem;
+
+      @include media.lg {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__title {
+    font-size: 2rem;
+
+    @include media.lg {
+      font-size: 3.4rem;
+    }
+
+    @include media.xl {
+      font-size: 3.8rem;
+    }
+
+    @include media.xxl {
+      font-size: 4.6rem;
+    }
+
+    @include media.xxxl {
+      font-size: 4.7rem;
+    }
+  }
+
+  &__text {
+    font-weight: 600;
+    font-size: 1.6rem;
+    line-height: calc( 19 / 16 );
+
+    background: var(--gradient-bv-horizontal);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+
+    margin: 0;
+
+    &:not(:last-child) {
+      margin-bottom: 6.6rem;
+
+      @include media.xl {
+        margin-bottom: 6.8rem;
+      }
+
+      @include media.xxl {
+        margin-bottom: 9rem;
+      }
+
+      @include media.xxxl {
+        margin-bottom: 11rem;
+      }
+    }
+
+    @include media.lg {
+      max-width: 56rem;
+      font-size: 2.4rem;
+    }
+
+    @include media.xl {
+      max-width: 64rem;
+      font-size: 2.6rem;
+    }
+
+    @include media.xxl {
+      max-width: 71rem;
+      font-size: 3rem;
+    }
+
+    @include media.xxxl {
+      max-width: 81rem;
+      font-size: 3.2rem;
+    }
+  }
+
+  &__row {
+    --margin-item: 1.4rem;
+    --width-item: 29rem;
+    --pad-box: 0;
+
+    width: calc(var(--width-item) + var(--margin-item));
+
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    flex-shrink: 0;
+
+    padding: 0 var(--pad-box);
+    margin: 0 auto;
+
+    @include media.sm {
+      --width-item: 42rem;
+      --margin-item: 3rem;
+    }
+
+    @include media.lg {
+      --pad-box: 2.8rem;
+
+      width: calc(var(--width-item) + var(--margin-item) + (var(--pad-box) * 2));
+      margin: 0;
+    }
+
+    @include media.xl {
+      --width-item: 44.6rem;
+      --margin-item: 3.2rem;
+      --pad-box: 1.4rem;
+    }
+
+    @include media.xxl {
+      --width-item: 50.7rem;
+      --margin-item: 3.6rem;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 16.8rem;
+
+      @include media.sm {
+        margin-bottom: 12rem;
+      }
+
+      @include media.lg {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__item {
+    max-width: var(--width-item);
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.2rem;
+
+    background: rgba(255, 255, 255, 0.43);
+    box-shadow: 0px 1px 14px rgba(202, 191, 167, 0.25);
+    backdrop-filter: blur(9.95px);
+    border-radius: 6px;
+
+    padding: 1.3rem 1.1rem;
+    margin-right: auto;
+
+    @include media.sm {
+      gap: 0.6rem;
+      border-radius: 13px;
+      padding: 2rem;
+    }
+
+    @include media.xl {
+      gap: 0.8rem;
+    }
+
+    @include media.xxl {
+      gap: 1rem;
+      padding: 2.2rem;
+    }
+
+    &:last-child {
+      margin-top: calc(-1 * var(--margin-item));
+      margin-left: auto;
+      margin-right: 0;
+
+      @include media.sm {
+        margin-top: -1.2rem;
+      }
+
+      @include media.xl {
+        margin-top: -2.2rem;
+      }
+
+      @include media.xxl {
+        margin-top: -3.4rem;
+      }
+    }
+  }
+
+  &__pic {
+    position: relative;
+    display: block;
+    flex: 0 0 5.5rem;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 6px;
+
+    @include media.sm {
+      flex: 0 0 8rem;
+      border-radius: 9px;
+    }
+
+    @include media.xl {
+      flex: 0 0 9rem;
+    }
+
+    @include media.xxl {
+      flex: 0 0 9.8rem;
+    }
+
+    &>img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+    }
+  }
+
+  &__name {
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: calc( 20 / 16 );
+    color: var(--color-text);
+    margin: 0;
+
+    @include media.sm {
+      font-size: 2.1rem;
+    }
+
+    @include media.xl {
+      font-size: 2.3rem;
+    }
+
+    @include media.xxl {
+      font-size: 2.5rem;
+    }
+
+    &>img {
+      position: relative;
+      top: -1px;
+      margin-right: 2px;
+      display: inline-block;
+      vertical-align: middle;
+      width: 1.6rem;
+      height: auto;
+
+      @include media.sm {
+        top: -2px;
+        margin-right: 2px;
+        width: 2.1rem;
+      }
+
+      @include media.xl {
+        width: 2.3rem;
+      }
+
+      @include media.xxl {
+        top: -3px;
+        margin-right: 3px;
+        width: 2.5rem;
+      }
+    }
+  }
+
+  &__like {
+    flex: 0 0 1.8rem;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    color: #ffcde3;
+
+    @include media.sm {
+      flex: 0 0 3rem;
+    }
+
+    @include media.xl {
+      flex: 0 0 3.3rem;
+    }
+
+    @include media.xxl {
+      flex: 0 0 4.1rem;
+    }
+  }
+
+  &__btn {
+    &.btn-gradient-red.btn-lg {
+      --btn-width: 100%;
+      --btn-padding-x: 4rem;
+
+      @include media.sm {
+        --btn-width: auto;
+        --btn-padding-x: 4.5rem;
+      }
+
+      @include media.lg {
+        --btn-font-size: 2.4rem;
+        --btn-padding-y: 1.2rem;
+        --btn-padding-x: 7rem;
+      }
+
+      @include media.xxl {
+        --btn-font-size: 3rem;
+        --btn-padding-y: 1.5rem;
+        --btn-padding-x: 8.6rem;
+      }
+
+      @include media.xxxl {
+        --btn-font-size: 3.2rem;
+        --btn-padding-y: 1.6rem;
+        --btn-padding-x: 9rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+extends layouts/_default.pug
+
+block variables
+  - const theme_title = 'Landing_3 (new)'
+  - const theme_color = '#fff'
+  - const theme_body_classes = ['page']
+  - const current_page = 'landing_3new'
+
+block content
+  main.main#main
+    include blocks/landing3-new/free.pug
+    include blocks/landing3-new/line.pug
+    include blocks/landing3-new/etap.pug
+    include blocks/landing3-new/get.pug
+    include blocks/landing3-new/app.pug
+    include blocks/landing3-new/quote.pug
+    include blocks/landing3-new/prom.pug
+  include components/footer.pug
+  include components/svg-defs.pug

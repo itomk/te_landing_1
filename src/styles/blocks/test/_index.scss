@@ -1,0 +1,242 @@
+@use '../../inc/mixins/breakpoints' as media;
+@use '../../inc/mixins/patterns' as pat;
+
+.test {
+  position: relative;
+
+  &>.container {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__bg {
+    position: absolute;
+    z-index: 1;
+    display: none;
+    left: 0;
+    bottom: -5rem;
+    width: 100%;
+    height: 200%;
+    opacity: 0.35;
+    overflow: hidden;
+    pointer-events: none;
+
+    @include media.lg {
+      display: block;
+    }
+
+    @include media.xl {
+      bottom: -5.8rem;
+    }
+
+    @include media.xxl {
+      bottom: -8.5rem;
+    }
+
+    @include media.xxxl {
+      bottom: -9.7rem;
+    }
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: '';
+      z-index: 1;
+      display: block;
+      background-image: url('../images/promo-decor.svg');
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 100% 100%;
+      opacity: 0.7;
+      aspect-ratio: 1 / 1;
+    }
+
+    &::after {
+      bottom: -3rem;
+      left: 56.7%;
+      width: 65.7rem;
+      transform: rotate(110deg);
+
+      @include media.xl {
+        width: 74rem;
+      }
+
+      @include media.xxl {
+        width: 91.5rem;
+      }
+
+      @include media.xxxl {
+        width: 98.7rem;
+      }
+    }
+
+    &::before {
+      bottom: -4.9rem;
+      right: 58.3%;
+      width: 57.7rem;
+      transform: rotate(-45deg);
+
+      @include media.xl {
+        width: 65rem;
+      }
+
+      @include media.xxl {
+        bottom: -6.5rem;
+        width: 80.3rem;
+      }
+
+      @include media.xxxl {
+        width: 86.6rem;
+      }
+    }
+  }
+
+  &__text {
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.4rem;
+    line-height: calc(17 / 14);
+
+    color: var(--color-dark);
+
+    margin: 0 auto;
+    @include pat.not-last-margin;
+
+    @include media.lg {
+      font-size: 2rem;
+    }
+
+    @include media.xl {
+      font-size: 2.2rem;
+    }
+
+    @include media.xxl {
+      font-size: 2.7rem;
+    }
+
+    @include media.xxxl {
+      font-size: 3rem;
+    }
+
+    &-accent {
+      color: var(--color-base);
+    }
+  }
+
+  &__row {
+    --gap-item: 3rem;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    gap: var(--gap-item);
+
+    list-style: none;
+    padding: 0;
+
+    @include media.xxl {
+      --gap-item: 3.5rem;
+    }
+
+    @include media.xxxl {
+      --gap-item: 4rem;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+
+      @include media.lg {
+        margin-bottom: 2.5rem;
+      }
+
+      @include media.xl {
+        margin-bottom: 3rem;
+      }
+
+      @include media.xxl {
+        margin-bottom: 3.5rem;
+      }
+
+      @include media.xxxl {
+        margin-bottom: 4rem;
+      }
+    }
+  }
+
+  &__item {
+    position: relative;
+
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: calc( 19 / 16 );
+
+    background-color: #fff;
+    box-shadow: 0px 2px 22.1px rgba(41, 99, 163, 0.1);
+    backdrop-filter: blur(1.8px);
+    border-radius: 15px;
+
+    padding: 2rem 2rem 2rem 3.8rem;
+
+    @include media.md {
+      width: calc(50% - var(--gap-item) / 2);
+    }
+
+    @include media.lg {
+      width: calc(25% - var(--gap-item) * 3 / 4);
+      font-size: 1.4rem;
+      padding: 2rem 1rem 2rem 3.8rem;
+    }
+
+    @include media.xl {
+      padding: 2.2rem 1.2rem 2.2rem 4.2rem;
+      font-size: 1.5rem;
+    }
+
+    @include media.xxl {
+      padding: 2.4rem 1.4rem 2.4rem 4.6rem;
+      font-size: 1.8rem;
+    }
+
+    @include media.xxxl {
+      padding: 2.6rem 1.6rem 2.6rem 5rem;
+      font-size: 2rem;
+    }
+
+    &::before {
+      position: absolute;
+      content: '';
+      display: block;
+      left: 1rem;
+      top: 2rem;
+      width: 1.8rem;
+      height: auto;
+      aspect-ratio: 1 / 1;
+      background-image: url('../images/check.svg');
+      background-size: 100% 100%;
+      background-position: center center;
+      background-repeat: no-repeat;
+
+      @include media.xl {
+        left: 1.2rem;
+        top: 2.2rem;
+        width: 2rem;
+      }
+
+      @include media.xxl {
+        left: 1.4rem;
+        top: 2.4rem;
+        width: 2.2rem;
+      }
+
+      @include media.xxxl {
+        left: 1.6rem;
+        top: 2.6rem;
+        width: 2.4rem;
+      }
+    }
+  }
+}

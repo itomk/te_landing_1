@@ -1,0 +1,113 @@
+@use '../../inc/mixins/breakpoints' as media;
+@use '../../inc/mixins/hover' as hover;
+
+.quote {
+  & {
+    --section-padding-y: 5rem;
+  }
+
+  &__container {
+    --container-max-width: 72.7rem;
+
+    @include media.xl {
+      --container-max-width: 80.7rem;
+    }
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2rem;
+    padding: 2.5rem;
+
+    background-color: var(--color-light);
+    box-shadow: 0 0 12px hsla(247, 88%, 73%, 0.36);
+    border-radius: 25px;
+
+    @include media.md {
+      padding: 4rem;
+    }
+  }
+
+  &__title {
+    display: inline-flex;
+    align-items: center;
+    margin: 0;
+
+    &-icon {
+      width: 1.6rem;
+      height: 1.6rem;
+
+      @include media.md {
+        width: 2.2rem;
+        height: 2.2rem;
+      }
+
+      @include media.xl {
+        width: 2.4rem;
+        height: 2.4rem;
+      }
+
+      &:not(:last-child) {
+        margin-right: 0.5rem;
+      }
+    }
+
+    &-text {
+      font-weight: 400;
+      font-size: 1.4rem;
+      line-height: calc(17 / 14);
+
+      background: linear-gradient(90.43deg, hsl(234, 100%, 79%) -39.21%, hsl(260, 97%, 39%) 34.4%, hsl(260, 98%, 16%) 113.17%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+
+      @include media.sm {
+        font-size: 2rem;
+      }
+
+      @include media.xl {
+        font-size: 2.2rem;
+      }
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+
+    line-height: 1.46;
+
+    gap: 0.5rem;
+    margin: 0;
+
+    @include media.md {
+      font-size: 2.5rem;
+    }
+
+    @include media.xl {
+      font-size: 2.7rem;
+    }
+
+    &-gradient {
+      font-weight: 600;
+
+      background: linear-gradient(90deg, hsl(217, 100%, 38%) 3.67%, hsl(267, 93%, 61%) 46.68%, hsl(332, 76%, 58%) 80.18%, hsl(32, 100%, 67%) 109.84%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+    }
+
+    &-right {
+      display: block;
+      width: 100%;
+
+      font-weight: 600;
+      text-align: right;
+    }
+  }
+}
