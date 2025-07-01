@@ -4,6 +4,8 @@ import { toggle_top_btn, scroll_top_btn } from './functions/top-link.js'
 import { throttle } from './functions/throttle.js'
 import { reviewSlider } from './blocks/review.js'
 import { etapSlider } from './blocks/etap.js'
+import { anonymSlider } from './blocks/anonym.js'
+import { viewSlider } from './blocks/view.js'
 import { playerSlider, controlMusic, controlLike } from './blocks/player.js'
 import { runLine, cuteControlElement } from './blocks/hero.js'
 import InitModal from './blocks/modal.js'
@@ -26,6 +28,14 @@ window.addEventListener('DOMContentLoaded', () => {
   // Slider for Etap block
   if (document.querySelectorAll('.etap-slider').length)
     etapSlider('.etap-slider')
+
+  // Slider for Anonym block
+  if (document.querySelectorAll('.anonym-slider').length)
+    anonymSlider('.anonym-slider')
+
+  // Slider for View block
+  if (document.querySelectorAll('.view-slider').length)
+    viewSlider('.view-slider')
 
   // Slider for Player block
   if (document.querySelectorAll('.player-slider').length) {

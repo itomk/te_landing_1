@@ -30,4 +30,27 @@
   &__accent {
     color: var(--color-base);
   }
+
+  &--max {
+    font-weight: 700;
+    --fz-heading: 3rem;
+    line-height: calc(36 / 30);
+    color: #565bd9;
+
+    @include queries.md {
+      --fz-heading: 3.6rem;
+    }
+
+    @include queries.lg {
+      --fz-heading: 4rem;
+    }
+
+    @include queries.xl {
+      --fz-heading: 4.2rem;
+    }
+
+    @include queries.xxl {
+      --fz-heading: 4.4rem;
+    }
+  }
 }
