@@ -21,7 +21,7 @@ class InitModal {
     this.cookies = new Cookies(this.cookieName, true, this.numberDay)
 
     this.btnOpenModal()
-    this.openModalTimer()
+    if (this.timerMsec > 0) this.openModalTimer()
     this.mailSent()
   }
 

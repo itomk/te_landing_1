@@ -18,41 +18,48 @@
 @forward './elems/top-link';
 @forward './elems/m-player';
 
-@forward './blocks/hero';
-@forward './blocks/problems';
-@forward './blocks/services';
-@forward './blocks/history';
-@forward './blocks/promo';
 @forward './blocks/footer';
 
-@forward './blocks/banner';
-@forward './blocks/help';
-@forward './blocks/instruments';
-@forward './blocks/users';
-@forward './blocks/now';
-@forward './blocks/bonus';
+@forward './blocks/page-1/hero';
+@forward './blocks/page-1/problems';
+@forward './blocks/page-1/services';
+@forward './blocks/page-1/history';
+@forward './blocks/page-1/promo';
 
-@forward './blocks/first';
-@forward './blocks/future';
-@forward './blocks/review';
+@forward './blocks/page-2/banner';
+@forward './blocks/page-2/help';
+@forward './blocks/page-2/instruments';
+@forward './blocks/page-2/users';
+@forward './blocks/page-2/now';
+@forward './blocks/page-2/bonus';
 
-@forward './blocks/medit';
-@forward './blocks/meditation';
-@forward './blocks/test';
-@forward './blocks/wild';
+@forward './blocks/page-4/first';
+@forward './blocks/page-4/review';
 
-@forward './blocks/free';
-@forward './blocks/line';
-@forward './blocks/etap';
-@forward './blocks/get';
-@forward './blocks/app';
-@forward './blocks/quote';
-@forward './blocks/prom';
+@forward './blocks/page-3/free';
+@forward './blocks/page-3/line';
+@forward './blocks/page-3/etap';
+@forward './blocks/page-3/get';
+@forward './blocks/page-3/app';
+@forward './blocks/page-3/quote';
+@forward './blocks/page-3/prom';
 
-@forward './blocks/escape';
-@forward './blocks/find';
-@forward './blocks/prop';
-@forward './blocks/view';
-@forward './blocks/why';
-@forward './blocks/anonym';
-@forward './blocks/care';
+@forward './blocks/page-5/escape';
+@forward './blocks/page-5/find';
+@forward './blocks/page-5/prop';
+@forward './blocks/page-5/view';
+@forward './blocks/page-5/why';
+@forward './blocks/page-5/anonym';
+@forward './blocks/page-5/care';
+
+@forward './blocks/page-6/talk';
+@forward './blocks/page-6/events';
+@forward './blocks/page-6/effective';
+@forward './blocks/page-6/click';
+
+// ------ OLD BLOCKS ------------>
+// @forward './blocks/page-4/future';
+// @forward './blocks/old/medit';
+// @forward './blocks/old/meditation';
+// @forward './blocks/old/test';
+// @forward './blocks/old/wild';

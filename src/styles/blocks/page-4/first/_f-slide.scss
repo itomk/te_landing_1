@@ -1,0 +1,82 @@
+@use '../../../inc/mixins/breakpoints' as media;
+
+.f-slide {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__pic {
+    display: block;
+    flex: 0 0 1.9rem;
+    height: auto;
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border: 0.038rem solid var(--color-base);
+
+    @include media.lg-max {
+      @include media.sm {
+        flex: 0 0 2.9rem;
+        border-width: 0.05rem;
+      }
+
+      @include media.md {
+        flex: 0 0 4.5rem;
+        border-width: 0.1rem;
+      }
+    }
+
+    @include media.lg {
+      flex: 0 0 2.9rem;
+      border-width: 0.05rem;
+    }
+
+    @include media.xl {
+      flex: 0 0 3.3rem;
+      border-width: 0.1rem;
+    }
+
+    @include media.xxl {
+      flex: 0 0 4.2rem;
+    }
+
+    @include media.xxxl {
+      flex: 0 0 4.5rem;
+    }
+
+    &:not(:first-child) {
+      margin-left: -0.5rem;
+
+      @include media.lg-max {
+        @include media.sm {
+          margin-left: -0.7rem;
+        }
+
+        @include media.md {
+          margin-left: -1rem;
+        }
+      }
+
+      @include media.lg {
+        margin-left: -0.7rem;
+      }
+
+      @include media.xl {
+        margin-left: -0.9rem;
+      }
+
+      @include media.xxl {
+        margin-left: -1rem;
+      }
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+  }
+}

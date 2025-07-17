@@ -1,0 +1,447 @@
+@use '../../../inc/mixins/breakpoints' as media;
+@use '../../../inc/mixins/patterns' as pattern;
+
+.users {
+  position: relative;
+  overflow: hidden;
+
+  &__bg {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    opacity: 0.4;
+    display: none;
+
+    @include media.lg {
+      display: block;
+    }
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: '';
+      z-index: 1;
+      display: block;
+      background-image: url('../images/promo-decor.svg');
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 100% 100%;
+      opacity: 0.7;
+    }
+
+    &::after {
+      bottom: 0;
+      left: 47.7%;
+      width: 103.9rem;
+      height: 72.4rem;
+      transform: rotate(110deg);
+
+      @include media.xl {
+        width: 73.9rem;
+        height: 81.4rem;
+        bottom: -4.2rem;
+        left: 62.3%;
+        transform: rotate(112deg);
+      }
+
+      @include media.xxl {
+        width: 91.5rem;
+        height: 100.7rem;
+        bottom: -6.2rem;
+        left: 63.2%;
+      }
+
+      @include media.xxxl {
+        width: 98.7rem;
+        height: 108.5rem;
+        bottom: -6.5rem;
+        left: 63.1%;
+      }
+    }
+
+    &::before {
+      bottom: -13rem;
+      right: 59.3%;
+      width: 57.7rem;
+      height: 63.6rem;
+      transform: rotate(-45deg);
+
+      @include media.xl {
+        bottom: -12.9rem;
+        right: 60.8%;
+        width: 65rem;
+        height: 71.6rem;
+      }
+
+      @include media.xxl {
+        bottom: -17.3rem;
+        right: 60%;
+        width: 80.3rem;
+        height: 88.5rem;
+      }
+
+      @include media.xxxl {
+        bottom: -17.3rem;
+        right: 60.1%;
+        width: 86.6rem;
+        height: 95.4rem;
+      }
+    }
+  }
+
+  &__container {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__heading {
+    max-width: 27rem;
+
+    @include media.lg {
+      max-width: none;
+    }
+  }
+
+  &__review-slider-wrapper,
+  &__block {
+    @include pattern.not-last-margin;
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background: var(--gradient-aw-horizontal);
+    box-shadow: 0px 2px 22.1px var(--color-shadow-gray);
+    border-radius: 2.4rem;
+    backdrop-filter: blur(2px);
+
+    padding: 2rem 1.5rem 3.55rem;
+
+    @include media.md {
+      flex-direction: row;
+      justify-content: space-between;
+
+      padding: 2rem 1.5rem;
+    }
+
+    @include media.lg {
+      padding: 2rem;
+    }
+
+    @include media.xl {
+      border-radius: 2.6rem;
+      padding: 2.2rem;
+    }
+
+    @include media.xxl {
+      border-radius: 3.2rem;
+      padding: 2.7rem;
+    }
+
+    @include media.xxxl {
+      border-radius: 3.4rem;
+      padding: 3rem;
+    }
+
+    &-top {
+      width: 100%;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      @include media.md {
+        max-width: 43rem;
+      }
+
+      @include media.xl {
+        max-width: 48.5rem;
+      }
+
+      @include media.xxl {
+        max-width: 60rem;
+      }
+
+      @include media.xxxl {
+        max-width: 64.3rem;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 3.6rem;
+
+        @include media.md {
+          margin-bottom: 0;
+          margin-right: 2rem;
+        }
+      }
+    }
+
+    &-rating {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      font-weight: 400;
+      font-size: 2rem;
+      line-height: calc(24 / 20);
+      text-align: center;
+
+      color: var(--color-base);
+
+      @include media.lg {
+        font-size: 2.4rem;
+      }
+
+      @include media.xl {
+        font-size: 2.7rem;
+      }
+
+      @include media.xxl {
+        font-size: 3.338rem;
+      }
+
+      @include media.xxxl {
+        font-size: 3.6rem;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 1.4rem;
+
+        @include media.xl {
+          margin-bottom: 1.6rem;
+        }
+
+        @include media.xxl {
+          margin-bottom: 2rem;
+        }
+
+        @include media.xxxl {
+          margin-bottom: 2.157rem;
+        }
+      }
+
+      &-number {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        font-weight: 700;
+        font-size: 6rem;
+
+        @include media.lg {
+          font-size: 7.9rem;
+        }
+
+        @include media.xl {
+          font-size: 8.8rem;
+        }
+
+        @include media.xxl {
+          font-size: 10.8rem;
+        }
+
+        @include media.xxxl {
+          font-size: 11.6rem;
+        }
+
+        &:not(:last-child) {
+          margin-bottom: -0.5rem;
+
+          @include media.xl {
+            margin-bottom: -0.6rem;
+          }
+
+          @include media.xxl {
+            margin-bottom: -0.7rem;
+          }
+
+          @include media.xxxl {
+            margin-bottom: -0.8rem;
+          }
+        }
+      }
+
+      &-star {
+        max-width: 5rem;
+        width: 100%;
+        max-height: none;
+        height: auto;
+
+        object-fit: contain;
+
+        margin-left: 1.06rem;
+
+        @include media.lg {
+          max-width: 5.6rem;
+          margin-left: 1.1rem;
+        }
+
+        @include media.xl {
+          max-width: 6.3rem;
+          margin-left: 1.2rem;
+        }
+
+        @include media.xxl {
+          max-width: 7.8rem;
+          margin-left: 1.5rem;
+        }
+
+        @include media.xxxl {
+          max-width: 8.8rem;
+          margin-left: 1.55rem;
+        }
+      }
+    }
+
+    &-row {
+      max-width: 33rem;
+      width: 100%;
+
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+
+      @include media.xl {
+        max-width: 37rem;
+      }
+
+      @include media.xxl {
+        max-width: 46rem;
+      }
+
+      @include media.xxxl {
+        max-width: 49rem;
+      }
+    }
+
+    &-badge {
+      &:not(:last-child) {
+        margin-right: 1rem;
+
+        @include media.xl {
+          margin-right: 1.2rem;
+        }
+
+        @include media.xxl {
+          margin-right: 1.3rem;
+        }
+
+        @include media.xxxl {
+          margin-right: 1.4rem;
+        }
+      }
+    }
+
+    &-bottom {
+      max-width: 100%;
+      width: 100%;
+
+      display: flex;
+      flex-direction: column;
+
+      @include media.md {
+        max-width: 43rem;
+      }
+
+      @include media.xl {
+        max-width: 48.5rem;
+      }
+
+      @include media.xxl {
+        max-width: 60rem;
+      }
+
+      @include media.xxxl {
+        max-width: 64.3rem;
+      }
+    }
+
+    &-item {
+      max-width: 100%;
+      width: 100%;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      font-weight: 500;
+      font-size: 1.6rem;
+      line-height: calc(19 / 16);
+      text-align: center;
+
+      color: var(--color-light);
+      background: var(--color-base-light);
+      border-radius: 1.6rem;
+
+      padding: 1.5rem 1rem;
+      margin: 0;
+
+      @include media.lg {
+        font-size: 1.8rem;
+        padding: 2rem 1rem;
+      }
+
+      @include media.xl {
+        font-size: 2rem;
+        border-radius: 1.8rem;
+        padding: 2.35rem;
+      }
+
+      @include media.xxl {
+        font-size: 2.4rem;
+        border-radius: 2.2rem;
+        padding: 2.9rem;
+      }
+
+      @include media.xxxl {
+        font-size: 2.6rem;
+        border-radius: 2.4rem;
+        padding: 3.2rem;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 1.5rem;
+
+        @include media.xl {
+          margin-bottom: 1.6rem;
+        }
+
+        @include media.xxl {
+          margin-bottom: 2rem;
+        }
+      }
+
+      &:nth-child(2) {
+        background: var(--gradient-bw-diagonal);
+      }
+
+      &-accent {
+        font-weight: 700;
+        font-size: 3.2rem;
+
+        @include media.lg {
+          font-size: 3.4rem;
+        }
+
+        @include media.xl {
+          font-size: 3.8rem;
+        }
+
+        @include media.xxl {
+          font-size: 4.7rem;
+        }
+
+        @include media.xxxl {
+          font-size: 5rem;
+        }
+      }
+    }
+  }
+}

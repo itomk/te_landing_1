@@ -1,0 +1,368 @@
+@use '../../../inc/mixins/breakpoints' as media;
+@use '../../../inc/mixins/patterns' as pattern;
+
+.help {
+  position: relative;
+
+  &__bg {
+    position: absolute;
+    z-index: 1;
+    display: none;
+    top: 0;
+    left: 0;
+    bottom: 6rem;
+    width: 100%;
+    opacity: 0.35;
+    overflow: hidden;
+    pointer-events: none;
+
+    @include media.lg {
+      display: block;
+    }
+
+    @include media.xl {
+      bottom: 6.5rem;
+    }
+
+    @include media.xxl {
+      bottom: 8rem;
+    }
+
+    @include media.xxxl {
+      bottom: 9rem;
+    }
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: '';
+      z-index: 1;
+      display: block;
+      background-image: url('../images/promo-decor.svg');
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 100% 100%;
+      opacity: 0.7;
+      aspect-ratio: 1 / 1;
+    }
+
+    &::after {
+      bottom: 0;
+      left: 50.7%;
+      width: 79.4rem;
+      transform: rotate(110deg);
+
+      @include media.xl {
+        width: 89.4rem;
+        bottom: 0;
+        left: 49.5%;
+      }
+
+      @include media.xxl {
+        width: 110.3rem;
+        bottom: 0;
+        left: 49.6%;
+      }
+
+      @include media.xxxl {
+        width: 118.9rem;
+        bottom: 0;
+        left: 49.6%;
+      }
+    }
+
+    &::before {
+      bottom: -1.9rem;
+      right: 54.3%;
+      width: 63.6rem;
+      transform: rotate(-45deg);
+
+      @include media.xl {
+        width: 71.6rem;
+      }
+
+      @include media.xxl {
+        width: 88.5rem;
+      }
+
+      @include media.xxxl {
+        bottom: -3.9rem;
+        width: 95.4rem;
+      }
+    }
+  }
+
+  &__container {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__heading {
+    max-width: 36rem;
+
+    @include media.sm {
+      max-width: none;
+
+      &>br {
+        display: none;
+      }
+    }
+  }
+
+  &__wrapper {
+    @include pattern.not-last-margin;
+  }
+
+  &__col {
+    color: var(--color-dark);
+    background-color: var(--color-light);
+    border-radius: 2.4rem;
+    box-shadow: 0px 2px 22.1px var(--color-shadow-gray);
+
+    padding: 2rem 1rem;
+
+    @include media.md {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    @include media.lg {
+      padding: 2rem;
+    }
+
+    @include media.xl {
+      border-radius: 2.6rem;
+      padding: 2.2rem;
+    }
+
+    @include media.xxl {
+      border-radius: 3.2rem;
+      padding: 2.7rem;
+    }
+
+    @include media.xxxl {
+      border-radius: 3.4rem;
+      padding: 3rem;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 2.5rem;
+
+      @include media.xl {
+        margin-bottom: 3rem;
+      }
+
+      @include media.xxl {
+        margin-bottom: 3.5rem;
+      }
+
+      @include media.xxxl {
+        margin-bottom: 4rem;
+      }
+    }
+
+    &:nth-child(even) {
+      .help__item:not(:last-child)::after {
+        background-image: url('../images/help-arrow-other.svg');
+
+        @include media.md {
+          width: 8.4rem;
+          height: 4.4rem;
+          top: calc(100% + 0.9rem);
+          left: calc(100% + 1rem);
+        }
+
+        @include media.xl {
+          width: 9.4rem;
+          height: 4.9rem;
+        }
+
+        @include media.xxl {
+          width: 11.6rem;
+          height: 6.1rem;
+        }
+
+        @include media.xxxl {
+          width: 11.2rem;
+          height: 5.8rem;
+        }
+      }
+    }
+  }
+
+  &__item {
+    position: relative;
+
+    @include media.md {
+      width: calc(50% - 2.5rem);
+    }
+
+    @include media.xl {
+      width: calc(50% - 2.8rem);
+    }
+
+    @include media.xxl {
+      width: calc(50% - 3.5rem);
+    }
+
+    &:not(:last-child) {
+      z-index: 2;
+      margin-bottom: 5rem;
+
+      @include media.md {
+        margin-bottom: 0;
+      }
+
+      &::after {
+        position: absolute;
+        content: '';
+        display: block;
+        top: 100%;
+        width: 4.8rem;
+        height: 4.8rem;
+        left: 50%;
+        transform: translateX(-50%) rotate(110deg) scaleY(-1);
+        background-image: url('../images/help-arrow.svg');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 100% 100%;
+
+        @include media.md {
+          width: 8.8rem;
+          height: 5.6rem;
+          transform: translate(-50%, -100%);
+          top: calc(100% + 1.2rem);
+          left: calc(100% + 1.6rem);
+        }
+
+        @include media.xl {
+          width: 9.9rem;
+          height: 6.3rem;
+        }
+
+        @include media.xxl {
+          width: 12.2rem;
+          height: 7.8rem;
+        }
+
+        @include media.xxxl {
+          width: 17.7rem;
+          height: 7.4rem;
+          top: calc(100% + 0.7rem);
+          left: calc(100% + 2.2rem);
+        }
+      }
+    }
+  }
+
+  &__pic {
+    position: relative;
+    display: block;
+
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+
+    border-radius: 1.5rem;
+    overflow: hidden;
+
+    margin-bottom: 1rem;
+
+    @include media.xl {
+      margin-bottom: 1.1rem;
+      border-radius: 1.6rem;
+    }
+
+    @include media.xxl {
+      margin-bottom: 1.4rem;
+      border-radius: 2rem;
+    }
+
+    @include media.xxxl {
+      margin-bottom: 1.5rem;
+      border-radius: 2.2rem;
+    }
+
+    &::before {
+      content: '';
+      display: table;
+      padding-bottom: 53.25%;
+
+      @include media.lg {
+        padding-bottom: 51.16%;
+      }
+
+      @include media.xl {
+        padding-bottom: 50.92%;
+      }
+
+      @include media.xxl {
+        padding-bottom: 51.16%;
+      }
+    }
+
+    &>img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
+  }
+
+  &__name {
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.4rem;
+    line-height: calc(17 / 14);
+
+    margin: 0;
+
+    @include media.xl {
+      font-size: 1.6rem;
+    }
+
+    @include media.xxl {
+      font-size: 2rem;
+    }
+
+    @include media.xxxl {
+      font-size: 2.2rem;
+    }
+  }
+
+  &__text {
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.4rem;
+    line-height: calc(17 / 14);
+
+    color: var(--color-dark);
+
+    margin: 0 auto;
+    @include pattern.not-last-margin;
+
+    @include media.lg {
+      font-size: 2rem;
+    }
+
+    @include media.xl {
+      font-size: 2.2rem;
+    }
+
+    @include media.xxl {
+      font-size: 2.7rem;
+    }
+
+    @include media.xxxl {
+      font-size: 3rem;
+    }
+
+    &>span {
+      color: var(--color-base);
+    }
+  }
+}

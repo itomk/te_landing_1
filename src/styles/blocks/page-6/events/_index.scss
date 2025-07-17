@@ -1,0 +1,46 @@
+@use '../../../inc/mixins/breakpoints' as media;
+@use '../../../inc/mixins/hover' as hover;
+@use './e-slide' as *;
+
+.events {
+  overflow: hidden;
+  padding: 5rem 0;
+
+  &__container {
+    --container-max-width: 192rem;
+
+    @include media.lg {
+      --container-padding-x: 4rem;
+    }
+
+    @include media.xl {
+      --container-padding-x: 6rem;
+    }
+
+    @include media.xxl {
+      --container-padding-x: 8.4rem;
+    }
+  }
+
+  &__heading {
+    color: #0049D3;
+    --mb-heading: 2.5rem;
+  }
+
+  &-slider {
+    overflow: visible;
+
+    &>.swiper-wrapper {
+      align-items: stretch;
+    }
+  }
+
+  &__slide {
+    max-width: 29rem;
+    height: auto;
+
+    @include media.md {
+      max-width: 48rem;
+    }
+  }
+}

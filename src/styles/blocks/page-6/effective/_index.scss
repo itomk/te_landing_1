@@ -1,0 +1,223 @@
+@use '../../../inc/mixins/breakpoints' as media;
+@use '../../../inc/mixins/hover' as hover;
+
+.effective {
+  position: relative;
+  background: linear-gradient(270deg, #C9DBFF 0%, #F7F9FF 59.61%);
+  overflow: hidden;
+  padding: 5rem 0;
+
+  &::before {
+    position: absolute;
+    content: '';
+    top: 10.8rem;
+    right: 11.8%;
+    width: 59rem;
+    height: 59rem;
+    background: linear-gradient(176.76deg, #0057FC 2.68%, #B0D5FF 38.61%, #B0B6FF 75.04%);
+    filter: blur(104px);
+    transform: rotate(-120deg);
+    border-radius: 50%;
+
+    @include media.lg {
+      top: -12.5rem;
+      right: auto;
+      left: 50.31%;
+    }
+  }
+
+  &__decor {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0.8;
+    filter: blur(72px);
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: '';
+      border-radius: 50%;
+      background: linear-gradient(180deg, #B0D5FF 20%, #8FC3FF 100%);
+    }
+
+    &::before {
+      top: 26.1rem;
+      left: 90.7%;
+      width: 25.8rem;
+      height: 25.8rem;
+
+      @include media.lg {
+        top: auto;
+        bottom: -9.7rem;
+        left: -22.2rem;
+      }
+
+      @include media.xl {
+        bottom: -8.6rem;
+        left: -6.2rem;
+      }
+
+      @include media.xxl {
+        bottom: -5rem;
+        left: auto;
+        right: 70%;
+      }
+    }
+
+    &::after {
+      bottom: 0;
+      right: 17.4%;
+      width: 50.6rem;
+      height: 50.6rem;
+
+      @include media.lg {
+        bottom: -23.2rem;
+        right: auto;
+        left: 55%;
+      }
+    }
+  }
+
+  &__container {
+    position: relative;
+    z-index: 2;
+    --container-max-width: 99rem;
+
+    @include media.xl {
+      --container-max-width: 107rem;
+    }
+  }
+
+  &__heading {
+    color: #0049D3;
+    --mb-heading: 2.5rem;
+  }
+
+  &__grid {
+    --gap-item: 2rem;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: var(--gap-item);
+
+    @include media.lg {
+      --gap-item: 3rem;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 2.5rem;
+    }
+  }
+
+  &__item {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    gap: 1rem;
+    background-color: rgba(255, 255, 255, 0.86);
+    box-shadow: 0px 2px 22px rgba(41, 99, 163, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+
+    @include media.md {
+      width: calc(50% - var(--gap-item) / 2);
+    }
+  }
+
+  &__pic {
+    display: flex;
+    max-width: 10rem;
+    width: 100%;
+    height: auto;
+
+    @include media.xl {
+      max-width: 11rem;
+    }
+
+    @include media.xxl {
+      max-width: 12.7rem;
+    }
+
+    &>img {
+      max-width: 100%;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+  }
+
+  &__name {
+    text-align: center;
+    font-weight: 500;
+    font-size: 2.2rem;
+    line-height: calc(26 / 22);
+    color: var(--color-dark);
+    margin: 0;
+
+    @include media.lg {
+      font-size: 2.5rem;
+    }
+
+    @include media.xl {
+      font-size: 2.7rem;
+    }
+
+    @include media.xxl {
+      font-size: 2.9rem;
+    }
+  }
+
+  &__row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.4rem;
+
+    @include media.sm {
+      flex-direction: row;
+      justify-content: center;
+      gap: 1.2rem;
+    }
+
+    @include media.xl {
+      gap: 1rem;
+    }
+  }
+
+  &__badge {
+    max-width: 40rem;
+    width: 100%;
+    min-height: 7rem;
+
+    border-width: 2px;
+    border-radius: 16px;
+
+    @include media.sm {
+      max-width: none;
+      width: auto;
+      padding: 0.7rem 1.5rem;
+    }
+
+    &>img.badge__img {
+      max-width: 19.8rem;
+      max-height: 5.2rem;
+
+      @include media.sm {
+        max-width: 19.8rem;
+        max-height: 5.2rem;
+      }
+    }
+  }
+}

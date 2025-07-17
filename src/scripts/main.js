@@ -6,7 +6,9 @@ import { reviewSlider } from './blocks/review.js'
 import { etapSlider } from './blocks/etap.js'
 import { anonymSlider } from './blocks/anonym.js'
 import { viewSlider } from './blocks/view.js'
-import { playerSlider, controlMusic, controlLike } from './blocks/player.js'
+import { clickSlider } from './blocks/click.js'
+import { eventsSlider } from './blocks/events.js'
+// import { playerSlider, controlMusic, controlLike } from './blocks/player.js'
 import { runLine, cuteControlElement } from './blocks/hero.js'
 import InitModal from './blocks/modal.js'
 
@@ -37,12 +39,20 @@ window.addEventListener('DOMContentLoaded', () => {
   if (document.querySelectorAll('.view-slider').length)
     viewSlider('.view-slider')
 
+  // Slider for Events block
+  if (document.querySelectorAll('.events-slider').length)
+    eventsSlider('.events-slider')
+
+  // Slider for Click block
+  if (document.querySelectorAll('.click-slider').length)
+    clickSlider('.click-slider')
+
   // Slider for Player block
-  if (document.querySelectorAll('.player-slider').length) {
-    playerSlider('.player-slider', '.m-player')
-    controlMusic('.m-player__play', '.m-player')
-    controlLike('.m-player__like')
-  }
+  // if (document.querySelectorAll('.player-slider').length) {
+  //   playerSlider('.player-slider', '.m-player')
+  //   controlMusic('.m-player__play', '.m-player')
+  //   controlLike('.m-player__like')
+  // }
 
   // Timer for Promo section
   if (document.querySelectorAll('[data-timer]'))

@@ -1,0 +1,123 @@
+@use '../../../inc/mixins/breakpoints' as media;
+@use '../../../inc/mixins/hover' as hover;
+
+.click {
+  position: relative;
+  padding: 5rem 0;
+  overflow: hidden;
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+
+    &:not(:last-child) {
+      margin-bottom: 2.5rem;
+    }
+  }
+
+  &__heading {
+    color: #0049D3;
+    --mb-heading: 0;
+  }
+
+  &__sub-heading {
+    text-align: center;
+    font-weight: 600;
+    font-size: 2.2rem;
+    line-height: calc(26 / 22);
+    color: var(--color-dark);
+    margin: 0;
+
+    @include media.md {
+      font-size: 2rem;
+    }
+
+    @include media.lg {
+      font-size: 2.4rem;
+    }
+
+    @include media.xl {
+      font-size: 2.6rem;
+    }
+
+    @include media.xxl {
+      font-size: 2.8rem;
+    }
+
+    &>span {
+      color: var(--color-base);
+    }
+  }
+
+  &__sub-title {
+    text-align: center;
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: calc(36 / 30);
+    color: var(--color-base);
+    margin: 0;
+
+    @include media.md {
+      font-size: 3.4rem;
+    }
+
+    @include media.lg {
+      font-size: 4rem;
+    }
+
+    @include media.xl {
+      font-size: 4.2rem;
+    }
+
+    @include media.xxl {
+      font-size: 4.4rem;
+    }
+
+    &:not(:first-child) {
+      margin-top: -1rem;
+    }
+  }
+
+  &-slider {
+    width: calc(100% + var(--container-padding-x));
+    position: relative;
+    display: block;
+    padding: 2rem calc(2rem + var(--container-padding-x)) 2rem 2rem;
+    border-radius: 25px 0 0 25px;
+    background: linear-gradient(179.22deg, #C2DAFF 2.31%, #F7F9FF 39.93%, #F7F9FF 84.2%);
+
+    @include media.md {
+      max-width: 66.4rem;
+      width: 100%;
+      border-radius: 25px;
+      margin: 0 auto;
+    }
+
+    &>.swiper-wrapper {
+      align-items: stretch;
+    }
+  }
+
+  &__slide {
+    display: inline-flex;
+    width: 19.4rem;
+
+    &-image {
+      max-width: 100%;
+      width: 100%;
+      height: auto;
+      display: flex;
+      align-items: flex-start;
+      overflow: hidden;
+
+      &>img {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+      }
+    }
+  }
+}

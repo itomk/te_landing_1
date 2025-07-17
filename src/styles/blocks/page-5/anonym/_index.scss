@@ -1,0 +1,160 @@
+@use '../../../inc/mixins/breakpoints' as media;
+@use '../../../inc/mixins/hover' as hover;
+
+.anonym {
+  position: relative;
+  z-index: 1;
+  padding: 5rem 0;
+  overflow: hidden;
+
+  &__container {
+    --container-max-width: 99rem;
+
+    @include media.xl {
+      --container-max-width: 120rem;
+    }
+
+    @include media.xxl {
+      --container-max-width: 132rem;
+    }
+
+    @include media.xxxl {
+      --container-max-width: 144rem;
+    }
+  }
+
+  &__heading {
+    --mb-heading: 2.5rem;
+  }
+
+  &-slider {
+    max-width: 84%;
+    width: 100%;
+    overflow: visible;
+    margin-left: 0;
+
+    @include media.xxl {
+      max-width: 74%;
+    }
+
+    &>.swiper-wrapper {
+      align-items: stretch;
+    }
+
+    @include media.lg-max {
+      .swiper-slide {
+        opacity: 1;
+        transition: opacity .3s ease-in-out;
+  
+        &-prev {
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+  &__slide {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    overflow: hidden;
+    padding: 2.5rem;
+    gap: 2rem;
+    background-color: var(--color-light);
+    box-shadow: 0px 0px 12.1px rgba(140, 125, 247, 0.36);
+    border-radius: 25px;
+
+    @include media.md {
+      padding: 3rem;
+    }
+
+    @include media.lg {
+      padding: 3.5rem;
+    }
+
+    @include media.xl {
+      padding: 4rem;
+    }
+
+    &-title {
+      display: inline-flex;
+      align-items: center;
+      font-weight: 400;
+      font-size: 1.4rem;
+      line-height: calc(17 / 14);
+      margin: 0;
+
+      @include media.md {
+        font-size: 1.8rem;
+      }
+
+      @include media.lg {
+        font-size: 2rem;
+      }
+
+      @include media.xl {
+        font-size: 2.2rem;
+      }
+
+      &>svg {
+        width: 1.6rem;
+        height: 1.6rem;
+        margin-right: 0.5rem;
+
+        @include media.md {
+          width: 2rem;
+          height: 2rem;
+        }
+
+        @include media.lg {
+          width: 2.2rem;
+          height: 2.2rem;
+        }
+
+        @include media.xl {
+          width: 2.4rem;
+          height: 2.4rem;
+        }
+      }
+
+      &>span {
+        display: inline-block;
+        background: linear-gradient(90.43deg, #959FFF -39.21%, #4203C2 34.4%, #1B014F 113.17%), #7644DD;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+      }
+    }
+
+    &-text {
+      font-weight: 400;
+      font-size: 1.6rem;
+      line-height: calc(23 / 16);
+      color: var(--color-dark);
+      margin: 0;
+
+      @include media.md {
+        font-size: 2rem;
+      }
+
+      @include media.lg {
+        font-size: 2.4rem;
+      }
+
+      @include media.xl {
+        font-size: 2.7rem;
+      }
+
+      &>span {
+        display: block;
+        font-weight: 600;
+        background: linear-gradient(90deg, #004AC3 3.67%, #9240F8 46.68%, #E5448F 80.18%, #FFB058 109.84%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+      }
+    }
+  }
+}

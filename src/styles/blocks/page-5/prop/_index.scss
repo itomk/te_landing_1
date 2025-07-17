@@ -1,0 +1,232 @@
+@use '../../../inc/mixins/breakpoints' as media;
+@use '../../../inc/mixins/hover' as hover;
+
+.prop {
+  position: relative;
+  padding: 5rem 0;
+  overflow: hidden;
+  background: linear-gradient(90.46deg, #CCFFF2 2.51%, #CCF7FF 52.86%, #D5B3FF 120.95%);
+
+  &__decor-1 {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    top: -8rem;
+    right: 61.67%;
+    pointer-events: none;
+    width: 65.2rem;
+    height: auto;
+    transform: rotate(-45deg);
+    opacity: 0.35;
+
+    @include media.lg {
+      display: flex;
+    }
+
+    @include media.xl {
+      top: -7rem;
+    }
+
+    @include media.xxl {
+      top: -10rem;
+      width: 78.9rem;
+    }
+
+    @include media.xxxl {
+      top: -8rem;
+      right: 65%;
+      width: 71.9rem;
+    }
+
+    &>img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__decor-2 {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    bottom: -7.5rem;
+    left: 56.81%;
+    pointer-events: none;
+    width: 65.7rem;
+    height: auto;
+    transform: rotate(122deg);
+    opacity: 0.4;
+
+    @include media.lg {
+      display: flex;
+    }
+
+    @include media.xxl {
+      left: 62.8%;
+    }
+
+    @include media.xxxl {
+      bottom: -9rem;
+      left: 64%;
+      width: 71rem;
+    }
+
+    &>img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__container {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+  }
+
+  &__heading {
+    --mb-heading: 0;
+  }
+
+  &__list {
+    --gap-item: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    gap: var(--gap-item);
+    list-style: none;
+    padding: 0;
+
+    @include media.sm {
+      --gap-item: 2rem;
+    }
+
+    @include media.md {
+      --gap-item: 2.5rem;
+    }
+
+    @include media.lg {
+      --gap-item: 3rem;
+    }
+  }
+
+  &__item {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.86);
+    box-shadow: 0px 2px 22.1px rgba(41, 99, 163, 0.1);
+    backdrop-filter: blur(10px);
+    margin: 0;
+
+    @include media.md {
+      width: calc(50% - var(--gap-item) / 2);
+    }
+
+    &>span {
+      position: relative;
+      display: block;
+      width: 100%;
+      font-weight: 500;
+      font-size: 1.4rem;
+      line-height: calc(26 / 22);
+      color: var(--color-dark);
+      padding-left: 3.5rem;
+
+      @include media.sm {
+        font-size: 1.8rem;
+      }
+
+      @include media.md {
+        font-size: 2rem;
+      }
+
+      @include media.lg {
+        font-size: 2.2rem;
+      }
+
+      @include media.xxl {
+        font-size: 2.4rem;
+      }
+
+      &::before {
+        position: absolute;
+        content: '';
+        left: 0;
+        top: -0.5rem;
+        width: 2.5rem;
+        height: 2.5rem;
+        background-image: url('../images/why-check.svg');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 100% 100%;
+
+        @include media.sm {
+          top: -0.2rem;
+        }
+
+        @include media.md {
+          top: -0.1rem;
+        }
+
+        @include media.lg {
+          top: 0.1rem;
+        }
+
+        @include media.xxl {
+          top: 0.2rem;
+        }
+      }
+    }
+  }
+
+  &__row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.4rem;
+
+    @include media.sm {
+      flex-direction: row;
+      justify-content: center;
+      gap: 1.2rem;
+    }
+
+    @include media.xl {
+      gap: 1rem;
+    }
+  }
+
+  &__badge {
+    max-width: 40rem;
+    width: 100%;
+    min-height: 7rem;
+
+    border-width: 2px;
+    border-radius: 16px;
+
+    @include media.sm {
+      max-width: none;
+      width: auto;
+      padding: 0.7rem 1.5rem;
+    }
+
+    &>img.badge__img {
+      max-width: 19.8rem;
+      max-height: 5.2rem;
+
+      @include media.sm {
+        max-width: 19.8rem;
+        max-height: 5.2rem;
+      }
+    }
+  }
+}
