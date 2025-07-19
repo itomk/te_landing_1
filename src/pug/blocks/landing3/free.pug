@@ -11,9 +11,11 @@ section.free#free
       p.free__text Попробуй расклад с ИИ и пойми, 
         br
         | что происходит на самом деле
-      a.btn.btn-lg.btn-gradient-blue.btn-icon.free__btn(href="#!")
-        img.btn__icon(src="/assets/picture/landing3-new/circle-icon.png", alt="")
-        span.btn__text Сделать расклад бесплатно
+      .free__row
+        a.badge.badge--mini.free__badge(href="#!" target="_blank")
+          img.badge__img(src="/assets/picture/google_play_download.svg", alt="")
+        a.badge.badge--mini.free__badge(href="#!" target="_blank")
+          img.badge__img(src="/assets/picture/app_store_download.svg", alt="")
     .free__cards
       picture.free__card
         img(src="/assets/picture/landing3-new/free-card-01.png", alt="")

@@ -248,46 +248,43 @@
     }
   }
 
-  &__btn {
-    &.btn-lg {
-      --btn-width: 100%;
-      --btn-padding-x: 1.2rem;
-      --btn-padding-y: 1.2rem;
-      --btn-font-size: 1.6rem;
-      max-width: 32.8rem;
+  &__row {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    max-width: 36.4rem;
+    gap: 1rem;
+
+    @include media.md {
+      max-width: 36rem;
+      justify-content: center;
+    }
+
+    @include media.lg {
+      max-width: 45.6rem;
+    }
+  }
+
+  &__badge {
+    max-width: calc(50% - 0.5rem);
+    width: 100%;
+    min-height: auto;
+    height: auto;
+    padding: 0.5rem 2.8rem;
+
+    @include media.lg {
+      max-width: none;
+      width: auto;
+      padding: 0.8rem 2rem;
+    }
+
+    &>.badge__img {
+      max-height: none;
+      max-width: 100%;
 
       @include media.lg {
-        --btn-width: auto;
-        --btn-padding-x: 4.5rem;
-        --btn-padding-y: 1.5rem;
-        --btn-font-size: 2.2rem;
-        max-width: none;
-      }
-
-      @include media.xl {
-        --btn-font-size: 2.4rem;
-      }
-
-      @include media.xxl {
-        --btn-font-size: 2.6rem;
-      }
-
-      &.btn-icon {
-        .btn__icon {
-          width: 1.7rem;
-
-          @include media.lg {
-            width: 2.3rem;
-          }
-
-          @include media.xl {
-            width: 2.5rem;
-          }
-
-          @include media.xxl {
-            width: 2.7rem;
-          }
-        }
+        max-width: 19.8rem;
+        max-height: 5.2rem;
       }
     }
   }
