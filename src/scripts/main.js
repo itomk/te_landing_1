@@ -8,6 +8,7 @@ import { anonymSlider } from './blocks/anonym.js'
 import { viewSlider } from './blocks/view.js'
 import { clickSlider } from './blocks/click.js'
 import { eventsSlider } from './blocks/events.js'
+import { howSlider } from './blocks/how.js'
 // import { playerSlider, controlMusic, controlLike } from './blocks/player.js'
 import { runLine, cuteControlElement } from './blocks/hero.js'
 import InitModal from './blocks/modal.js'
@@ -46,6 +47,10 @@ window.addEventListener('DOMContentLoaded', () => {
   // Slider for Click block
   if (document.querySelectorAll('.click-slider').length)
     clickSlider('.click-slider')
+
+  // Slider for How block
+  if (document.querySelectorAll('.how-slider').length)
+    howSlider('.how-slider')
 
   // Slider for Player block
   // if (document.querySelectorAll('.player-slider').length) {
