@@ -1,0 +1,90 @@
+@use '../../../inc/mixins/breakpoints' as media;
+@use '../../../inc/mixins/hover' as hover;
+
+.after {
+  position: relative;
+  z-index: 2;
+  padding: 5rem 0;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+  }
+
+  &__heading {
+    color: #0049d3;
+    --mb-heading: 0;
+  }
+
+  &__sub-heading {
+    text-align: center;
+    font-weight: 600;
+    font-size: 2.2rem;
+    line-height: calc(26 / 22);
+    color: var(--color-dark);
+    margin: 0;
+
+    @include media.md {
+      font-size: 2rem;
+    }
+
+    @include media.lg {
+      font-size: 2.4rem;
+    }
+
+    @include media.xl {
+      font-size: 2.6rem;
+    }
+
+    @include media.xxl {
+      font-size: 2.8rem;
+    }
+
+    &>span {
+      color: var(--color-base);
+    }
+  }
+
+  &__row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.4rem;
+
+    @include media.sm {
+      flex-direction: row;
+      justify-content: center;
+      gap: 1.2rem;
+    }
+
+    @include media.lg {
+      gap: 1rem;
+    }
+  }
+
+  &__badge {
+    max-width: 40rem;
+    width: 100%;
+    min-height: 7rem;
+
+    border-width: 2px;
+    border-radius: 16px;
+
+    @include media.sm {
+      max-width: none;
+      width: auto;
+      padding: 0.7rem 1.5rem;
+    }
+
+    &>img.badge__img {
+      max-height: 5.2rem;
+
+      @include media.sm {
+        max-height: 5.2rem;
+      }
+    }
+  }
+}

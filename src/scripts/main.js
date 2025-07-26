@@ -52,6 +52,14 @@ window.addEventListener('DOMContentLoaded', () => {
   if (document.querySelectorAll('.how-slider').length)
     howSlider('.how-slider')
 
+  // Slider for Comment block
+  if (document.querySelectorAll('.comment-slider').length)
+    anonymSlider('.comment-slider')
+
+  // Slider for Helper block
+  if (document.querySelectorAll('.helper-slider').length)
+    howSlider('.helper-slider')
+
   // Slider for Player block
   // if (document.querySelectorAll('.player-slider').length) {
   //   playerSlider('.player-slider', '.m-player')

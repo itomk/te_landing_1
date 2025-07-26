@@ -1,0 +1,511 @@
+@use '../../../inc/mixins/breakpoints' as media;
+@use '../../../inc/mixins/hover' as hover;
+
+.single {
+  --container-max-width: 192rem;
+  --container-padding-x: 1.6rem;
+  position: relative;
+  background-image: linear-gradient(360deg, #C9DBFF 0%, #F7F9FF 59.61%);
+  border-radius: 0 0 18px 18px;
+  overflow: hidden;
+  padding: 4.7rem 0 1.1rem;
+
+  @include media.md {
+    --container-padding-x: 3rem;
+    border-radius: 0;
+    padding: 7rem 0 3.5rem;
+  }
+
+  @include media.lg {
+    --container-padding-x: 4rem;
+    padding: 9.4rem 0 4.8rem;
+  }
+
+  @include media.xl {
+    --container-padding-x: 8rem;
+    padding: 11.7rem 0 7.2rem;
+  }
+
+  @include media.xxl {
+    padding: 17.3rem 0 12.7rem;
+  }
+
+  &::before {
+    position: absolute;
+    content: '';
+    z-index: 1;
+    border-radius: 50%;
+    bottom: -0.4rem;
+    right: -0.6rem;
+    width: 24.1rem;
+    height: 24.1rem;
+    background-image: linear-gradient(176.76deg, #0057FC 2.68%, #B0D5FF 38.61%, #B0EEFF 75.04%);
+    filter: blur(42px);
+    transform: rotate(-30deg);
+
+    @include media.md {
+      bottom: auto;
+      top: -14.3rem;
+      right: -10rem;
+      width: 59rem;
+      height: 59rem;
+      filter: blur(104px);
+      transform: rotate(-120deg);
+    }
+  }
+
+  &__decor {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+    filter: blur(29px);
+
+    @include media.md {
+      filter: blur(72px);
+    }
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: '';
+      border-radius: 50%;
+      transform: rotate(90deg);
+    }
+
+    &::before {
+      bottom: 0.4rem;
+      left: -1.4rem;
+      width: 20.7rem;
+      height: 20.7rem;
+      background-image: linear-gradient(180deg, #B0D5FF 20%, #0050AD 100%);
+
+      @include media.md {
+        bottom: -21.3rem;
+        left: -7.5rem;
+        width: 25.8rem;
+        height: 25.8rem;
+      }
+
+      @include media.xl {
+        bottom: -15rem;
+        left: auto;
+        right: 76%;
+      }
+
+      @include media.xxl {
+        bottom: -1.4rem;
+        right: 63.8%;
+      }
+    }
+
+    &::after {
+      top: -11.1rem;
+      left: 4.1rem;
+      width: 10.5rem;
+      height: 10.5rem;
+      background-image: linear-gradient(180deg, #0057FC 0%, #B0D5FF 80%);
+
+      @include media.md {
+        top: 0;
+        left: 60.31%;
+        width: 25.8rem;
+        height: 25.8rem;
+      }
+    }
+  }
+
+  &__header {
+    position: absolute;
+    z-index: 4;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem var(--container-padding-x);
+
+    &-logo {
+      display: block;
+      max-width: 14.2rem;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      opacity: 1;
+      transition: .3s ease-in-out;
+
+      @include media.lg {
+        max-width: 17.8rem;
+      }
+
+      @include hover.on-hover {
+        opacity: 0.8;
+      }
+
+      &>img {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+      }
+    }
+  }
+
+  &__container {
+    position: relative;
+    z-index: 3;
+  }
+
+  &__main {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+
+    @include media.md {
+      align-items: flex-start;
+      gap: 1.5rem;
+    }
+
+    @include media.lg {
+      gap: 2rem;
+    }
+  }
+
+  &__heading {
+    max-width: 36rem;
+    text-align: center;
+    font-weight: 700;
+    font-size: 2.2rem;
+    line-height: calc(26 / 22);
+    color: #0049d3;
+    margin: 0;
+
+    @include media.md {
+      max-width: none;
+      text-align: left;
+      font-size: 3.4rem;
+    }
+
+    @include media.lg {
+      font-size: 4.6rem;
+    }
+
+    @include media.xl {
+      font-size: 4.8rem;
+    }
+
+    @include media.xxl {
+      font-size: 5rem;
+    }
+  }
+
+  &__sub-heading {
+    max-width: 22.5rem;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: calc(17 / 14);
+    color: #345187;
+    margin: 0;
+
+    @include media.md {
+      max-width: 29rem;
+      text-align: left;
+      font-size: 1.8rem;
+    }
+
+    @include media.lg {
+      max-width: 39.8rem;
+      font-size: 2.5rem;
+    }
+
+    @include media.xl {
+      max-width: 43rem;
+      font-size: 2.7rem;
+    }
+
+    @include media.xxl {
+      max-width: 46rem;
+      font-size: 2.9rem;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25.7rem;
+    margin-top: -0.4rem;
+
+    @include media.sm {
+      gap: 30rem;
+    }
+
+    @include media.md {
+      max-width: 36rem;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    @include media.lg {
+      max-width: 45.6rem;
+      margin-top: 2rem;
+    }
+  }
+
+  &__row {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    max-width: 36.4rem;
+    gap: 1rem;
+    order: 2;
+
+    @include media.md {
+      max-width: 100%;
+      justify-content: flex-start;
+      order: 1;
+    }
+
+    @include media.lg {
+      max-width: 100%;
+    }
+  }
+
+  &__badge {
+    max-width: calc(50% - 0.5rem);
+    width: 100%;
+    min-height: auto;
+    height: auto;
+    padding: 0.5rem 2.8rem;
+
+    @include media.lg {
+      max-width: none;
+      width: auto;
+      padding: 0.8rem 2rem;
+    }
+
+    &>.badge__img {
+      max-height: none;
+
+      @include media.lg {
+        max-height: 5.2rem;
+      }
+    }
+  }
+
+  &__text {
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    line-height: calc(14 / 12);
+    color: #345187;
+    margin: 0;
+    order: 1;
+
+    @include media.md {
+      font-weight: 600;
+      font-size: 1.6rem;
+      line-height: 1.3;
+      order: 2;
+    }
+
+    @include media.lg {
+      font-size: 2rem;
+    }
+
+    @include media.xl {
+      font-size: 2.2rem;
+    }
+
+    @include media.xxl {
+      font-size: 2.4rem;
+    }
+  }
+
+  &__media {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: auto;
+    left: 0;
+    bottom: 0;
+
+    @include media.md {
+      left: auto;
+      right: 0;
+      width: auto;
+      height: 100%;
+      display: flex;
+      align-items: flex-end;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    bottom: 0;
+    right: 8.97%;
+    max-width: 39rem;
+    height: auto;
+
+    @include media.sm {
+      max-width: 45rem;
+      right: 22%;
+    }
+
+    @include media.md {
+      position: relative;
+      max-width: 44rem;
+      right: -2.8rem;
+    }
+
+    @include media.lg {
+      max-width: 55.8rem;
+    }
+
+    @media (width >= 1080px) {
+      max-width: 63.8rem;
+    }
+
+    @include media.xl {
+      max-width: 69.9rem;
+      bottom: -0.6rem;
+      right: -0.6rem;
+    }
+
+    @include media.xxl {
+      max-width: 87rem;
+      bottom: 0;
+      right: -1.8rem;
+    }
+
+    &>img {
+      position: relative;
+      z-index: 1;
+      max-width: 100%;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    &-blur {
+      position: absolute;
+      content: '';
+      z-index: 2;
+      display: block;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      height: 5rem;
+      background-color: rgba(218, 230, 255, 0.01);
+      backdrop-filter: blur(15px);
+
+      @include media.md {
+        height: 2.2rem;
+      }
+
+      @include media.lg {
+        height: 2.7rem;
+      }
+
+      @media (width >= 1080px) {
+        height: 3rem;
+      }
+
+      @include media.xl {
+        height: 3.3rem;
+      }
+
+      @include media.xxl {
+        height: 4.1rem;
+      }
+    }
+  }
+
+  &__card {
+    position: absolute;
+    z-index: 3;
+    bottom: 4.5rem;
+    left: 68.2%;
+    display: flex;
+    max-width: 10rem;
+    width: 100%;
+    height: auto;
+    box-shadow: 0px 3px 9px rgba(41, 51, 86, 0.14);
+    border-radius: 7px;
+    transform: rotate(11.42deg);
+    overflow: hidden;
+
+    @include media.md {
+      left: 40%;
+      bottom: 1rem;
+    }
+
+    @include media.lg {
+      max-width: 13.3rem;
+      box-shadow: 0px 4px 13px rgba(41, 51, 86, 0.14);
+      border-radius: 9px;
+      transform: rotate(6.37deg);
+    }
+
+    @include media.xl {
+      left: 41%;
+      bottom: 3rem;
+      max-width: 14.6rem;
+      border-radius: 10px;
+    }
+
+    @include media.xxl {
+      left: 37%;
+      max-width: 17.2rem;
+      box-shadow: 0px 6px 16px rgba(41, 51, 86, 0.14);
+      border-radius: 12px;
+      transform: rotate(6.37deg);
+    }
+
+    &>img {
+      max-width: 100%;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+  }
+
+  &__cntrl {
+    padding-top: 21.6rem;
+
+    @include media.md {
+      padding-top: 2rem;
+    }
+
+    .btn-gradient-red.btn-lg {
+      --btn-width: 100%;
+      --btn-padding-y: 1.2rem;
+      --btn-font-size: 1.8rem;
+      --btn-font-weight: 600;
+
+      @include media.sm {
+        --btn-width: auto;
+      }
+
+      @include media.lg {
+        --btn-padding-y: 1.5rem;
+        --btn-font-size: 2.2rem;
+      }
+
+      @include media.xl {
+        --btn-font-size: 2.4rem;
+      }
+
+      @include media.xxl {
+        --btn-font-size: 2.6rem;
+      }
+    }
+  }
+}

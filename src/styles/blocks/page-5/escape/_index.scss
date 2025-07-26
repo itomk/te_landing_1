@@ -419,10 +419,8 @@
 
     &>.badge__img {
       max-height: none;
-      max-width: 100%;
 
       @include media.lg {
-        max-width: 19.8rem;
         max-height: 5.2rem;
       }
     }

@@ -1,0 +1,86 @@
+@use '../../../inc/mixins/breakpoints' as media;
+@use '../../../inc/mixins/hover' as hover;
+
+.professional {
+  position: relative;
+  z-index: 2;
+  padding: 5rem 0;
+
+  &__container {
+    --container-max-width: 99rem;
+
+    @include media.xl {
+      --container-max-width: 107rem;
+    }
+  }
+
+  &__heading {
+    color: #0049d3;
+    --mb-heading: 2.5rem;
+  }
+
+  &__inner {
+    --gap-item: 2rem;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 3rem var(--gap-item);
+    padding: 2rem;
+    background-image: linear-gradient(180.21deg, #3C7BF8 -0.75%, #5887FF 15.19%, #A7CDFF 37.81%, #F7F9FF 83.93%);
+    border-radius: 25px;
+  }
+
+  &__item {
+    max-width: 100%;
+    width: 100%;
+    max-height: 37.8rem;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: stretch;
+    overflow: hidden;
+    border-radius: 20px;
+    padding: 2rem 0 0;
+    gap: 1rem;
+    background-image: linear-gradient(180deg, #FFFFFF 0%, #5AA6FF 100%);
+    box-shadow: 0px 2px 22px rgba(41, 99, 163, 0.1);
+
+    @include media.md {
+      width: calc(50%  - var(--gap-item) / 2);
+    }
+  }
+
+  &__text {
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: calc(24 / 20);
+    color: var(--color-dark);
+    padding: 0 2rem;
+    margin: 0;
+
+    @include media.xl {
+      font-size: 2.2rem;
+    }
+
+    @include media.xxl {
+      font-size: 2.4rem;
+    }
+  }
+
+  &__pic {
+    max-width: 100%;
+    max-height: 30rem;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &>img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+  }
+}

@@ -1,28 +1,40 @@
 @use '../../../inc/mixins/breakpoints' as media;
 @use '../../../inc/mixins/hover' as hover;
 
-.effective {
+.details {
   position: relative;
-  background: linear-gradient(270deg, #C9DBFF 0%, #F7F9FF 59.61%);
-  overflow: hidden;
+  z-index: 2;
   padding: 5rem 0;
+  background-image: linear-gradient(270deg, #C9DBFF 0%, #F7F9FF 59.61%);
+  overflow: hidden;
 
-  &::before {
+  &::after {
     position: absolute;
     content: '';
-    top: 10.8rem;
-    right: 11.8%;
+    z-index: 1;
+    display: block;
+    border-radius: 50%;
+    top: 20.1rem;
+    left: -24.5rem;
     width: 59rem;
     height: 59rem;
-    background: linear-gradient(176.76deg, #0057FC 2.68%, #B0D5FF 38.61%, #B0B6FF 75.04%);
+    background-image: linear-gradient(176.76deg, #0057FC 2.68%, #B0D5FF 38.61%, #B0EEFF 75.04%);
     filter: blur(104px);
     transform: rotate(-120deg);
-    border-radius: 50%;
 
-    @include media.lg {
-      top: -12.5rem;
-      right: auto;
-      left: 50.31%;
+    @include media.md {
+      top: -3.7rem;
+      left: 55%;
+    }
+
+    @include media.xl {
+      top: -3.3rem;
+      left: 60%;
+    }
+
+    @include media.xxl {
+      top: -1.2rem;
+      left: 66.67%;
     }
   }
 
@@ -41,44 +53,55 @@
     &::after {
       position: absolute;
       content: '';
+      z-index: 1;
+      display: block;
       border-radius: 50%;
-      background: linear-gradient(180deg, #B0D5FF 20%, #8FC3FF 100%);
     }
 
     &::before {
-      top: 26.1rem;
-      left: 90.7%;
-      width: 25.8rem;
-      height: 25.8rem;
+      top: 35.3rem;
+      right: -22.2rem;
+      width: 25.7rem;
+      height: 25.7rem;
+      background-image: linear-gradient(180deg, #B0D5FF 20%, #0050AD 100%);
 
-      @include media.lg {
+      @include media.md {
         top: auto;
-        bottom: -9.7rem;
-        left: -22.2rem;
+        bottom: -13rem;
+        right: 92.5%;
       }
 
       @include media.xl {
-        bottom: -8.6rem;
-        left: -6.2rem;
+        bottom: -12.6rem;
+        right: 82.22%;
       }
 
       @include media.xxl {
-        bottom: -5rem;
-        left: auto;
-        right: 70%;
+        bottom: -10.6rem;
+        right: 68.52%;
       }
     }
 
     &::after {
-      bottom: 0;
-      right: 17.4%;
+      bottom: 9.3rem;
+      left: -18.5rem;
       width: 50.6rem;
       height: 50.6rem;
+      background-image: linear-gradient(180deg, #B0D5FF 20%, #54CFFF 100%);
 
-      @include media.lg {
-        bottom: -23.2rem;
-        right: auto;
-        left: 55%;
+      @include media.md {
+        bottom: -26.5rem;
+        left: 59.69%;
+      }
+
+      @include media.xl {
+        bottom: -26.1rem;
+        left: 64.17%;
+      }
+
+      @include media.xxl {
+        bottom: -24.1rem;
+        left: 70.14%;
       }
     }
   }
@@ -86,6 +109,9 @@
   &__container {
     position: relative;
     z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
     --container-max-width: 99rem;
 
     @include media.xl {
@@ -94,8 +120,8 @@
   }
 
   &__heading {
-    color: #0049D3;
-    --mb-heading: 2.5rem;
+    color: #0049d3;
+    --mb-heading: 0;
   }
 
   &__grid {
@@ -109,51 +135,48 @@
     @include media.lg {
       --gap-item: 3rem;
     }
-
-    &:not(:last-child) {
-      margin-bottom: 2.5rem;
-    }
   }
 
   &__item {
     max-width: 100%;
     width: 100%;
-    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 2rem;
-    gap: 1rem;
     background-color: rgba(255, 255, 255, 0.86);
-    box-shadow: 0px 2px 22px rgba(41, 99, 163, 0.1);
+    box-shadow: 0px 2px 22.1px rgba(41, 99, 163, 0.1);
     backdrop-filter: blur(10px);
     border-radius: 15px;
+    padding: 2rem;
+    gap: 1rem;
 
     @include media.md {
-      width: calc(50% - var(--gap-item) / 2);
+      max-width: calc(33.3333% - var(--gap-item) * 2 / 3);
+
+      &:nth-child(4),
+      &:nth-child(5) {
+        max-width: calc(50% - var(--gap-item) / 2);
+      }
     }
   }
 
-  &__pic {
-    display: flex;
-    max-width: 10rem;
+  &__icon {
+    max-width: 100%;
     width: 100%;
-    height: auto;
-
-    @include media.xl {
-      max-width: 11rem;
-    }
+    height: 6.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     @include media.xxl {
-      max-width: 12.7rem;
+      height: 7.3rem;
     }
 
     &>img {
       max-width: 100%;
-      width: 100%;
-      height: auto;
+      max-height: 100%;
       object-fit: contain;
+      object-position: center center;
     }
   }
 
@@ -176,6 +199,36 @@
     @include media.xxl {
       font-size: 2.9rem;
     }
+
+    &>span {
+      display: block;
+      font-size: 1.8rem;
+
+      @include media.lg {
+        font-size: 2rem;
+      }
+
+      @include media.xl {
+        font-size: 2.2rem;
+      }
+    }
+  }
+
+  &__text {
+    text-align: center;
+    font-weight: 600;
+    font-size: 2.4rem;
+    line-height: calc(29 / 24);
+    color: var(--color-dark);
+    margin: 0;
+
+    @include media.xl {
+      font-size: 2.6rem;
+    }
+
+    @include media.xxl {
+      font-size: 2.8rem;
+    }
   }
 
   &__row {
@@ -184,6 +237,7 @@
     align-items: center;
     flex-direction: column;
     gap: 1.4rem;
+    margin-top: -0.5rem;
 
     @include media.sm {
       flex-direction: row;
@@ -191,8 +245,9 @@
       gap: 1.2rem;
     }
 
-    @include media.xl {
+    @include media.lg {
       gap: 1rem;
+      margin-top: 0;
     }
   }
 

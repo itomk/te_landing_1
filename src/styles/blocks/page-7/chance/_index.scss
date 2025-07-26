@@ -177,11 +177,9 @@
     }
 
     &>img.badge__img {
-      max-width: 19.8rem;
       max-height: 5.2rem;
 
       @include media.sm {
-        max-width: 19.8rem;
         max-height: 5.2rem;
       }
     }

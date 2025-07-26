@@ -1,0 +1,18 @@
+extends layouts/_default.pug
+
+block variables
+  - const theme_title = 'Landing_8'
+  - const theme_color = '#fff'
+  - const theme_body_classes = ['page']
+  - const current_page = 'landing_8'
+
+block content
+  main.main#main
+    include blocks/landing8/single.pug
+    include blocks/landing8/helper.pug
+    include blocks/landing8/details.pug
+    include blocks/landing8/professional.pug
+    include blocks/landing8/comment.pug
+    include blocks/landing8/after.pug
+  include components/footer.pug
+  include components/svg-defs.pug
